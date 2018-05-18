@@ -14,9 +14,14 @@ import java.io.Serializable;
 public class Game implements Serializable{
     // Class instance variable.
     private Player thePlayer;
+    private Map theMap;
+    private CropData cropData;
+    private ArrayList<ListItem> animals;
+    private ArrayList<ListItem> tools;
+    private ArrayList<ListItem> provisions;
 
-    public Game(Player thePlayer) {
-    }
+    public Game(Player thePlayer, Map theMap, CropData cropData, <any> animals, <any> tools, <any> provisions) {
+    }    
 
     public Player getThePlayer() {
         return thePlayer;
@@ -24,6 +29,46 @@ public class Game implements Serializable{
 
     public void setThePlayer(Player thePlayer) {
         this.thePlayer = thePlayer;
+    }
+
+    public Map getTheMap() {
+        return theMap;
+    }
+
+    public void setTheMap(Map theMap) {
+        this.theMap = theMap;
+    }
+
+    public CropData getCropData() {
+        return cropData;
+    }
+
+    public void setCropData(CropData cropData) {
+        this.cropData = cropData;
+    }
+
+    public <any> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(<any> animals) {
+        this.animals = animals;
+    }
+
+    public <any> getTools() {
+        return tools;
+    }
+
+    public void setTools(<any> tools) {
+        this.tools = tools;
+    }
+
+    public <any> getProvisions() {
+        return provisions;
+    }
+
+    public void setProvisions(<any> provisions) {
+        this.provisions = provisions;
     }
     
     
