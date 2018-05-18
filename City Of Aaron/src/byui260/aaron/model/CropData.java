@@ -1,3 +1,5 @@
+package byui260.aaron.model;
+
 
 import java.io.Serializable;
 
