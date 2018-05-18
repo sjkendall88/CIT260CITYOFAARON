@@ -24,7 +24,7 @@ public class CityOfAaron {
         
         String playerOneName = playerOne.getName();
         
-        System.out.println(String "Name = " + playerOneName);
+        System.out.println("Name = " + playerOneName);
     }
     
 }
