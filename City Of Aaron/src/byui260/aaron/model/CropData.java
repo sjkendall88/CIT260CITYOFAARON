@@ -32,21 +32,6 @@ public class CropData implements Serializable {
     private Integer wheatForPeople;
 
     public CropData(Integer year, Integer population, Integer acresOwned, Integer cropYield, Integer wheatInStore, Integer newPeople, Integer harvest, Integer harvestAfterOffering, Integer offering, Integer offeringBushels, Integer peopleFed, Integer acresPlanted, Integer numStarved, Integer eatenByRats, Integer wheatForPeople) {
-        this.year = year;
-        this.population = population;
-        this.acresOwned = acresOwned;
-        this.cropYield = cropYield;
-        this.wheatInStore = wheatInStore;
-        this.newPeople = newPeople;
-        this.harvest = harvest;
-        this.harvestAfterOffering = harvestAfterOffering;
-        this.offering = offering;
-        this.offeringBushels = offeringBushels;
-        this.peopleFed = peopleFed;
-        this.acresPlanted = acresPlanted;
-        this.numStarved = numStarved;
-        this.eatenByRats = eatenByRats;
-        this.wheatForPeople = wheatForPeople;
     }
     
     

@@ -16,11 +16,7 @@ public enum TeamMember {
     private String memberTitle;
 
     private TeamMember(String memberName, String memberTitle) {
-        this.memberName = memberName;
-        this.memberTitle = memberTitle;
     }
-    
-    
 
     public String getMemberName() {
         return memberName;

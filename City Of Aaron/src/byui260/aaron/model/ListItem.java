@@ -17,8 +17,6 @@ public class ListItem implements Serializable{
     private Integer number;
 
     public ListItem(String name, Integer number) {
-        this.name = name;
-        this.number = number;
     }
     
     

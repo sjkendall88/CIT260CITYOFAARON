@@ -17,11 +17,7 @@ public class Location implements Serializable{
     private String symbol;
 
     public Location(String description, String symbol) {
-        this.description = description;
-        this.symbol = symbol;
-    }
-    
-    
+    }  
 
     public String getDescription() {
         return description;
