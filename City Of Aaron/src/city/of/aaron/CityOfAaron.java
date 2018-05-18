@@ -6,6 +6,8 @@
  */
 package city.of.aaron;
 
+import byui260.aaron.model.Player;
+
 /**
  *
  * @author hotja
@@ -16,7 +18,13 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Player playerOne = new Player();
+        
+        playerOne.setName("Sterling");
+        
+        String playerOneName = playerOne.getName();
+        
+        System.out.println(String "Name = " + playerOneName);
     }
     
 }
