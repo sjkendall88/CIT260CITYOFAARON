@@ -34,8 +34,6 @@ public class CropData implements Serializable {
     public CropData(Integer year, Integer population, Integer acresOwned, Integer cropYield, Integer wheatInStore, Integer newPeople, Integer harvest, Integer harvestAfterOffering, Integer offering, Integer offeringBushels, Integer peopleFed, Integer acresPlanted, Integer numStarved, Integer eatenByRats, Integer wheatForPeople) {
     }
     
-    
-
     public Integer getYear() {
         return year;
     }
