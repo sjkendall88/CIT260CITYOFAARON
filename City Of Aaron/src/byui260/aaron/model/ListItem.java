@@ -5,11 +5,13 @@
  */
 package byui260.aaron.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author hotja
  */
-public class ListItem {
+public class ListItem implements Serializable{
     
     private String name;
     private Integer number;
