@@ -15,6 +15,15 @@ import java.util.Objects;
 public class Player implements Serializable {
     // Class instance variables
     private String name;
+    private ArrayList<Game> games = new ArrayList<Game>();
+
+    public <any> getGames() {
+        return games;
+    }
+
+    public void setGames(<any> games) {
+        this.games = games;
+    }
 
     public Player(String name) {
         this.name = name;
