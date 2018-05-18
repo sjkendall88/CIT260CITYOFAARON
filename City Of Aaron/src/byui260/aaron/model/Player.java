@@ -15,19 +15,19 @@ import java.util.Objects;
 public class Player implements Serializable {
     // Class instance variables
     private String name;
-    private ArrayList<Game> games = new ArrayList<Game>();
-
+//    private ArrayList<Game> games = new ArrayList<Game>();
+    
     public Player(String name) {
         this.name = name;
     }
 
-    public <any> getGames() {
-        return games;
-    }
+//    public <any> getGames() {
+//        return games;
+//    }
 
-    public void setGames(<any> games) {
-        this.games = games;
-    }
+//    public void setGames(<any> games) {
+//        this.games = games;
+//    }
     
     public String getName() {
         return name;
@@ -66,7 +66,5 @@ public class Player implements Serializable {
         }
         return true;
     }
-    
-    
     
 }

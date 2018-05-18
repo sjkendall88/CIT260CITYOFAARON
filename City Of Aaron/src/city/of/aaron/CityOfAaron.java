@@ -18,8 +18,9 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player playerOne = new Player();
-        
+        Player playerOne;
+        playerOne = new Player();
+       
         playerOne.setName("Sterling");
         
         String playerOneName = playerOne.getName();
