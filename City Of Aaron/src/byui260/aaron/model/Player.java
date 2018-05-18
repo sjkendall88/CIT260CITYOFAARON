@@ -17,18 +17,24 @@ public class Player implements Serializable {
     private String name;
 //    private ArrayList<Game> games = new ArrayList<Game>();
     
+
+
+ //   public Player() {
+ //       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ //   }
+
+/*    public <any> getGames() {
+        return games;
+    }
+
+    public void setGames(<any> games) {
+        this.games = games;
+    }
+*/
     public Player(String name) {
         this.name = name;
     }
-
-//    public <any> getGames() {
-//        return games;
-//    }
-
-//    public void setGames(<any> games) {
-//        this.games = games;
-//    }
-    
+   
     public String getName() {
         return name;
     }
