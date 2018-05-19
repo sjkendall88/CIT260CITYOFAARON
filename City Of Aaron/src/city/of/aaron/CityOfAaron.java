@@ -7,6 +7,7 @@
 package city.of.aaron;
 
 import byui260.aaron.model.Player;
+import byui260.aaron.model.TeamMember;
 
 /**
  *
@@ -25,6 +26,15 @@ public class CityOfAaron {
         String playerOneName = playerOne.getName();
         
         System.out.println("Name = " + playerOneName);
+        
+        TeamMember TeamMemberOne = new TeamMember();
+        
+        TeamMemberOne.setMemberName("");
+        TeamMemberOne.setMemberTitle("");
+        
+        String TeamMemberOneName = TeamMemberOne.getMemberName();
+        String TeamMemberOneTitle = TeamMemberOne.getMemberTitle();
+        
     }
     
 }

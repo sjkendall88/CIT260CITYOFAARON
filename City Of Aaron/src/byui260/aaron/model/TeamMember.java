@@ -7,33 +7,25 @@ package byui260.aaron.model;
 
 /**
  *
- * @author hotja
+ * @author Sterling
  */
 public enum TeamMember {
     ;
-      
+        
     private String memberName;
     private String memberTitle;
 
-    private TeamMember(String memberName, String memberTitle) {
+    TeamMember(String memberName, String memberTitle){
+        this.memberName = memberName;
+        this.memberTitle = memberTitle;
     }
-
+    
     public String getMemberName() {
         return memberName;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
     public String getMemberTitle() {
         return memberTitle;
-    }
-
-    public void setMemberTitle(String memberTitle) {
-        this.memberTitle = memberTitle;
-    }
-    
-    
+    }    
     
 }
