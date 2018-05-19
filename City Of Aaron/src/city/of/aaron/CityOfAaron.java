@@ -6,6 +6,7 @@
  */
 package city.of.aaron;
 
+import byui260.aaron.model.CropData;
 import byui260.aaron.model.ListItem;
 import byui260.aaron.model.Location;
 import byui260.aaron.model.Player;
@@ -50,6 +51,41 @@ public class CityOfAaron {
         System.out.println(listItemOneNumber + " " + listItemOneName);
         
         //CropData
+        CropData cropDataOne = new CropData();
+        cropDataOne.setYear(listItemOneNumber);
+        cropDataOne.setPopulation(listItemOneNumber);
+        cropDataOne.setAcresOwned(listItemOneNumber);
+        cropDataOne.setCropYield(listItemOneNumber);
+        cropDataOne.setWheatInStore(listItemOneNumber);
+        cropDataOne.setNumberWhoDied(listItemOneNumber);
+        cropDataOne.setNewPeople(listItemOneNumber);
+        cropDataOne.setHarvest(listItemOneNumber);
+        cropDataOne.setHarvestAfterOffering(listItemOneNumber);
+        cropDataOne.setOffering(listItemOneNumber);
+        cropDataOne.setOfferingBushels(listItemOneNumber);
+        cropDataOne.setPeopleFed(listItemOneNumber);
+        cropDataOne.setAcresPlanted(listItemOneNumber);
+        cropDataOne.setNumStarved(listItemOneNumber);
+        cropDataOne.setEatenByRats(listItemOneNumber);
+        cropDataOne.setWheatForPeople(listItemOneNumber);
+        //Getter
+        Integer cropDataOneYear = cropDataOne.getYear();
+        Integer cropDataOnePopulation = cropDataOne.getPopulation();
+        Integer cropDataOneAcresOwned = cropDataOne.getAcresOwned();
+        Integer cropDataOneCropYield = cropDataOne.getCropYield();
+        Integer cropDataOneWheatInStore = cropDataOne.getWheatInStore();
+        Integer cropDataNumberWhoDied = cropDataOne.getNumberWhoDied();
+        Integer cropDataNewPeople = cropDataOne.getNewPeople();
+        Integer cropDataHarvest = cropDataOne.getHarvest();
+        Integer cropDataHarvestAfterOffering = cropDataOne.getHarvestAfterOffering();
+        Integer cropDataOffering = cropDataOne.getOffering();
+        Integer cropDataOfferingBushels = cropDataOne.getOfferingBushels();
+        Integer cropDataPeopleFed = cropDataOne.getPeopleFed();
+        Integer cropDataAcresPlanted = cropDataOne.getAcresPlanted();
+        Integer cropDataNumStarved = cropDataOne.getNumStarved();
+        Integer cropDataEatenByRats = cropDataOne.getEatenByRats();
+        Integer cropDataWheatForPeople = cropDataOne.getWheatForPeople();
+        System.out.println(cropDataOne.toString());
     }
     
 }
