@@ -46,7 +46,7 @@ public class CityOfAaron {
         listItemOne.setName("");
         listItemOne.setNumber(Integer.SIZE);
         String listItemOneName = listItemOne.getName();
-        String listItemOneNumber = listItemOne.getNumber();
+        Integer listItemOneNumber = listItemOne.getNumber();
         System.out.println(listItemOneNumber + " " + listItemOneName);
         
         //CropData
