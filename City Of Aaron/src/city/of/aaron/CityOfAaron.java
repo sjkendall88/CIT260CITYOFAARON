@@ -39,7 +39,7 @@ public class CityOfAaron {
         locationOne.setSymbol("City");
         String locationOneDescription = locationOne.getDescription();
         String locationOneSymbol = locationOne.getSymbol();
-        System.out.println(locationOneSymbol + locationOneDescription);
+        System.out.println(locationOneSymbol + " " + locationOneDescription);
         
         //ListItem
         
