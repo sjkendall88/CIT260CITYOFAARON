@@ -14,7 +14,7 @@ import byui260.aaron.model.TeamMember;
 
 /**
  *
- * @author hotja
+ * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
 public class CityOfAaron {
 
