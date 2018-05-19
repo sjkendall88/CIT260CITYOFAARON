@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author hotja
+ * @author Sterling Kendall
  */
 public class CropData implements Serializable {
     
