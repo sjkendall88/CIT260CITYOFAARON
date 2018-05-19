@@ -10,7 +10,10 @@ package byui260.aaron.model;
  * @author Sterling
  */
 public enum TeamMember {
-    ;
+    
+    one("James Rasmussen","Man with no Sleep"),
+    two("JJ Hugh","Man with no Time"),
+    three("Sterling Kendall","Man of frustrations");
         
     private String memberName;
     private String memberTitle;
