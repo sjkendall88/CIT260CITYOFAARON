@@ -6,6 +6,7 @@
  */
 package city.of.aaron;
 
+import byui260.aaron.model.ListItem;
 import byui260.aaron.model.Location;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.TeamMember;
@@ -41,7 +42,12 @@ public class CityOfAaron {
         System.out.println(locationOneSymbol + " " + locationOneDescription);
         
         //ListItem
-        
+        ListItem listItemOne = new ListItem();
+        listItemOne.setName("");
+        listItemOne.setNumber(Integer.SIZE);
+        String listItemOneName = listItemOne.getName();
+        String listItemOneNumber = listItemOne.getNumber();
+        System.out.println(listItemOneNumber + " " + listItemOneName);
         
         //CropData
     }
