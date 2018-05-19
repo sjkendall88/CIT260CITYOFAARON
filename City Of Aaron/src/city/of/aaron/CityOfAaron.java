@@ -34,7 +34,6 @@ public class CityOfAaron {
         
         //Location
         Location locationOne = new Location();
-        //Location locationOneSymbol = new Location();
         locationOne.setDescription("Here");
         locationOne.setSymbol("City");
         String locationOneDescription = locationOne.getDescription();
