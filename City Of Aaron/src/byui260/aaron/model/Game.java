@@ -21,7 +21,7 @@ public class Game implements Serializable{
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provisions;
 
-    public Game(Player thePlayer, Map theMap, CropData cropData, <any> animals, <any> tools, <any> provisions) {
+    public Game(){
     }    
 
     public Player getThePlayer() {
