@@ -27,8 +27,11 @@ public class CityOfAaron {
         
         System.out.println("Name = " + playerOneName);
         
-        TeamMember.one.getMemberName();
-        TeamMember.one.getMemberTitle();
+        String memberName = TeamMember.one.getMemberName();
+        String memberTitle = TeamMember.one.getMemberTitle();
+        
+        System.out.println(memberName + " " + memberTitle);
+        
     }
     
 }
