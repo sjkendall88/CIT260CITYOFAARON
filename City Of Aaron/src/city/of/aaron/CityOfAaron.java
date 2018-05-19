@@ -6,6 +6,7 @@
  */
 package city.of.aaron;
 
+import byui260.aaron.model.Location;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.TeamMember;
 
@@ -19,19 +20,31 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player playerOne = new Player();
-       
-        playerOne.setName("Sterling");
         
-        String playerOneName = playerOne.getName();
-        
+        //Player java bean
+        Player playerOne = new Player();      
+        playerOne.setName("Sterling");       
+        String playerOneName = playerOne.getName();        
         System.out.println("Name = " + playerOneName);
         
+        //TeamMember
         String memberName = TeamMember.one.getMemberName();
         String memberTitle = TeamMember.one.getMemberTitle();
-        
         System.out.println(memberName + " " + memberTitle);
         
+        //Location
+        Location locationOne = new Location();
+        //Location locationOneSymbol = new Location();
+        locationOne.setDescription("Here");
+        locationOne.setSymbol("City");
+        String locationOneDescription = locationOne.getDescription();
+        String locationOneSymbol = locationOne.getSymbol();
+        System.out.println(locationOneSymbol + locationOneDescription);
+        
+        //ListItem
+        
+        
+        //CropData
     }
     
 }
