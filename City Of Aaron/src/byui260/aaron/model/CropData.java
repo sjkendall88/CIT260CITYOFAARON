@@ -19,6 +19,7 @@ public class CropData implements Serializable {
     private Integer acresOwned;
     private Integer cropYield;
     private Integer wheatInStore;
+    private Integer numberWhoDied;
     private Integer newPeople;
     private Integer harvest;
     private Integer harvestAfterOffering;
@@ -30,7 +31,7 @@ public class CropData implements Serializable {
     private Integer eatenByRats;
     private Integer wheatForPeople;
 
-    public CropData(Integer year, Integer population, Integer acresOwned, Integer cropYield, Integer wheatInStore, Integer newPeople, Integer harvest, Integer harvestAfterOffering, Integer offering, Integer offeringBushels, Integer peopleFed, Integer acresPlanted, Integer numStarved, Integer eatenByRats, Integer wheatForPeople) {
+    public CropData() {
     }
     
     public Integer getYear() {
@@ -73,6 +74,14 @@ public class CropData implements Serializable {
         this.wheatInStore = wheatInStore;
     }
 
+    public Integer getNumberWhoDied() {
+        return numberWhoDied;
+    }
+
+    public void setNumberWhoDied(Integer numberWhoDied) {
+        this.numberWhoDied = numberWhoDied;
+    }
+    
     public Integer getNewPeople() {
         return newPeople;
     }
