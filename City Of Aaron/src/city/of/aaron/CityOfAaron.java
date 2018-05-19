@@ -43,7 +43,7 @@ public class CityOfAaron {
         
         //ListItem
         ListItem listItemOne = new ListItem();
-        listItemOne.setName("");
+        listItemOne.setName("Help");
         listItemOne.setNumber(Integer.SIZE);
         String listItemOneName = listItemOne.getName();
         Integer listItemOneNumber = listItemOne.getNumber();
