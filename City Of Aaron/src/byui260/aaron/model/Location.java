@@ -3,14 +3,15 @@
  * Spring 2018
  * Team members: James Rasmussen, Sterling Kendall, JJ Hugh
  */
-package byui260.aaron.model;
 
+package byui260.aaron.model;
 import java.io.Serializable;
 
 /**
  *
  * @author James Rasmussen
  */
+
 public class Location implements Serializable{
     
     private String description;
@@ -34,7 +35,5 @@ public class Location implements Serializable{
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
-    
-    
     
 }

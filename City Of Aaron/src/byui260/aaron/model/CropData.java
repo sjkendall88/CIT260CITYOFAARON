@@ -1,18 +1,17 @@
-package byui260.aaron.model;
-
-
-import java.io.Serializable;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * CIT-260
+ * Spring 2018
+ * Team members: James Rasmussen, Sterling Kendall, JJ Hugh
  */
+
+package byui260.aaron.model;
+import java.io.Serializable;
 
 /**
  *
  * @author Sterling Kendall
  */
+
 public class CropData implements Serializable {
     
     private Integer year;
@@ -153,7 +152,5 @@ public class CropData implements Serializable {
     public void setWheatForPeople(Integer wheatForPeople) {
         this.wheatForPeople = wheatForPeople;
     }
-    
-    
-    
+   
 }

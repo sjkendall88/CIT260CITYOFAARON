@@ -1,16 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * CIT-260
+ * Spring 2018
+ * Team members: James Rasmussen, Sterling Kendall, JJ Hugh
  */
-package byui260.aaron.model;
 
+package byui260.aaron.model;
 import java.io.Serializable;
 
 /**
  *
  * @author JJ Hugh
  */
+
 public class ListItem implements Serializable{
     
     private String name;
@@ -34,7 +35,5 @@ public class ListItem implements Serializable{
     public void setNumber(Integer number) {
         this.number = number;
     }
-    
-    
     
 }
