@@ -47,7 +47,7 @@ public class Game implements Serializable{
     public void setCropData(CropData cropData) {
         this.cropData = cropData;
     }
-
+/*
     public <any> getAnimals() {
         return animals;
     }
@@ -71,7 +71,5 @@ public class Game implements Serializable{
     public void setProvisions(<any> provisions) {
         this.provisions = provisions;
     }
-    
-    
-
+ */   
 }
