@@ -42,9 +42,10 @@ public class CropControlTest {
     
     @Test
     public void testBuyLand() {
+        System.out.println("testBuyLand");
         
         // Test 1 
-        System.out.println("/tTest Case 1");
+        System.out.println("\tTest Case 1");
         CropData theCrops = new CropData();
         theCrops.setAcresOwned(10);
         theCrops.setWheatInStore(300);
@@ -58,7 +59,7 @@ public class CropControlTest {
         // fail("The test case is a prototype.");
         
         // Test 2
-        System.out.println("/tTest Case 2");
+        System.out.println("\tTest Case 2");
         theCrops.setAcresOwned(10);
         theCrops.setWheatInStore(100);
         theCrops.setPopulation(100);
@@ -71,7 +72,7 @@ public class CropControlTest {
         // fail("The test case is a prototype.");
         
         // Test 3
-        System.out.println("/tTest Case 3");
+        System.out.println("\tTest Case 3");
         theCrops.setAcresOwned(1);
         theCrops.setWheatInStore(60000);
         theCrops.setPopulation(1);
@@ -84,7 +85,7 @@ public class CropControlTest {
         // fail("The test case is a prototype.");
         
         // Test 4
-        System.out.println("/tTest Case 4");
+        System.out.println("\tTest Case 4");
         theCrops.setAcresOwned(1);
         theCrops.setWheatInStore(100);
         theCrops.setPopulation(100);
@@ -97,7 +98,7 @@ public class CropControlTest {
         // fail("The test case is a prototype.");
         
         // Test 5
-        System.out.println("/tTest Case 5");
+        System.out.println("\tTest Case 5");
         theCrops.setAcresOwned(0);
         theCrops.setWheatInStore(0);
         theCrops.setPopulation(0);
@@ -110,7 +111,7 @@ public class CropControlTest {
         // fail("The test case is a prototype.");
         
         // Test 6
-        System.out.println("/tTest Case 6");
+        System.out.println("\tTest Case 6");
         theCrops.setAcresOwned(10);
         theCrops.setWheatInStore(1000);
         theCrops.setPopulation(2);
@@ -123,7 +124,7 @@ public class CropControlTest {
         // fail("The test case is a prototype.");
         
         // Test 7
-        System.out.println("/tTest Case 7");
+        System.out.println("\tTest Case 7");
         theCrops.setAcresOwned(50);
         theCrops.setWheatInStore(1000);
         theCrops.setPopulation(10);
