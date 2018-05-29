@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author Sterling Kendall, JJ Hugh, and James Rasmussen
+ * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
 public class CropControl {
 /*    

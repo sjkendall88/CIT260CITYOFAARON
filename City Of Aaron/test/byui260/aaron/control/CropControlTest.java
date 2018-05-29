@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author hotja
+ * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
 public class CropControlTest {
     
