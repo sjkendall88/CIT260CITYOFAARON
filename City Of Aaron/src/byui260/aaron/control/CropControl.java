@@ -30,12 +30,13 @@ public class CropControl {
     }    
 */    
     // The sellLand method
-    //Purpose: To sell land
+    // Purpose: To sell land
     // Parameters: the price of land, the number of acres to sell, and 
     // a reference to a CropData object.
     // Returns: the number of acres owned after the sale
     // Pre-conditions: acres to sell must be positive
     // and  <= acresOwned
+    
     public static int sellLand(int landPrice, int acresToSell, CropData cropData){
         
         // if acresToSell < 0, return -1
@@ -58,5 +59,43 @@ public class CropControl {
         
         // return acresOwned
         return owned;
+    }
+
+    // The buyLand method
+    // Purpose: to buy land
+    // Parameters: the price of land, the number of acres to buy, and
+    // the a reference to CropData.
+    // Returns: The number of acres owned after purchase.
+    // Pre-Conditions: acres to buy must be positive.
+    
+    public static int buyLand(int landPrice, int acresToBuy, CropData cropData){
+                
+        // if(acresToBuy < 0) return -1
+        if(acresToBuy < 0)
+            return -1;
+        
+        // TotalCost = acresToBuy * landPrice
+        int totalCost = acresToBuy * landPrice;
+        
+        // if totalCost > wheatOwned return -1
+        int wheatOwned = cropData.getWheatInStore();
+        if(totalCost > wheatOwned)
+            return -1;
+        
+        // totalAcres = acresOwned + acresToBuy
+        int acresOwned = cropData.getAcresOwned();
+        int totalAcres = acresOwned + acresToBuy;
+
+        // if population < totalAcres/10 return -1
+        int population = cropData.getPopulation();
+        if(population < totalAcres/10)
+            return -1;
+
+        // wheatOwned = wheatOwned - totalCost
+        wheatOwned -= totalCost;
+        
+        // return totalAcres
+        return totalAcres;
+        
     }
 }
