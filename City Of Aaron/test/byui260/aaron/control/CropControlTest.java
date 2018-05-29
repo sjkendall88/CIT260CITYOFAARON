@@ -136,5 +136,86 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
     }
-    
+
+    /**
+     * Test of AcresToPlant method, of class CropControl.
+     */
+    @Test
+    public void testAcresToPlant() {
+        System.out.println("AcresToPlant");
+        
+        // Test 1
+        System.out.println("\tTest 1");
+        CropData theCrops = new CropData();
+        theCrops.setAcresPlanted(0);
+        theCrops.setAcresOwned(15);
+        theCrops.setWheatInStore(50);
+        int acresToPlant = 10;
+        int expResult = 10;
+        int result = CropControl.AcresToPlant(acresToPlant, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+        // Test 2
+        System.out.println("\tTest 2");
+        theCrops.setAcresPlanted(0);
+        theCrops.setAcresOwned(15);
+        theCrops.setWheatInStore(50);
+        acresToPlant = -5;
+        expResult = -1;
+        result = CropControl.AcresToPlant(acresToPlant, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+
+        // Test 3
+        System.out.println("\tTest 3");
+        theCrops.setAcresPlanted(0);
+        theCrops.setAcresOwned(15);
+        theCrops.setWheatInStore(50);
+        acresToPlant = 20;
+        expResult = -1;
+        result = CropControl.AcresToPlant(acresToPlant, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+
+        // Test 4
+        System.out.println("\tTest 4");
+        theCrops.setAcresPlanted(0);
+        theCrops.setAcresOwned(15);
+        theCrops.setWheatInStore(50);
+        acresToPlant = 30;
+        expResult = -1;
+        result = CropControl.AcresToPlant(acresToPlant, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+
+        // Test 5
+        System.out.println("\tTest 5");
+        theCrops.setAcresPlanted(0);
+        theCrops.setAcresOwned(10);
+        theCrops.setWheatInStore(50);
+        acresToPlant = 10;
+        expResult = 10;
+        result = CropControl.AcresToPlant(acresToPlant, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+
+        // Test 6
+        System.out.println("\tTest 6");
+        theCrops.setAcresPlanted(0);
+        theCrops.setAcresOwned(15);
+        theCrops.setWheatInStore(5);
+        acresToPlant = 10;
+        expResult = 10;
+        result = CropControl.AcresToPlant(acresToPlant, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+    }    
 }
