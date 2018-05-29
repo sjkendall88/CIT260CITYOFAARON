@@ -98,4 +98,42 @@ public class CropControl {
         return totalAcres;
         
     }
+    
+    // The AcresToPlant method
+    // Purpose: to plant acres
+    // Parameters: the number of acres to plant, and
+    // the a reference to CropData.
+    // Returns: The number of acres to plant.
+    // Pre-Conditions: acres to plant must be positive.
+    
+    public static int AcresToPlant(int acresToPlant, CropData cropData){
+        
+        // If (acresToPlant < 0) then return -1
+        if(acresToPlant < 0)
+            return -1;
+        
+        // If (acresToPlant !<= acresOwned) then return -1
+        int acresOwned = cropData.getAcresOwned();
+        if(acresOwned < acresToPlant)
+            return -1;
+        
+        // bushelsToPlant = acresToPlant / 2
+        int bushelsToPlant = acresToPlant / 2;
+        
+        // If (wheatInStore !>= bushelsToPlant) then return -1
+        int wheatInStore = cropData.getWheatInStore();
+        if(wheatInStore < bushelsToPlant)
+            return -1;
+        
+        // wheatInStore  = wheatInStore – bushelsToPlant
+        wheatInStore -= bushelsToPlant;
+        
+        // acresPlanted += acresToPlant
+        int acresPlanted = cropData.getAcresPlanted();
+        acresPlanted += acresToPlant;
+        
+        // Return acresPlanted
+        return acresPlanted;
+        
+    }
 }
