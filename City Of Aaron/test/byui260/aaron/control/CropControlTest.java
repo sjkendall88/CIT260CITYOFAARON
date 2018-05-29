@@ -5,6 +5,7 @@
  */
 package byui260.aaron.control;
 
+import byui260.aaron.model.CropData;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -28,11 +29,11 @@ public class CropControlTest {
         theCrops.setAcresOwned(2800);
         int landPrice = 10;
         int acresToSell = 15;
-        int expResult = 2790;
+        int expResult = 2785;
         int result = CropControl.sellLand(landPrice, acresToSell, theCrops);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
     
 }

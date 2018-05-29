@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui260.aaron.control;
+import byui260.aaron.model.CropData;
 import java.util.Random;
 
 /**
