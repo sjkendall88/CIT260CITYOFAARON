@@ -153,18 +153,35 @@ public class CropControl {
         // RETURN offering
         return offering;
     }
+   // The feedPeople method
+    // Purpose: to set aside wheat for the people.
+    // Parameters: wheat set aside and a reference to CropData.
+    // Returns: amount of wheatInStore with an update to wheatForPeople.
+    // Pre-Conditions: amount of wheat set aside for the people, amount must be positive.
+    
 
+	 public static int feedPeople (int wheatSetAside, CropData cropData){
+
+	// if (wheatSetAside < 0), then return -1
+	 if (wheatSetAside < 0) 
+		return -1;
+
+	 // if (wheatSetAside > wheatInStore) then return -1
+	 int wheatInStore = cropData.getWheatInStore();
+	 if (wheatSetAside > wheatInStore)
+		return -1;
+	
+	 //wheatInStore =  wheatInStore - wheatSetAside.
+	  wheatInStore -= wheatSetAside;
+	
+	//wheatForPeople = whatForPeople + wheatSetAside.
+	int wheatForPeople = cropData.getWheatForPeople();
+	  wheatForPeople += wheatSetAside;
+	 
+
+	//Return Wheat In Store remaining.
+	   return wheatInStore;
+         }
 }
-     // The feedPeople method
-    // Purpose: to Feed  the People
-    // Parameters: the number of people to feed and
-    // the a reference to CropData.
-    // Returns: The number of people being fed.
-    // Pre-Conditions: number of people fed must be positive.
+   
 
-    public static int feedPeople (int population, CropData cropData){
-
-    //20 bushes of wheat / person
-    // peopleFed = wheatForPeople / 20    
-    // peopleFed
-}
