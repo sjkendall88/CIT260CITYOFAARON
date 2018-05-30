@@ -99,3 +99,16 @@ public class CropControl {
         
     }
 }
+     // The feedPeople method
+    // Purpose: to Feed People
+    // Parameters: the number of people to feed and
+    // the a reference to CropData.
+    // Returns: The number of people being fed.
+    // Pre-Conditions: number of people fed must be positive.
+
+    public static int feedPeople (int population, CropData cropData){
+
+    //20 bushes of wheat / person
+    // peopleFed = wheatForPeople / 20    
+    // peopleFed
+}
