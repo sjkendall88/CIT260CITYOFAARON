@@ -217,5 +217,20 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
         
-    }    
+    }
+
+    @Test
+    public void testSetOffering() {
+        System.out.println("\tTest setOffering()");
+        
+        // Test 1
+        System.out.println("\tTest Case 1");
+        CropData theCrops = new CropData();
+        int offering = 10;
+        int expResult = 10;
+        int result = CropControl.setOffering(offering, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");     
+    }
 }
