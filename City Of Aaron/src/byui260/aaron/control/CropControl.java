@@ -98,6 +98,62 @@ public class CropControl {
         return totalAcres;
         
     }
+    
+    // The AcresToPlant method
+    // Purpose: to plant acres
+    // Parameters: the number of acres to plant, and
+    // the a reference to CropData.
+    // Returns: The number of acres to plant.
+    // Pre-Conditions: acres to plant must be positive.
+    
+    public static int AcresToPlant(int acresToPlant, CropData cropData){
+        
+        // If (acresToPlant < 0) then return -1
+        if(acresToPlant < 0)
+            return -1;
+        
+        // If (acresToPlant !<= acresOwned) then return -1
+        int acresOwned = cropData.getAcresOwned();
+        if(acresOwned < acresToPlant)
+            return -1;
+        
+        // bushelsToPlant = acresToPlant / 2
+        int bushelsToPlant = acresToPlant / 2;
+        
+        // If (wheatInStore !>= bushelsToPlant) then return -1
+        int wheatInStore = cropData.getWheatInStore();
+        if(wheatInStore < bushelsToPlant)
+            return -1;
+        
+        // wheatInStore  = wheatInStore – bushelsToPlant
+        wheatInStore -= bushelsToPlant;
+        
+        // acresPlanted += acresToPlant
+        int acresPlanted = cropData.getAcresPlanted();
+        acresPlanted += acresToPlant;
+        
+        // Return acresPlanted
+        return acresPlanted;
+        
+    }
+    
+    // The setOffering method
+    // Purpose: To set an offering percentage
+    // Parameters: desired offering amount and a reference
+    // to the CropData object
+    // Returns: integer of offering amount
+    // Pre-conditions: offering must be between 0 and 100
+
+    public static int setOffering(int offering, CropData cropdata) {
+        
+        // IF 0 > offering or offering > 100 return -1
+        if (offering < 0 || offering > 100)
+            return -1;
+        
+        // RETURN offering
+        return offering;
+    }
+
 }
      // The feedPeople method
     // Purpose: to Feed People
