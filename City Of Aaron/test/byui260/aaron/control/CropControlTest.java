@@ -221,7 +221,7 @@ public class CropControlTest {
 
     @Test
     public void testSetOffering() {
-        System.out.println("\tTest setOffering()");
+        System.out.println("Test setOffering()");
         
         // Test 1
         System.out.println("\tTest Case 1");
