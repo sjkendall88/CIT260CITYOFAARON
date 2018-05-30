@@ -156,7 +156,7 @@ public class CropControl {
 
 }
      // The feedPeople method
-    // Purpose: to Feed People
+    // Purpose: to Feed  the People
     // Parameters: the number of people to feed and
     // the a reference to CropData.
     // Returns: The number of people being fed.
