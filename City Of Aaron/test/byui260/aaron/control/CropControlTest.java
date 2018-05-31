@@ -250,11 +250,10 @@ public class CropControlTest {
     @Test
     public void testFeedPeople() {
         System.out.println("\tTest feedPeople()");
-        CropData cropData = new CropData();
-        int wheatSetAside = 100;
-        
-        int expResult = 5;
-        int result = CropControl.feedPeople(wheatSetAside, cropData);
+        CropData theCrops = new CropData();
+        int wheatSetAside = 20;
+        int expResult = 20;
+        int result = CropControl.feedPeople(wheatSetAside, theCrops);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
