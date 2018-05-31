@@ -249,11 +249,95 @@ public class CropControlTest {
      */
     @Test
     public void testFeedPeople() {
-        System.out.println("\tTest feedPeople()");
+        System.out.println("feedPeople");
+        System.out.println("\tTest 1");
         CropData theCrops = new CropData();
-        int wheatSetAside = 20;
-        int expResult = 20;
+        theCrops.setWheatInStore(2000);
+        theCrops.setWheatForPeople(800);
+        int wheatSetAside = 300;
+        int expResult = 1700;
         int result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        System.out.println("\tTest 2");
+        theCrops.setWheatInStore(1700);
+        theCrops.setWheatForPeople(660);
+        wheatSetAside = 400;
+        expResult = 1300;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("\tTest 3");
+        theCrops.setWheatInStore(1300);
+        theCrops.setWheatForPeople(1300);
+        wheatSetAside = 1100;
+        expResult = 200;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("\tTest 4");
+        theCrops.setWheatInStore(100);
+        theCrops.setWheatForPeople(100);
+        wheatSetAside = 200;
+        expResult = -1;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("\tTest 5");
+        theCrops.setWheatInStore(0);
+        theCrops.setWheatForPeople(20);
+        wheatSetAside = -20;
+        expResult = -1;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("\tTest 6");
+        theCrops.setWheatInStore(-300);
+        theCrops.setWheatForPeople(100);
+        wheatSetAside = -300;
+        expResult = -1;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("\tTest 7");
+        theCrops.setWheatInStore(800);
+        theCrops.setWheatForPeople(500);
+        wheatSetAside = 1600;
+        expResult = -1;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //Minimum Test
+         System.out.println("\tTest 8");
+        theCrops.setWheatInStore(10);
+        theCrops.setWheatForPeople(200);
+        wheatSetAside = 0;
+        expResult = 10;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("\tTest 9");
+        theCrops.setWheatInStore(6500);
+        theCrops.setWheatForPeople(660);
+        wheatSetAside = 6500;
+        expResult = 0;
+        result = CropControl.feedPeople(wheatSetAside, theCrops);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
