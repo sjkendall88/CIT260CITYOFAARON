@@ -6,8 +6,10 @@
 package byui260.aaron.control;
 
 import byui260.aaron.model.CropData;
+import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -16,6 +18,14 @@ import static org.junit.Assert.*;
 public class CropControlTest {
     
     public CropControlTest() {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -233,4 +243,22 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");     
     }
+
+    /**
+     * Test of feedPeople method, of class CropControl.
+     */
+    @Test
+    public void testFeedPeople() {
+        System.out.println("\tTest feedPeople()");
+        CropData cropData = new CropData();
+        int wheatSetAside = 100;
+        
+        int expResult = 5;
+        int result = CropControl.feedPeople(wheatSetAside, cropData);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    
 }
