@@ -93,6 +93,8 @@ public class CropControl {
 
         // wheatOwned = wheatOwned - totalCost
         wheatOwned -= totalCost;
+        cropData.setWheatInStore(wheatOwned);
+        cropData.setAcresOwned(totalAcres);
         
         // return totalAcres
         return totalAcres;
@@ -127,10 +129,12 @@ public class CropControl {
         
         // wheatInStore  = wheatInStore – bushelsToPlant
         wheatInStore -= bushelsToPlant;
+        cropData.setWheatInStore(wheatInStore);
         
         // acresPlanted += acresToPlant
         int acresPlanted = cropData.getAcresPlanted();
         acresPlanted += acresToPlant;
+        cropData.setAcresPlanted(acresPlanted);
         
         // Return acresPlanted
         return acresPlanted;
@@ -179,7 +183,8 @@ public class CropControl {
 	//wheatForPeople = whatForPeople + wheatSetAside.
 	int wheatForPeople = cropData.getWheatForPeople();
 	  wheatForPeople += wheatSetAside;
-	 
+        cropData.setWheatForPeople(wheatForPeople);
+        cropData.setWheatInStore(wheatInStore);
 
 	//Return Wheat In Store remaining.
 	   return wheatInStore;
