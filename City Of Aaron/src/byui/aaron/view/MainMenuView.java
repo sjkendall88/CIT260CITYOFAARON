@@ -118,9 +118,10 @@ public class MainMenuView {
         
         // Display the Banner Page.
         System.out.println("\nA hearty welcome to the City of Aaron! "
-                + "\nIt has been ordained that you should be the ruler "
+                + "\n\nIt has been ordained that you should be the ruler "
                 + "of the city. \nAs part and parcel with your calling, "
-                + "be prepared to buy and sell land, as well as set aside "
+                + "be prepared to buy and sell land, \n1"
+                + "as well as set aside "
                 + "wheat for both food and the years planting. \nYour job also"
                 + " includes the high and holy requirement of declaring and "
                 + "paying offerings. \nRemember though, people must eat too, "
