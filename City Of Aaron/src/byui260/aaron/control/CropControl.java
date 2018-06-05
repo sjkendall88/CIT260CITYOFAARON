@@ -24,6 +24,7 @@ public class CropControl {
     // Purpose: Calculate a random land price between 17 and 26 bushels/acre
     // Parameters: none
     // Returns: the land cost 
+    
     public static int calcLandCost(){
         int landCost = random.nextInt(LAND_RANGE)+LAND_BASE;
         return landCost;
@@ -199,13 +200,13 @@ public class CropControl {
         return -1;
     }
     
-   // The feedPeople method
+    // The feedPeople method
     // Purpose: to set aside wheat for the people.
     // Parameters: wheat set aside and a reference to CropData.
     // Returns: amount of wheatInStore with an update to wheatForPeople.
-    // Pre-Conditions: amount of wheat set aside for the people, amount must be positive.
+    // Pre-Conditions: amount of wheat set aside for the people, amount must be
+    // positive.
     
-
 	 public static int feedPeople (int wheatSetAside, CropData cropData){
 
 	// if (wheatSetAside < 0), then return -1
@@ -232,5 +233,3 @@ public class CropControl {
 	   return wheatInStore;
          }
 }
-   
-
