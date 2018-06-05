@@ -114,7 +114,7 @@ public class MainMenuView {
         Game theGame = new Game();
         
         // Save a reference to it in the GameProject class.
-        GameProject.setCurrentGame(theGame);
+        CityOfAaron.setCurrentGame(theGame);
         
         // Display the Banner Page.
         System.out.println("\nWelcome to the city of Aaron.");
