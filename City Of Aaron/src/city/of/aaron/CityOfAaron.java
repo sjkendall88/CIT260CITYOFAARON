@@ -11,7 +11,7 @@ import byui260.aaron.model.ListItem;
 import byui260.aaron.model.Location;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.TeamMember;
-import View.*;
+import byui.aaron.view.*;
 
 /**
  *
