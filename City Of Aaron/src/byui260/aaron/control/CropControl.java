@@ -12,7 +12,7 @@ import java.util.Random;
  * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
 public class CropControl {
-    /*
+    
     //constants
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
@@ -28,7 +28,7 @@ public class CropControl {
         int landCost = random.nextInt(LAND_RANGE)+LAND_BASE;
         return landCost;
     }    
-    */
+    
     // The sellLand method
     // Purpose: To sell land
     // Parameters: the price of land, the number of acres to sell, and 
@@ -158,6 +158,47 @@ public class CropControl {
         cropData.setOffering(offering);
         return offering;
     }
+    
+    // The harvestCrops Method
+    // Purpose: To harvest crops
+    // Parameters: reference to teh crop data object
+    // Returns: Failure (-1) or success (1)
+    
+    public static int harvestCrops(CropData cropData) {
+        //initialize variables for use
+        int harvest;
+        int offeringTier;
+        int offering = cropData.getOffering();
+        int wheatOwned = cropData.getWheatInStore();
+        int acres = cropData.getAcresOwned();
+        
+        // Assign tier level of return to offering amount
+        if(offering < 8)
+            offeringTier = 1;
+        else if(offering > 12)
+            offeringTier = 3;
+        else offeringTier = 2;
+        switch (offeringTier)
+        {
+            case 1:
+                harvest = acres * (random.nextInt(3) + 1);
+                wheatOwned += harvest;
+                cropData.setWheatInStore(wheatOwned);
+                return 1;
+            case 2:
+                harvest = acres * (random.nextInt(3) + 2);
+                wheatOwned += harvest;
+                cropData.setWheatInStore(wheatOwned);
+                return 1;
+            case 3:
+                harvest = acres * (random.nextInt(4) + 2);
+                wheatOwned += harvest;
+                cropData.setWheatInStore(wheatOwned);
+                return 1;
+        }            
+        return -1;
+    }
+    
    // The feedPeople method
     // Purpose: to set aside wheat for the people.
     // Parameters: wheat set aside and a reference to CropData.
