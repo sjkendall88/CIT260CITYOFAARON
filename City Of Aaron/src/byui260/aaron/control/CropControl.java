@@ -12,7 +12,7 @@ import java.util.Random;
  * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
 public class CropControl {
-/*    
+    /*
     //constants
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
@@ -28,7 +28,7 @@ public class CropControl {
         int landCost = random.nextInt(LAND_RANGE)+LAND_BASE;
         return landCost;
     }    
-*/    
+    */
     // The sellLand method
     // Purpose: To sell land
     // Parameters: the price of land, the number of acres to sell, and 
