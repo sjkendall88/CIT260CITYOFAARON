@@ -27,6 +27,9 @@ public class CityOfAaron {
     // runs the main menu
     public static void main(String[] args) {
         
+        // Getter method
+        
+        
         //Player java bean
         Player playerOne = new Player();      
         playerOne.setPlayerName("Sterling");       
@@ -91,9 +94,20 @@ public class CityOfAaron {
         Integer cropDataWheatForPeople = cropDataOne.getWheatForPeople();
         System.out.println(cropDataOne.toString());
         
+        // Game java bean
+        
+        
         // Main Menu View
         MainMenuView mmv = new MainMenuView();
         mmv.displayMenuView();
+    }
+
+    public static Game getCurrentGame() {
+        return theGame;
+    }
+
+    public static void setCurrentGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
     }
     
 }
