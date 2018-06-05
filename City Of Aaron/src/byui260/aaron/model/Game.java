@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author hotja
+ * @author Sterling, JJ, James
  */
 public class Game implements Serializable{
     // Class instance variable.
