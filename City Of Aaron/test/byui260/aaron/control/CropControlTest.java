@@ -262,7 +262,40 @@ public class CropControlTest {
         boolean check = false;
         if(result2 > expRange && result2 < expRange2)
             check = true;
-        assertEquals(check, 1);
+        assertEquals(check, true);
+        System.out.println(result2);
+        
+        // Test 2
+        theCrops.setWheatInStore(100);
+        theCrops.setAcresOwned(1);
+        theCrops.setOffering(8);
+        expResult = 1;
+        expRange = 101;
+        expRange2 = 105;
+        result = CropControl.harvestCrops(theCrops);
+        result2 = theCrops.getWheatInStore();
+        assertEquals(expResult, result);
+        check = false;
+        if(result2 > expRange && result2 < expRange2)
+            check = true;
+        assertEquals(check, true);
+        System.out.println(result2);
+        
+        // Test 3
+        theCrops.setWheatInStore(100);
+        theCrops.setAcresOwned(1);
+        theCrops.setOffering(13);
+        expResult = 1;
+        expRange = 101;
+        expRange2 = 106;
+        result = CropControl.harvestCrops(theCrops);
+        result2 = theCrops.getWheatInStore();
+        assertEquals(expResult, result);
+        check = false;
+        if(result2 > expRange && result2 < expRange2)
+            check = true;
+        assertEquals(check, true);
+        System.out.println(result2);
     }
     
     /**
