@@ -148,13 +148,14 @@ public class CropControl {
     // Returns: integer of offering amount
     // Pre-conditions: offering must be between 0 and 100
 
-    public static int setOffering(int offering, CropData cropdata) {
+    public static int setOffering(int offering, CropData cropData) {
         
         // IF 0 > offering or offering > 100 return -1
         if (offering < 0 || offering > 100)
             return -1;
         
         // RETURN offering
+        cropData.setOffering(offering);
         return offering;
     }
    // The feedPeople method
