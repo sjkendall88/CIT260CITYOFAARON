@@ -187,19 +187,16 @@ public class CropControl {
                 harvest = acres * (random.nextInt(3) + 1);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
-                System.out.println(wheatOwned);
                 return 1;
             case 2:
                 harvest = acres * (random.nextInt(3) + 2);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
-                System.out.println(wheatOwned);
                 return 1;
             case 3:
                 harvest = acres * (random.nextInt(4) + 2);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
-                System.out.println(wheatOwned);
                 return 1;
         }            
         return -1;
