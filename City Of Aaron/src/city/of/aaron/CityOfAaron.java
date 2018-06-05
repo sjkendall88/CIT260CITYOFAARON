@@ -25,8 +25,8 @@ public class CityOfAaron {
         
         //Player java bean
         Player playerOne = new Player();      
-        playerOne.setName("Sterling");       
-        String playerOneName = playerOne.getName();        
+        playerOne.setPlayerName("Sterling");       
+        String playerOneName = playerOne.getPlayerName();        
         System.out.println("Name = " + playerOneName);
         
         //TeamMember

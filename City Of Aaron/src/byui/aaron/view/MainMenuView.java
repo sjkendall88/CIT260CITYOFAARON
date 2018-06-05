@@ -17,7 +17,7 @@ import byui260.aaron.model.Player;
  */
 public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
-    private string theMenu;
+    private String theMenu;
     private int max;
     // The MainMenuView constructor
     // Purpose: Initialize the menu Data
