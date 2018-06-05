@@ -26,11 +26,11 @@ public class Player implements Serializable {
         this.name = name;
     }
    
-    public String getName() {
+    public String getPlayerName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setPlayerName(String name) {
         this.name = name;
     }
 

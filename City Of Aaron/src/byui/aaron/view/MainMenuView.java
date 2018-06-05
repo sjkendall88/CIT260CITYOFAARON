@@ -8,6 +8,7 @@ package byui.aaron.view;
 import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.Player;
+import byui260.aaron.model.Game;
 
 
 
@@ -109,8 +110,31 @@ public class MainMenuView {
     // returns: none
     // =====================================================
     public void startNewGame(){
-        System.out.println("\nStart new game option selected.");
+        // Create a new Game object.
+        Game theGame = new Game();
+        
+        // Save a reference to it in the GameProject class.
+        GameProject.setCurrentGame(theGame);
+        
+        // Display the Banner Page.
+        System.out.println("\nWelcome to the city of Aaron.");
+        
+        // create a new Player object
+        Player thePlayer = new Player();
+        
+        // Prompt for and get the user's name.
+        String name;
+        System.out.println("\nPlease type in your first name: ");
+        name = keyboard.next();
+        
+        // Save the user's name in the Player object
+        thePlayer.setPlayerName(name);
+        
+        // Save a reference to the player object in the Game object.
+        // Display a welcome message
+        // Display the game menu
     }
+    
     // The startSavedGame method
     // Purpose: locate game object and starts saved game
     // parameters: none

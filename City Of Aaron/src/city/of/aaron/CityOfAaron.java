@@ -7,6 +7,7 @@
 package city.of.aaron;
 
 import byui260.aaron.model.CropData;
+import byui260.aaron.model.Game;
 import byui260.aaron.model.ListItem;
 import byui260.aaron.model.Location;
 import byui260.aaron.model.Player;
@@ -18,16 +19,18 @@ import byui.aaron.view.*;
  * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
 public class CityOfAaron {
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    // Variable for keeping a reference to the game object
+    private static Game theGame = null;
+    
+    // main function - entry point for the program
+    // runs the main menu
     public static void main(String[] args) {
         
         //Player java bean
         Player playerOne = new Player();      
-        playerOne.setName("Sterling");       
-        String playerOneName = playerOne.getName();        
+        playerOne.setPlayerName("Sterling");       
+        String playerOneName = playerOne.getPlayerName();        
         System.out.println("Name = " + playerOneName);
         
         //TeamMember
