@@ -17,7 +17,7 @@ import byui260.aaron.model.Player;
  */
 public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
-    private string theMenu;
+    private String theMenu;
     private int max;
     // The MainMenuView constructor
     // Purpose: Initialize the menu Data
@@ -41,11 +41,11 @@ public class MainMenuView {
     // Parameters: none
     // Returns: none
     // ========================================
-    public void displayMainMenu(){
+    public void displayMenuView(){
         int menuOption;
         do{
         // Display the Menu
-        System.out.println(mainMenu);
+        System.out.println(theMenu);
         // Prompt the user for input and get user input
         menuOption = getMenuOption();
         // Perform the desired action
@@ -90,8 +90,8 @@ public class MainMenuView {
             case 1: // if the option is 1, call startNewGame()
                 startNewGame();
                 break;
-            case 2: // if the option is 2, call startExistingGame()
-                startExistingGame();
+            case 2: // if the option is 2, call startSavedGame()
+                startSavedGame();
                 break;
             case 3: // if the option is 3, call displayHelpMenu()
                 displayHelpMenuView();
