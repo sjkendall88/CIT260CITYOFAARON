@@ -244,6 +244,27 @@ public class CropControlTest {
         // fail("The test case is a prototype.");     
     }
 
+    @Test
+    public void testHarvestCrops() {
+        System.out.println("Test harvestCrops()");
+        
+        // Test 1
+        CropData theCrops = new CropData();
+        theCrops.setWheatInStore(100);
+        theCrops.setAcresOwned(1);
+        theCrops.setOffering(7);
+        int expResult = 1;
+        int expRange = 100;
+        int expRange2 = 104;
+        int result = CropControl.harvestCrops(theCrops);
+        int result2 = theCrops.getWheatInStore();
+        assertEquals(expResult, result);
+        boolean check = false;
+        if(result2 > expRange && result2 < expRange2)
+            check = true;
+        assertEquals(check, 1);
+    }
+    
     /**
      * Test of feedPeople method, of class CropControl.
      */
