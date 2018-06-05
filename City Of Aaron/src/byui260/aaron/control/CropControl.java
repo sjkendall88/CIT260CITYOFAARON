@@ -162,7 +162,7 @@ public class CropControl {
     
     // The harvestCrops Method
     // Purpose: To harvest crops
-    // Parameters: reference to teh crop data object
+    // Parameters: reference to the crop data object
     // Returns: Failure (-1) or success (1)
     
     public static int harvestCrops(CropData cropData) {
@@ -179,22 +179,27 @@ public class CropControl {
         else if(offering > 12)
             offeringTier = 3;
         else offeringTier = 2;
+        
+        // harvest wheat and add it to stores based on offeringTier
         switch (offeringTier)
         {
             case 1:
                 harvest = acres * (random.nextInt(3) + 1);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                System.out.println(wheatOwned);
                 return 1;
             case 2:
                 harvest = acres * (random.nextInt(3) + 2);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                System.out.println(wheatOwned);
                 return 1;
             case 3:
                 harvest = acres * (random.nextInt(4) + 2);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                System.out.println(wheatOwned);
                 return 1;
         }            
         return -1;
