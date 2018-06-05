@@ -11,6 +11,7 @@ import byui260.aaron.model.ListItem;
 import byui260.aaron.model.Location;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.TeamMember;
+import View.*;
 
 /**
  *
@@ -86,6 +87,10 @@ public class CityOfAaron {
         Integer cropDataEatenByRats = cropDataOne.getEatenByRats();
         Integer cropDataWheatForPeople = cropDataOne.getWheatForPeople();
         System.out.println(cropDataOne.toString());
+        
+        // Main Menu View
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
     }
     
 }
