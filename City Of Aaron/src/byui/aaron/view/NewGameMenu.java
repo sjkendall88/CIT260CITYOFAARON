@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.aaron.view;
+import java.util.Scanner;
 
 
 /**
@@ -14,7 +15,7 @@ public class NewGameMenu {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
-    
+ 
     //The newGameMenuView Constructor
     //Purpose: Initialize the menu Data
     //Parameters: none
