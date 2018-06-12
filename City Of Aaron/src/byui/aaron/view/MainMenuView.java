@@ -232,22 +232,22 @@ public class MainMenuView {
         switch(option)
         {
             case 1: 
-                System.out.println("Goals of game help");
+                System.out.println("Goals of game help\n");
                 break;
             case 2:
-                System.out.println("What City of Aaron is help");
+                System.out.println("What City of Aaron is help\n");
                 break;
             case 3:
-                System.out.println("Map viewing help");
+                System.out.println("Map viewing help\n");
                 break;
             case 4:
-                System.out.println("Moving location help");
+                System.out.println("Moving location help\n");
                 break;
             case 5:
-                System.out.println("Display possessions help");
+                System.out.println("Display possessions help\n");
                 break;
             case 6:
-                System.out.println("Exiting help menu");
+                System.out.println("Exiting help menu\n");
         }
     }
     
