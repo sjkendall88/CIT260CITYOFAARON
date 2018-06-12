@@ -46,13 +46,13 @@ public class MainMenuView {
     public void displayMenuView(){
         int menuOption;
         do{
-        // Display the Menu
-        System.out.println(theMenu);
-        // Prompt the user for input and get user input
-        menuOption = getMenuOption();
-        // Perform the desired action
-        doAction(menuOption);
-        // Determine and Display the next action
+            // Display the Menu
+            System.out.println(theMenu);
+            // Prompt the user for input and get user input
+            menuOption = getMenuOption();
+            // Perform the desired action
+            doAction(menuOption);
+            // Determine and Display the next action
         }while(menuOption != max);
     }
     // the getMenuoption method
@@ -169,6 +169,7 @@ public class MainMenuView {
         System.out.println("\nWelcome " + name + " have fun.");
         
         // Display the game menu
+        
     }
     
     // The startSavedGame method

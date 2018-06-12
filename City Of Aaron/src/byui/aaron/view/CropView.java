@@ -34,9 +34,9 @@ public static void runCropsView()
 buyLandView();
 
 //add calls to the other crop view methods
-//sellLandView();
-//feedPeopleView();
-//plantCropsView();
+//sellLandView();   do this
+//feedPeopleView(); do this
+//plantCropsView(); do this
 //showStarvedView();
 //displayCropsReportView();
 }
