@@ -85,7 +85,7 @@ public class NewGameMenu {
     //return: none
     
     public void doAction (int option){
-        switch (option){/*
+        switch (option){
             case 1: //View the Map
                 displayMap();
                 break;
@@ -95,6 +95,7 @@ public class NewGameMenu {
             case 3: //Move to a new location
                 startMove();
                 break;
+                /*
             case 4: //Manage the crops
                 startManageCrops();
                 break;*/
@@ -104,15 +105,23 @@ public class NewGameMenu {
                 MainMenuView mmv = new MainMenuView();
                 mmv.displayMenuView();
         }
-    /*
+    }
     
-    public void displayMap();   
+    
+    public void displayMap(){   
+    System.out.println("\nDetails of the Map are to come.");
+    }
+    /*
     public void displayList();
-    public void startMove();
+    */
+    
+    public void startMove(){
+    System.out.println("\nMoving to a new location Soon");
+    }
+    /*
     public void startManageCrops();
-    public void startReturnMain();
-      */     
-     }       
+    */     
+            
 }      
             
             
