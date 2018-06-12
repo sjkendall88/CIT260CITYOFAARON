@@ -37,6 +37,7 @@ public class MainMenuView {
                 + "5 - Quit \n";
         max = 5;
     }
+    
     // The displayMainMenu method
     // Purpose: displays the menu, gets the user input
     //          and does the selected action
