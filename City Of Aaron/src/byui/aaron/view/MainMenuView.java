@@ -10,7 +10,7 @@ import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.Game;
-
+import byui.aaron.view.NewGameMenu
 
 
 /**
@@ -169,8 +169,12 @@ public class MainMenuView {
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
         
-        // Display the game menu
-    }
+        //Display the game menu
+        NewGameMenu ngmv = new NewGameMenu(); 
+        ngmv.displayGameMenuView();
+            
+        }
+    
     
     // The startSavedGame method
     // Purpose: locate game object and starts saved game
