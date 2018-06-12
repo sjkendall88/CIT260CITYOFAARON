@@ -70,7 +70,7 @@ public class NewGameMenu {
             
             //If it is not a valid value output an error message.
             if (userInput < 1 || userInput > max){
-            System.out.println( "\nOption must be beween 1 and " + max); 
+            System.out.println( "\nOption must be between 1 and " + max); 
         }
             // loop back to top if input not valid
         }while (userInput < 1 || userInput > max);
@@ -84,8 +84,8 @@ public class NewGameMenu {
     //parameters: none
     //return: none
     
-    public void doAction (int option){/*
-        switch (option){
+    public void doAction (int option){
+        switch (option){/*
             case 1: //View the Map
                 displayMap();
                 break;
@@ -97,12 +97,14 @@ public class NewGameMenu {
                 break;
             case 4: //Manage the crops
                 startManageCrops();
-                break;
-            case 5: //Return to the main menu
-                startReturnMain();
-                break;
+                break;*/
+            case 5: 
+                //Return to the main menu
+                // Main Menu View
+                MainMenuView mmv = new MainMenuView();
+                mmv.displayMenuView();
         }
-    
+    /*
     
     public void displayMap();   
     public void displayList();
