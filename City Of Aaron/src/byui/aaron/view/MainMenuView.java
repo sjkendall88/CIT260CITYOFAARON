@@ -150,8 +150,6 @@ public class MainMenuView {
         //save a reference to it in the Game.
         theGame.setCrop(cropData);
         
-        
-        
         // create a new Player object
         Player thePlayer = new Player();    
         
@@ -190,8 +188,68 @@ public class MainMenuView {
     // returns: none
     // =====================================================
     public void displayHelpMenuView(){
-        System.out.println("\nDisplay the help menu view.");
+        int option;
+        
+        // Display Menu after every option but quit
+        do {
+            //initialize help menu text
+            helpMenuView();
+            
+            //display the menu
+            System.out.println(theMenu);
+            
+            //get user input
+            option = getMenuOption();
+            
+            //execute appropriate menu option.
+            doHelpMenu(option);
+        } while(option != max);
     }
+    
+    // Help Menu View method
+    // Purpose : To save a menu view for the help menu
+    // Parameters : none
+    // returns :  none
+    public void helpMenuView() {
+        theMenu = "\n" + "*******************************\n"
+                + "Help Menu:\n"
+                + "\t1 - What are the goals of the game?\n"
+                + "\t2 - What is the city of Aaron?\n"
+                + "\t3 - How do I view the map?\n"
+                + "\t4 - How do I move to another location?\n"
+                + "\t5 - How do I display a list of animals, provisions,"
+                + " and tools in the city storehouse?\n"
+                + "\t6 - Back to the Main Menu.";
+        max = 6;
+    }
+    
+    // the doHelpMenuFunction
+    // Purpose : Execute aid fo weary player
+    // Parameters : option selected
+    // returns : none
+    public void doHelpMenu(int option) {
+        switch(option)
+        {
+            case 1: 
+                System.out.println("Goals of game help");
+                break;
+            case 2:
+                System.out.println("What City of Aaron is help");
+                break;
+            case 3:
+                System.out.println("Map viewing help");
+                break;
+            case 4:
+                System.out.println("Moving location help");
+                break;
+            case 5:
+                System.out.println("Display possessions help");
+                break;
+            case 6:
+                System.out.println("Exiting help menu");
+        }
+    }
+    
     // The displaySaveGameView method
     // Purpose: Display list of saved games
     // parameters: none
