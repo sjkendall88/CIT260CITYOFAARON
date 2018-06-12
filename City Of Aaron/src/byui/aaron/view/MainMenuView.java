@@ -20,7 +20,9 @@ import byui.aaron.view.NewGameMenu;
 public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
+    private String theHelpMenu;
     private int max;
+    private int helpMax;
     // The MainMenuView constructor
     // Purpose: Initialize the menu Data
     // Parameters: none
@@ -172,8 +174,7 @@ public class MainMenuView {
         ngmv.displayGameMenuView();
             
         }
-    
-    
+     
     // The startSavedGame method
     // Purpose: locate game object and starts saved game
     // parameters: none
@@ -189,22 +190,20 @@ public class MainMenuView {
     // =====================================================
     public void displayHelpMenuView(){
         int option;
-        
         // Display Menu after every option but quit
         do {
             //initialize help menu text
             helpMenuView();
             
             //display the menu
-            System.out.println(theMenu);
+            System.out.println(theHelpMenu);
             
             //get user input
             option = getMenuOption();
             
             //execute appropriate menu option.
             doHelpMenu(option);
-            max = 6;
-        } while(option != max);
+        } while(option != helpMax);
     }
     
     // Help Menu View method
@@ -212,7 +211,7 @@ public class MainMenuView {
     // Parameters : none
     // returns :  none
     public void helpMenuView() {
-        theMenu = "\n" + "*******************************\n"
+        theHelpMenu = "\n" + "*******************************\n"
                 + "Help Menu:\n"
                 + "\t1 - What are the goals of the game?\n"
                 + "\t2 - What is the city of Aaron?\n"
@@ -221,9 +220,9 @@ public class MainMenuView {
                 + "\t5 - How do I display a list of animals, provisions,"
                 + " and tools in the city storehouse?\n"
                 + "\t6 - Back to the Main Menu.";
-        max = 6;
+        helpMax = 6;
     }
-    
+     
     // the doHelpMenuFunction
     // Purpose : Execute aid fo weary player
     // Parameters : option selected
