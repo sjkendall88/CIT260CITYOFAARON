@@ -20,9 +20,7 @@ import byui.aaron.view.NewGameMenu;
 public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
-    private String theHelpMenu;
     private int max;
-    private int helpMax;
     // The MainMenuView constructor
     // Purpose: Initialize the menu Data
     // Parameters: none
@@ -196,14 +194,15 @@ public class MainMenuView {
             helpMenuView();
             
             //display the menu
-            System.out.println(theHelpMenu);
+            System.out.println(theMenu);
             
             //get user input
             option = getMenuOption();
             
             //execute appropriate menu option.
             doHelpMenu(option);
-        } while(option != helpMax);
+        } while(option != max);
+        refreshMenu();
     }
     
     // Help Menu View method
@@ -211,7 +210,7 @@ public class MainMenuView {
     // Parameters : none
     // returns :  none
     public void helpMenuView() {
-        theHelpMenu = "\n" + "*******************************\n"
+        theMenu = "\n" + "*******************************\n"
                 + "Help Menu:\n"
                 + "\t1 - What are the goals of the game?\n"
                 + "\t2 - What is the city of Aaron?\n"
@@ -220,9 +219,27 @@ public class MainMenuView {
                 + "\t5 - How do I display a list of animals, provisions,"
                 + " and tools in the city storehouse?\n"
                 + "\t6 - Back to the Main Menu.";
-        helpMax = 6;
+        max = 6;
     }
      
+    // the returnToMain() method
+    // Purpose :  refresh theMenu and max variables for main menu
+    // Parameters : none
+    // returns :  none
+    
+    public void refreshMenu()
+    {
+        theMenu = "\n" + "***************************\n"
+                + "*City Of Aaron: Main Game Menu *\n"
+                + "***************************\n"
+                + "1 - Start new Game \n"
+                + "2 - Get and Start a Saved Game \n"
+                + "3 - Get help on playing the Game \n"
+                + "4 - Save Game \n"
+                + "5 - Quit \n";
+        max = 5;
+    }
+    
     // the doHelpMenuFunction
     // Purpose : Execute aid fo weary player
     // Parameters : option selected
