@@ -59,29 +59,29 @@ public class Game implements Serializable{
     }
     
     
-/*
-    public <any> getAnimals() {
+
+    public ArrayList<ListItem> getAnimals() {
         return animals;
     }
 
-    public void setAnimals(<any> animals) {
+    public void setAnimals(ArrayList<ListItem> animals) {
         this.animals = animals;
     }
 
-    public <any> getTools() {
+    public ArrayList<ListItem> getTools() {
         return tools;
     }
 
-    public void setTools(<any> tools) {
+    public void setTools(ArrayList<ListItem> tools) {
         this.tools = tools;
     }
 
-    public <any> getProvisions() {
+    public ArrayList<ListItem> getProvisions() {
         return provisions;
     }
 
-    public void setProvisions(<any> provisions) {
+    public void setProvisions(ArrayList<ListItem> provisions) {
         this.provisions = provisions;
     }
- */     
+      
 }

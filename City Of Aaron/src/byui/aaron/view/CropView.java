@@ -15,6 +15,9 @@ import city.of.aaron.CityOfAaron;
  */
 public class CropView {
     
+  //feedPeopleView method
+    
+    
 
 //Create a Scanner object.
 private static Scanner keyboard = new Scanner(System.in);
@@ -35,8 +38,12 @@ buyLandView();
 
 //add calls to the other crop view methods
 //sellLandView();
-//feedPeopleView();
-//plantCropsView();
+
+// The feedPeopleView method
+//feedPeopleView(){}
+
+plantCropsView();
+
 //showStarvedView();
 //displayCropsReportView();
 }
@@ -62,6 +69,25 @@ public static void buyLandView()
     
     //Call the buyLand() method in the control layer to buy the land. 
     CropControl.buyLand(toBuy, price, cropData);   
+}
+
+// The plantCropsView method
+// Purpose: To interface with the user to plant crops
+//      works with the AcresToPlant control method
+// Parameters: none
+// Return: AcresPlanted
+// Author: Sterling Kendall
+public static void plantCropsView () {
+    // Prompt the user for acres of land to plant
+    // One bushel will plant two acres of land
+    System.out.println("It takes 1 bushel to plant 2 acres. "
+            + "\nHow many acres would you like to plant?");
+    // Get the user input 
+    int acresToPlant = keyboard.nextInt();
+    // call the AcresToPlant() method in the control layer
+    int acresPlanted = CropControl.AcresToPlant(acresToPlant, cropData);
+    // Display acres planted
+    System.out.println(acresPlanted);
 }
 
 }

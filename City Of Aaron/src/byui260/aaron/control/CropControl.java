@@ -138,8 +138,7 @@ public class CropControl {
         cropData.setAcresPlanted(acresPlanted);
         
         // Return acresPlanted
-        return acresPlanted;
-        
+        return acresPlanted;        
     }
     
     // The setOffering method
