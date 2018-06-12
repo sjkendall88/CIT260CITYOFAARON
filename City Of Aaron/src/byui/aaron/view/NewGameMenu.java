@@ -91,7 +91,8 @@ public class NewGameMenu {
                 break;
                 
             case 2: //View/Print a List
-                displayList();
+                PrintListView plv = new PrintListView(); 
+                plv.displayPrintListView();
                 break;
             case 3: //Move to a new location
                 startMove();
@@ -111,14 +112,7 @@ public class NewGameMenu {
     
     public void displayMap(){   
     System.out.println("\nDetails of the Map are to come.");
-    }
-    
-    public void displayList(){
-    
-    
-   
-    }
-    
+    }   
     
     public void startMove(){
     System.out.println("\nMoving to a new location Soon");
