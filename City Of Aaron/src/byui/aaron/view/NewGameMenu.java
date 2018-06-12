@@ -116,7 +116,7 @@ public class NewGameMenu {
     public void displayList(){
     
     
-    System.out.println("\nAuthors: James Rasmussen, Sterling Kendall & J.J. Hugh");
+   
     }
     
     
@@ -126,10 +126,10 @@ public class NewGameMenu {
     /*
     public void startManageCrops();
     */     
-            
+       
 }      
             
-            
+      
             
             
             
