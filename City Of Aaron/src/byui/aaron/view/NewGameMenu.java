@@ -103,12 +103,13 @@ public class NewGameMenu {
                 break;
         }
     }
+    /*
     public void displayMap();   
     public void displayList();
     public void startMove();
     public void startManageCrops();
     public void startReturnMain();
-            
+     */       
             
             
             
