@@ -203,6 +203,7 @@ public class MainMenuView {
             
             //execute appropriate menu option.
             doHelpMenu(option);
+            max = 6;
         } while(option != max);
     }
     
