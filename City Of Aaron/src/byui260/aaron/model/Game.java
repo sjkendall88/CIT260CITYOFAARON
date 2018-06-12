@@ -16,11 +16,11 @@ public class Game implements Serializable{
     // Class instance variable.
     private Player thePlayer;
     private Map theMap;
-    private CropData cropData;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provisions;
-
+    private CropData cropData = null;
+    
     public Game(){
     }    
 
@@ -47,6 +47,18 @@ public class Game implements Serializable{
     public void setCropData(CropData cropData) {
         this.cropData = cropData;
     }
+    
+    public CropData getCrop()
+    {
+        return cropData;
+    }
+    
+    public void setCrop(CropData _cropRef)
+    {
+        cropData = _cropRef;
+    }
+    
+    
 /*
     public <any> getAnimals() {
         return animals;
@@ -71,5 +83,5 @@ public class Game implements Serializable{
     public void setProvisions(<any> provisions) {
         this.provisions = provisions;
     }
- */   
+ */     
 }
