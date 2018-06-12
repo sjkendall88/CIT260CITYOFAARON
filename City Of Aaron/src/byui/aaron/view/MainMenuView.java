@@ -10,7 +10,7 @@ import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.Game;
-import byui.aaron.view.NewGameMenu
+import byui.aaron.view.NewGameMenu;
 
 
 /**
