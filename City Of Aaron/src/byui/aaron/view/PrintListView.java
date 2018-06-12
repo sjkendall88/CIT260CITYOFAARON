@@ -89,7 +89,7 @@ public class PrintListView{
                //Display the game menu
         NewGameMenu ngmv = new NewGameMenu(); 
         ngmv.displayGameMenuView();
-            
+        } 
         }
     public void displayAnimals(){   
     System.out.println("\nI ain't got no stinkin animals.");
@@ -122,6 +122,7 @@ public class PrintListView{
     
     }
      
+
      
      
      
@@ -153,5 +154,3 @@ public class PrintListView{
      
      
      
-     
-}
