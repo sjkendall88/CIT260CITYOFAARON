@@ -185,6 +185,7 @@ public class MainMenuView {
     // Purpose: Display the help menu view
     // parameters: none
     // returns: none
+    // Author : James
     // =====================================================
     public void displayHelpMenuView(){
         int option;
@@ -209,6 +210,7 @@ public class MainMenuView {
     // Purpose : To save a menu view for the help menu
     // Parameters : none
     // returns :  none
+    // Author : James
     public void helpMenuView() {
         theMenu = "\n" + "*******************************\n"
                 + "Help Menu:\n"
@@ -226,6 +228,7 @@ public class MainMenuView {
     // Purpose :  refresh theMenu and max variables for main menu
     // Parameters : none
     // returns :  none
+    // Author : James
     
     public void refreshMenu()
     {
@@ -244,6 +247,8 @@ public class MainMenuView {
     // Purpose : Execute aid fo weary player
     // Parameters : option selected
     // returns : none
+    // Author : James
+    
     public void doHelpMenu(int option) {
         switch(option)
         {
