@@ -89,9 +89,10 @@ public class NewGameMenu {
             case 1: //View the Map
                 displayMap();
                 break;
+                /*
             case 2: //View/Print a List
                 displayList();
-                break;
+                break;*/
             case 3: //Move to a new location
                 startMove();
                 break;
