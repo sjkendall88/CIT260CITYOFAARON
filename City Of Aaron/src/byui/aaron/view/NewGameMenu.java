@@ -28,7 +28,7 @@ public class NewGameMenu {
                 + "1 - View the Map\n"
                 + "2 - View/Print a list\n"
                 + "3 - Move to a new location\n"
-                + "4 - Manae the crops \n"
+                + "4 - Manage the crops \n"
                 + "5 - Return to the game menu.\n";
                 
         max = 5;

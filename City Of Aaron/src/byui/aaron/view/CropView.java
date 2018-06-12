@@ -76,6 +76,7 @@ public static void buyLandView()
 //      works with the AcresToPlant control method
 // Parameters: none
 // Return: AcresPlanted
+// Author: Sterling Kendall
 public static void plantCropsView () {
     // Prompt the user for acres of land to plant
     // One bushel will plant two acres of land
