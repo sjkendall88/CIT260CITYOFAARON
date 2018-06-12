@@ -171,7 +171,8 @@ public class CropControl {
         int offering = cropData.getOffering();
         int wheatOwned = cropData.getWheatInStore();
         int acres = cropData.getAcresOwned();
-        int harvestRandom = random.nextInt(12);
+        int harvestRange = 3;
+        int harvestBase = 1;
         
         // Assign tier level of return to offering amount
         if(offering < 8)
@@ -184,17 +185,17 @@ public class CropControl {
         switch (offeringTier)
         {
             case 1:
-                harvest = acres * (random.nextInt(3) + 1);
+                harvest = acres * (random.nextInt(harvestRange) + harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
                 return 1;
             case 2:
-                harvest = acres * (random.nextInt(3) + 2);
+                harvest = acres * (random.nextInt(harvestRange) + ++harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
                 return 1;
             case 3:
-                harvest = acres * (random.nextInt(4) + 2);
+                harvest = acres * (random.nextInt(++harvestRange) + ++harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
                 return 1;
