@@ -5,6 +5,7 @@
  */
 package byui.aaron.view;
 
+import byui260.aaron.model.CropData;
 import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.Player;
@@ -129,8 +130,29 @@ public class MainMenuView {
                 + "\nPlease Plan carefully. Sounds easy enough… but have we "
                 + "told you about the rats?");
         
+        //create a CropData object,
+        CropData cropData = new CropData();
+        
+        cropData.setYear(0);
+        cropData.setPopulation(100);
+        cropData.setNewPeople(5);
+        cropData.setCropYield(3);
+        cropData.setNumberWhoDied(0);
+        cropData.setOffering(10);
+        cropData.setWheatInStore(2700);
+        cropData.setAcresOwned(1000);
+        cropData.setAcresPlanted(1000);
+        cropData.setHarvest(3000);
+        cropData.setOfferingBushels(300);
+        cropData.setAcresPlanted(1000);
+        
+        //save a reference to it in the Game.
+        theGame.setCrop(cropData);
+        
+        
+        
         // create a new Player object
-        Player thePlayer = new Player();
+        Player thePlayer = new Player();    
         
         // Prompt for and get the user's name.
         String name;
