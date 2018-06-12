@@ -89,10 +89,10 @@ public class NewGameMenu {
             case 1: //View the Map
                 displayMap();
                 break;
-                /*
+                
             case 2: //View/Print a List
                 displayList();
-                break;*/
+                break;
             case 3: //Move to a new location
                 startMove();
                 break;
@@ -112,9 +112,13 @@ public class NewGameMenu {
     public void displayMap(){   
     System.out.println("\nDetails of the Map are to come.");
     }
-    /*
-    public void displayList();
-    */
+    
+    public void displayList(){
+    
+    
+    System.out.println("\nAuthors: James Rasmussen, Sterling Kendall & J.J. Hugh");
+    }
+    
     
     public void startMove(){
     System.out.println("\nMoving to a new location Soon");
