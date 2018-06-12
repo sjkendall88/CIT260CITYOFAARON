@@ -57,6 +57,8 @@ public class Game implements Serializable{
     {
         cropData = _cropRef;
     }
+    
+    
 
     public ArrayList<ListItem> getAnimals() {
         return animals;
@@ -81,5 +83,5 @@ public class Game implements Serializable{
     public void setProvisions(ArrayList<ListItem> provisions) {
         this.provisions = provisions;
     }
-
+      
 }
