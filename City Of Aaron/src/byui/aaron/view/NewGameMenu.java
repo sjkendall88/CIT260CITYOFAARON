@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author JRome
+ * @author J.J. Hugh
  */
 public class NewGameMenu {
     Scanner keyboard = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class NewGameMenu {
                 + "2 - View/Print a list\n"
                 + "3 - Move to a new location\n"
                 + "4 - Manae the crops \n"
-                + "5 - Return to the main menu.\n";
+                + "5 - Return to the game menu.\n";
                 
         max = 5;
     }
@@ -70,7 +70,7 @@ public class NewGameMenu {
             
             //If it is not a valid value output an error message.
             if (userInput < 1 || userInput > max){
-            System.out.println( "\nOption must be beween 1 and " + max); 
+            System.out.println( "\nOption must be between 1 and " + max); 
         }
             // loop back to top if input not valid
         }while (userInput < 1 || userInput > max);
@@ -89,36 +89,45 @@ public class NewGameMenu {
             case 1: //View the Map
                 displayMap();
                 break;
+                
             case 2: //View/Print a List
-                displayList();
+                PrintListView plv = new PrintListView(); 
+                plv.displayPrintListView();
                 break;
             case 3: //Move to a new location
                 startMove();
                 break;
+                /*
             case 4: //Manage the crops
                 startManageCrops();
-                break;
-            case 5: //Return to the main menu
-                startReturnMain();
-                break;
+                break;*/
+            case 5: 
+                //Return to the main menu
+                // Main Menu View
+                MainMenuView mmv = new MainMenuView();
+                mmv.displayMenuView();
         }
-
-}
+    }
+    
+    
+    public void displayMap(){   
+    System.out.println("\nDetails of the Map are to come.");
+    }   
+    
+    public void startMove(){
+    System.out.println("\nMoving to a new location Soon");
+    }
     /*
-    public void displayMap();   
-    public void displayList();
-    public void startMove();
     public void startManageCrops();
-    public void startReturnMain();
-     */       
+    */     
+       
+}      
+            
+      
             
             
             
             
-            
-            
-            
-            
 
 
 
@@ -156,4 +165,4 @@ public class NewGameMenu {
     
     
 
-}
+
