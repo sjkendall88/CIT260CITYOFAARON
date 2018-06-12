@@ -78,7 +78,7 @@ public class NewGameMenu {
         //return the value input by the user
         return userInput;
     }
-    /*
+    
     // doAction method
     //Purpose: performs the selected action
     //parameters: none
@@ -102,8 +102,9 @@ public class NewGameMenu {
                 startReturnMain();
                 break;
         }
-    }
-    
+
+}
+    /*
     public void displayMap();   
     public void displayList();
     public void startMove();
