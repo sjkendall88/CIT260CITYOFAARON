@@ -83,8 +83,8 @@ public class NewGameMenu {
     //Purpose: performs the selected action
     //parameters: none
     //return: none
-    /*
-    public void doAction (int option){
+    
+    public void doAction (int option){/*
         switch (option){
             case 1: //View the Map
                 displayMap();
@@ -111,7 +111,7 @@ public class NewGameMenu {
     public void startReturnMain();
       */     
      }       
-            
+}      
             
             
             
