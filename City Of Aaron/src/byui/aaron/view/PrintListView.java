@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author James Rasmussen, Sterling Kendall, J.J. Hugh
+ * @author Sterling Kendall
  */
 public class PrintListView{
     Scanner keyboard = new Scanner(System.in);

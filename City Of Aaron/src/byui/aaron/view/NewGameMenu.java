@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author JRome
+ * @author J.J. Hugh
  */
 public class NewGameMenu {
     Scanner keyboard = new Scanner(System.in);
