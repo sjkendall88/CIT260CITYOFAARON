@@ -26,6 +26,8 @@ private static Scanner keyboard = new Scanner(System.in);
 private static Game theGame = CityOfAaron.getCurrentGame();
 private static CropData cropData = theGame.getCropData();
 
+// referential variable to stabilize value of Land value on a given round.
+public static int sellLandPrice;
 //The runCropsView method()
 //Purpose: runs the Hamurabi game
 //Parameters: none
@@ -59,6 +61,10 @@ public static void buyLandView()
 {
     //Get the cost of land for this round.
     int price = CropControl.calcLandCost();
+    
+    //Set value of land to sell as same as to buy
+    sellLandPrice = price;
+    
     //Prompt the user to enter the number of acres to buy
     System.out.format("Land is selling for %d bushels per acre. %n",price);
     System.out.format("\nHow many acres of land do you wish to buy?");
@@ -68,7 +74,7 @@ public static void buyLandView()
     toBuy = keyboard.nextInt();
     
     //Call the buyLand() method in the control layer to buy the land. 
-    CropControl.buyLand(toBuy, price, cropData);   
+    CropControl.buyLand(price, toBuy, cropData);   
 }
 
 // The plantCropsView method
@@ -90,4 +96,28 @@ public static void plantCropsView () {
     System.out.println(acresPlanted);
 }
 
+// the sellLandView method
+// Purpose : to interface with use to the sell land methods
+// parameters : none
+// return : new acreage amount
+// Author : James Rasmussen
+public static void sellLandView()
+{
+    //Prompt the user to enter the number of acres to sell
+    System.out.format("Land is selling for %d bushels per "
+            + "acre. %n",sellLandPrice);
+    System.out.format("\nHow many acres of land do you wish to sell?");
+    
+    //Get the user's input and save it.
+    int toSell = keyboard.nextInt();
+    
+    //Call the sellLand() method in the control layer to sell the land. 
+    int successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData); 
+    while(successCheck == -1)
+    {
+        toSell = keyboard.nextInt();
+        successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData);
+    }
+    System.out.format("You now own %d acres of land.", successCheck);
+}
 }
