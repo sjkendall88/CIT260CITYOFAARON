@@ -245,7 +245,7 @@ public class MainMenuView {
     }
     
     // the doHelpMenuFunction
-    // Purpose : Execute aid fo weary player
+    // Purpose : Execute aid for weary player
     // Parameters : option selected
     // returns : none
     // Author : James
