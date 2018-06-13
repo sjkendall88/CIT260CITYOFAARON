@@ -120,4 +120,32 @@ public static void sellLandView()
     }
     System.out.format("You now own %d acres of land.", successCheck);
 }
+
+
+
+    //the feedPeopleView method
+    //Purpose: To interface with the user to use feed people methods
+    //Purpose: none
+    //Return: amount of bushels of wheat for the people
+public static void feedPeopleView(){
+   
+    //Get the Wheat in Store set aside for the people
+    int WheatInStore = CropControl.feedPeople();
+    
+    //Prompt the user for buschels of grain wanted to give to the people.
+    //Display the amount of wheat set aside for the people.
+    System.out.println("You currently have" + WheatInStore + "available in your storehouse.");
+    System.out.println("\nHow many bushels of grain do you want to give to the people");
+    
+    //Get user's input and save it.
+    int forPeople = keyboard.nextInt();
+    
+    //call the feedPeople() method in the control layer to sell the land.
+    int WheatUsed = CropControl.feedPeople(forPeople, cropData);
+    
+    //Display wheat used for the people
+    System.out.println("you have set aside" +  WheatUsed + "for the people");
+    
+    
+}
 }
