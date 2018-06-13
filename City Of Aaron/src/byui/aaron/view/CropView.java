@@ -83,7 +83,7 @@ public static void buyLandView()
 // Parameters: none
 // Return: AcresPlanted
 // Author: Sterling Kendall
-public static void plantCropsView () {
+public static void plantCropsView() {
     // Prompt the user for acres of land to plant
     // One bushel will plant two acres of land
     System.out.println("It takes 1 bushel to plant 2 acres. "
