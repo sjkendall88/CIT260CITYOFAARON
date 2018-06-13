@@ -202,6 +202,10 @@ public class MainMenuView {
             
             //execute appropriate menu option.
             doHelpMenu(option);
+            
+            //Failsafe menu end
+            if (option == 6)
+                System.out.println(option);
         } while(option != max);
         refreshMenu();
     }
