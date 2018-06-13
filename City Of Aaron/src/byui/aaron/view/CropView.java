@@ -127,6 +127,7 @@ public static void sellLandView()
     //Purpose: To interface with the user to use feed people methods
     //Purpose: none
     //Return: amount of bushels of wheat for the people
+    //Author: J.J. Hugh
 public static void feedPeopleView(){
    
     //Get the Wheat in Store set aside for the people
@@ -144,8 +145,7 @@ public static void feedPeopleView(){
     int WheatUsed = CropControl.feedPeople(forPeople, cropData);
     
     //Display wheat used for the people
-    System.out.println("you have set aside" +  WheatUsed + "for the people");
-    
+    System.out.println("you have" +  WheatUsed + "for the people");
     
 }
 }
