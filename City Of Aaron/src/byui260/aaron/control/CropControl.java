@@ -23,8 +23,7 @@ public class CropControl {
     // calcLandCost()method
     // Purpose: Calculate a random land price between 17 and 26 bushels/acre
     // Parameters: none
-    // Returns: the land cost 
-    
+    // Returns: the land cost     
     public static int calcLandCost(){
         int landCost = random.nextInt(LAND_RANGE)+LAND_BASE;
         return landCost;
@@ -68,7 +67,6 @@ public class CropControl {
     // the a reference to CropData.
     // Returns: The number of acres owned after purchase.
     // Pre-Conditions: acres to buy must be positive.
-    
     public static int buyLand(int landPrice, int acresToBuy, CropData cropData){
                 
         // if(acresToBuy < 0) return -1
@@ -107,8 +105,7 @@ public class CropControl {
     // Parameters: the number of acres to plant, and
     // the a reference to CropData.
     // Returns: The number of acres to plant.
-    // Pre-Conditions: acres to plant must be positive.
-    
+    // Pre-Conditions: acres to plant must be positive.    
     public static int AcresToPlant(int acresToPlant, CropData cropData){
         
         // If (acresToPlant < 0) then return -1
@@ -147,7 +144,6 @@ public class CropControl {
     // to the CropData object
     // Returns: integer of offering amount
     // Pre-conditions: offering must be between 0 and 100
-
     public static int setOffering(int offering, CropData cropData) {
         
         // IF 0 > offering or offering > 100 return -1
@@ -162,8 +158,7 @@ public class CropControl {
     // The harvestCrops Method
     // Purpose: To harvest crops
     // Parameters: reference to the crop data object
-    // Returns: Failure (-1) or success (1)
-    
+    // Returns: Failure (-1) or success (1)    
     public static int harvestCrops(CropData cropData) {
         //initialize variables for use
         int harvest;
@@ -210,29 +205,29 @@ public class CropControl {
     // Pre-Conditions: amount of wheat set aside for the people, amount must be
     // positive.
     
-	 public static int feedPeople (int wheatSetAside, CropData cropData){
+    public static int feedPeople (int wheatSetAside, CropData cropData){
 
 	// if (wheatSetAside < 0), then return -1
-	 if (wheatSetAside < 0) {
-             return -1;
-         }
+	if (wheatSetAside < 0) {
+            return -1;
+        }
 
-	 // if (wheatSetAside > wheatInStore) then return -1
-	 int wheatInStore = cropData.getWheatInStore();
-	 if (wheatSetAside > wheatInStore) {
-             return -1;
-         }
+	// if (wheatSetAside > wheatInStore) then return -1
+	int wheatInStore = cropData.getWheatInStore();
+	if (wheatSetAside > wheatInStore) {
+            return -1;
+        }
 	
-	 //wheatInStore =  wheatInStore - wheatSetAside.
-	  wheatInStore -= wheatSetAside;
+	//wheatInStore =  wheatInStore - wheatSetAside.
+	wheatInStore -= wheatSetAside;
 	
 	//wheatForPeople = whatForPeople + wheatSetAside.
 	int wheatForPeople = cropData.getWheatForPeople();
-	  wheatForPeople += wheatSetAside;
+	wheatForPeople += wheatSetAside;
         cropData.setWheatForPeople(wheatForPeople);
         cropData.setWheatInStore(wheatInStore);
 
 	//Return Wheat In Store remaining.
-	   return wheatInStore;
-         }
+	return wheatInStore;
+    }
 }
