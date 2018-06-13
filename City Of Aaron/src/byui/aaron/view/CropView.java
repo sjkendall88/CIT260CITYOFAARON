@@ -132,7 +132,7 @@ public static void feedPeopleView(){
    
     //Get the Wheat in Store set aside for the people
     int WheatInStore = CropControl.feedPeople();
-    
+   
     //Prompt the user for buschels of grain wanted to give to the people.
     //Display the amount of wheat set aside for the people.
     System.out.println("You currently have" + WheatInStore + "available in your storehouse.");
@@ -142,10 +142,10 @@ public static void feedPeopleView(){
     int forPeople = keyboard.nextInt();
     
     //call the feedPeople() method in the control layer to sell the land.
-    int WheatUsed = CropControl.feedPeople(forPeople, cropData);
+    CropControl.feedPeople(forPeople, cropData);
     
     //Display wheat used for the people
-    System.out.println("you have" +  WheatUsed + "for the people");
+    System.out.println("you have" +  forPeople + "for the people");
     
 }
 }
