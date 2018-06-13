@@ -204,7 +204,6 @@ public class CropControl {
     // Returns: amount of wheatInStore with an update to wheatForPeople.
     // Pre-Conditions: amount of wheat set aside for the people, amount must be
     // positive.
-    
     public static int feedPeople (int wheatSetAside, CropData cropData){
 
 	// if (wheatSetAside < 0), then return -1
