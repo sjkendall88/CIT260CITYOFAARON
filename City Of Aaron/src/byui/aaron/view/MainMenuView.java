@@ -12,11 +12,11 @@ import byui260.aaron.model.Player;
 import byui260.aaron.model.Game;
 import byui.aaron.view.NewGameMenu;
 
-
 /**
  *
  * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
+
 public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
@@ -56,6 +56,7 @@ public class MainMenuView {
             // Determine and Display the next action
         }while(menuOption != max);
     }
+    
     // the getMenuoption method
     // Purpose get the user input
     // Parameters: none
@@ -106,6 +107,7 @@ public class MainMenuView {
                 System.out.println("Thanks for playing ... goodbye.");
         }
     }
+    
     // The startNewGame method
     // Purpose: create game object and starts the game
     // parameters: none
