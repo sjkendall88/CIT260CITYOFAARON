@@ -229,7 +229,7 @@ public static void sellLandView()
 public static void feedPeopleView(){
    
     //Get the Wheat in Store set aside for the people
-   // int WheatInStore = CropControl.feedPeople();
+    // int WheatInStore = CropControl.feedPeople();
     int wheatInStore = cropData.getWheatInStore();
     //Prompt the user for buschels of grain wanted to give to the people.
     //Display the amount of wheat set aside for the people.
@@ -249,7 +249,8 @@ public static void feedPeopleView(){
         fedPeople = CropControl.feedPeople(forPeople, cropData);
     }
     //Display wheat used for the people
-    System.out.println("You fed " + fedPeople + " bushel to the people");
+    System.out.println("You curretnly have " + fedPeople 
+            + " bushel in the store.");
     
 }
 }
