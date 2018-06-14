@@ -246,10 +246,10 @@ public static void feedPeopleView(){
         while(fedPeople == -1)
     {
         forPeople = keyboard.nextInt();
-        fedPeople = CropControl.AcresToPlant(forPeople, cropData);
+        fedPeople = CropControl.feedPeople(forPeople, cropData);
     }
     //Display wheat used for the people
-    System.out.println("you have" +  fedPeople + "for the people");
+    System.out.println("You have " + fedPeople + " for the people");
     
 }
 }
