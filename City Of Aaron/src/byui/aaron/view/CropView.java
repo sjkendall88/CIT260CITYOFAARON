@@ -204,9 +204,9 @@ public static void plantCropsView() {
 public static void sellLandView()
 {
     //Prompt the user to enter the number of acres to sell
-    System.out.format("Land is selling for %d bushels per "
-            + "acre. %n",sellLandPrice);
-    System.out.format("\nHow many acres of land do you wish to sell?");
+    System.out.println("Land is selling for " + sellLandPrice
+            + " bushels per acre.\n");
+    System.out.format("\nHow many acres of land do you wish to sell?\n");
     
     //Get the user's input and save it.
     int toSell = keyboard.nextInt();
@@ -233,8 +233,10 @@ public static void feedPeopleView(){
     int wheatInStore = cropData.getWheatInStore();
     //Prompt the user for buschels of grain wanted to give to the people.
     //Display the amount of wheat set aside for the people.
-    System.out.println("You currently have" + wheatInStore + "available in your storehouse.");
-    System.out.println("\nHow many bushels of grain do you want to give to the people");
+    System.out.println("You currently have " + wheatInStore + " available in "
+            + "your storehouse.");
+    System.out.println("\nHow many bushels of grain do you want to give to the "
+            + "people?\n");
     
     //Get user's input and save it.
     int forPeople = keyboard.nextInt();
