@@ -148,7 +148,7 @@ public class MainMenuView {
         cropData.setHarvest(3000);
         cropData.setOfferingBushels(300);
         cropData.setAcresPlanted(1000);
-        
+        cropData.setWheatForPeople(0);
         //save a reference to it in the Game.
         theGame.setCrop(cropData);
         
