@@ -97,10 +97,10 @@ public class NewGameMenu {
             case 3: //Move to a new location
                 startMove();
                 break;
-                /*
             case 4: //Manage the crops
-                startManageCrops();
-                break;*/
+                CropView cv = new CropView();
+                cv.displayGameMenuView();
+                break;
             case 5: 
                 //Return to the main menu
                 // Main Menu View
