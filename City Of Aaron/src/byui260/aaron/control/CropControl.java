@@ -226,8 +226,8 @@ public class CropControl {
         cropData.setWheatForPeople(wheatForPeople);
         cropData.setWheatInStore(wheatInStore);
 
-	//Return Wheat In Store remaining.
-	return wheatInStore;
+	//Return wheat used for people remaining.
+	return wheatForPeople;
     }
 
     //public static int feedPeople() {
