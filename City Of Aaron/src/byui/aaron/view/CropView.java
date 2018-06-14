@@ -249,7 +249,7 @@ public static void feedPeopleView(){
         fedPeople = CropControl.feedPeople(forPeople, cropData);
     }
     //Display wheat used for the people
-    System.out.println("You have " + fedPeople + " for the people");
+    System.out.println("You fed " + fedPeople + " bushel to the people");
     
 }
 }
