@@ -15,10 +15,6 @@ import city.of.aaron.CityOfAaron;
  */
 public class CropView {
     
-  
-    
-    
-
 //Create a Scanner object.
 private static Scanner keyboard = new Scanner(System.in);
 
@@ -28,6 +24,105 @@ private static CropData cropData = theGame.getCropData();
 
 // referential variable to stabilize value of Land value on a given round.
 public static int sellLandPrice;
+
+private String theMenu;
+private int max;
+    //The CropView constructor test method
+    //Purpose: confirm working methods
+    //Parameters: none
+    //Return: none
+    
+    public CropView(){
+        theMenu = "\n" + "**********************\n" 
+                + "*Debug: CropView testing phase *\n"
+                + "******************************\n"
+                + "1 - buylandview\n"
+                + "2 - feed peopleview\n"
+                + "3 - plantCropView\n"
+                + "4 - runCropView\n"
+                + "5 - sellLandView\n"
+                + "6 - exit to main menu\n";
+                
+        max = 6;
+    }
+
+    //The displayGameMenu method.
+    //Purpose dislays the menu, gets the user input 
+    //        and does the selected action.
+    //Parameters: none
+    //Returns: none
+    
+    public void displayGameMenuView(){
+        int menuOption;
+        do{
+            //display the menu
+            System.out.println(theMenu);
+            //Prompt user for input and get user input.
+            menuOption = getGameMenuOption();
+            //Perform the desire option
+            doAction(menuOption);
+            //Determine and display the next option.
+        }while(menuOption != max); 
+    }
+    
+    
+     //the getGameMenuOption method
+    //Purpose: get the user input
+    //Parameters: None
+    //Return: integers minus option selected
+    
+    public int getGameMenuOption(){
+        //declare the variable to hold the input
+        int userInput;
+        
+        //begin the loop
+        do {
+            //get user input from keyboard
+            userInput = keyboard.nextInt();
+            
+            //If it is not a valid value output an error message.
+            if (userInput < 1 || userInput > max){
+            System.out.println( "\nOption must be between 1 and " + max); 
+        }
+            // loop back to top if input not valid
+        }while (userInput < 1 || userInput > max);
+        
+        //return the value input by the user
+        return userInput;
+    }
+    
+    // doAction method
+    //Purpose: performs the selected action
+    //parameters: none
+    //return: none
+    
+    public void doAction (int option){
+        switch (option){
+            case 1: //View the Map
+                buyLandView();
+                break;
+            case 2: //View/Print a List
+                feedPeopleView();
+                break;
+            case 3: //Move to a new location
+                plantCropsView();
+                break;
+            case 4: //Manage the crops
+                runCropsView();
+                break;
+            case 5: 
+                sellLandView();
+                break;
+            case 6:
+                
+                //Return to the main menu
+                // Main Menu View
+                MainMenuView mmv = new MainMenuView();
+                mmv.displayMenuView();
+        }
+    }
+    
+
 //The runCropsView method()
 //Purpose: runs the Hamurabi game
 //Parameters: none
@@ -36,7 +131,7 @@ public static void runCropsView()
 {
     
 //call the buyLandView() method
-buyLandView();
+//buyLandView();
 
 //add calls to the other crop view methods
 //sellLandView();
@@ -44,7 +139,7 @@ buyLandView();
 // The feedPeopleView method
 //feedPeopleView(){}
 
-plantCropsView();
+//plantCropsView();
 
 //showStarvedView();
 //displayCropsReportView();
