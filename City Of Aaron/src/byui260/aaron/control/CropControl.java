@@ -230,7 +230,7 @@ public class CropControl {
 	return wheatInStore;
     }
 
-    public static int feedPeople() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    //public static int feedPeople() {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
 }
