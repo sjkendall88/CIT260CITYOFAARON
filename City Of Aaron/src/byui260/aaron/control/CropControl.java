@@ -131,7 +131,7 @@ public class CropControl {
         
         // acresPlanted += acresToPlant
         int acresPlanted = cropData.getAcresPlanted();
-        acresPlanted += acresToPlant;
+        acresPlanted = acresToPlant;
         cropData.setAcresPlanted(acresPlanted);
         
         // Return acresPlanted
