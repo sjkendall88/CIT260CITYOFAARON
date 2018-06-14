@@ -229,7 +229,6 @@ public static void sellLandView()
 public static void feedPeopleView(){
    
     //Get the Wheat in Store set aside for the people
-    // int WheatInStore = CropControl.feedPeople();
     int wheatInStore = cropData.getWheatInStore();
     //Prompt the user for buschels of grain wanted to give to the people.
     //Display the amount of wheat set aside for the people.
