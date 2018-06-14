@@ -15,7 +15,7 @@ import city.of.aaron.CityOfAaron;
  */
 public class CropView {
     
-  //feedPeopleView method
+  
     
     
 
@@ -92,6 +92,11 @@ public static void plantCropsView() {
     int acresToPlant = keyboard.nextInt();
     // call the AcresToPlant() method in the control layer
     int acresPlanted = CropControl.AcresToPlant(acresToPlant, cropData);
+        while(acresPlanted == -1)
+    {
+        acresToPlant = keyboard.nextInt();
+        acresPlanted = CropControl.AcresToPlant(acresToPlant, cropData);
+    }
     // Display acres planted
     System.out.println(acresPlanted);
 }
@@ -121,8 +126,6 @@ public static void sellLandView()
     System.out.format("You now own %d acres of land.", successCheck);
 }
 
-
-
     //the feedPeopleView method
     //Purpose: To interface with the user to use feed people methods
     //Purpose: none
@@ -131,21 +134,25 @@ public static void sellLandView()
 public static void feedPeopleView(){
    
     //Get the Wheat in Store set aside for the people
-    int WheatInStore = CropControl.feedPeople();
-   
+   // int WheatInStore = CropControl.feedPeople();
+    int wheatInStore = cropData.getWheatInStore();
     //Prompt the user for buschels of grain wanted to give to the people.
     //Display the amount of wheat set aside for the people.
-    System.out.println("You currently have" + WheatInStore + "available in your storehouse.");
+    System.out.println("You currently have" + wheatInStore + "available in your storehouse.");
     System.out.println("\nHow many bushels of grain do you want to give to the people");
     
     //Get user's input and save it.
     int forPeople = keyboard.nextInt();
     
     //call the feedPeople() method in the control layer to sell the land.
-    CropControl.feedPeople(forPeople, cropData);
-    
+    int fedPeople = CropControl.feedPeople(forPeople, cropData);
+        while(fedPeople == -1)
+    {
+        forPeople = keyboard.nextInt();
+        fedPeople = CropControl.AcresToPlant(forPeople, cropData);
+    }
     //Display wheat used for the people
-    System.out.println("you have" +  forPeople + "for the people");
+    System.out.println("you have" +  fedPeople + "for the people");
     
 }
 }
