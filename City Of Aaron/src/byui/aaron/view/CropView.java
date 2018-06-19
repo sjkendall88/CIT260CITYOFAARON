@@ -118,7 +118,7 @@ private int max;
                 //Return to the main menu
                 // Main Menu View
                 MainMenuView mmv = new MainMenuView();
-                mmv.displayMenuView();
+                mmv.displayMenu();
         }
     }
     
