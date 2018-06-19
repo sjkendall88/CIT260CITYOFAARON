@@ -131,7 +131,7 @@ public class CropControl {
         
         // acresPlanted += acresToPlant
         int acresPlanted = cropData.getAcresPlanted();
-        acresPlanted += acresToPlant;
+        acresPlanted = acresToPlant;
         cropData.setAcresPlanted(acresPlanted);
         
         // Return acresPlanted
@@ -226,11 +226,11 @@ public class CropControl {
         cropData.setWheatForPeople(wheatForPeople);
         cropData.setWheatInStore(wheatInStore);
 
-	//Return Wheat In Store remaining.
+	//Return wheat used for people remaining.
 	return wheatInStore;
     }
 
-    public static int feedPeople() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    //public static int feedPeople() {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
 }
