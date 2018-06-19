@@ -12,9 +12,7 @@ import java.util.Scanner;
  * @author User
  */
 public class HelpMenuView extends MenuView {
-    Scanner keyboard = new Scanner(System.in);
-    private String theMenu;
-    private int max;
+
     // Help Menu View method
     // Purpose : To save a menu view for the help menu
     // Parameters : none
