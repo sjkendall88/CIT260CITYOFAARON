@@ -12,10 +12,6 @@ import java.util.Scanner;
  * @author Sterling Kendall
  */
 public class PrintListView extends MenuView {
-    Scanner keyboard = new Scanner(System.in);
-    private String theMenu;
-    private int max;
- 
     //The newGameMenuView Constructor
     //Purpose: Initialize the menu Data
     //Parameters: none
