@@ -8,14 +8,7 @@
  */
 package byui.aaron.view;
 import java.util.Scanner;
-
-/**
- *
- * @author 
- */
-
-
-
+    
 public abstract class MenuView implements ViewInterface {
     protected final static Scanner keyboard = new Scanner(System.in);
     
