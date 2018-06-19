@@ -113,8 +113,7 @@ private int max;
             case 5: 
                 sellLandView();
                 break;
-            case 6:
-                
+            case 6:                
                 //Return to the main menu
                 // Main Menu View
                 MainMenuView mmv = new MainMenuView();

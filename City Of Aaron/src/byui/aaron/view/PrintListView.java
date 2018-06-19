@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Sterling Kendall
  */
-public class PrintListView{
+public class PrintListView extends MenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
@@ -19,35 +19,33 @@ public class PrintListView{
     //The newGameMenuView Constructor
     //Purpose: Initialize the menu Data
     //Parameters: none
-    //Return: none
-    
+    //Return: none    
     public PrintListView(){
-        theMenu = "\n" + "**********************\n" 
+        super("\n" + "**********************\n" 
                 + "*City of Aaron: View / Print List *\n"
                 + "******************************\n"
                 + "1 - The animals in the storehouse\n"
                 + "2 - The tools in the storehouse\n"
                 + "3 - The provisions in the storehouse\n"
                 + "4 - The authors of the game\n"
-                + "5 - Return to the main menu.\n";
-                
-        max = 5;
+                + "5 - Return to the main menu.\n",
+                5);
     }
     
-    public void displayPrintListView(){
+    @Override public void displayMenu(){
         int menuOption;
         do{
             //display the menu
             System.out.println(theMenu);
             //Prompt user for input and get user input.
-            menuOption = getPrintListOption();
+            menuOption = getMenuOption();
             //Perform the desire option
             doAction(menuOption);
             //Determine and display the next option.
         }while(menuOption != max); 
     }
     
-    public int getPrintListOption(){
+    @Override public int getMenuOption(){
         //declare the variable to hold the input
         int userInput;
         
@@ -67,19 +65,17 @@ public class PrintListView{
         return userInput;
     }
     
-     public void doAction (int option){
+    @Override public void doAction (int option){
         switch (option){
             case 1: //View / Print List of Animals
                 displayAnimals();
-                break;
-                
+                break;                
             case 2: //View/Print List of Tools
                 displayTools();
                 break;
             case 3: //View / Print List of Provisions
                 displayProvisions();
-                break;
-                
+                break;                
             case 4: //Display the Authors of the code
                 displayAuthors();
                 break;
@@ -90,24 +86,18 @@ public class PrintListView{
         NewGameMenu ngmv = new NewGameMenu(); 
         ngmv.displayGameMenuView();
         } 
-        }
+    }
     public void displayAnimals(){   
     System.out.println("\nI ain't got no stinkin animals.");
-    }
-    
+    }    
     public void displayTools(){
-    System.out.println("\nTools, Ha who needs tools.");
-   
+    System.out.println("\nTools, Ha who needs tools.");   
     }
-    
-    
     public void displayProvisions(){
     System.out.println("\nWhat Provisions");
     }
-    
     public void displayAuthors(){
-    
-      //TeamMember java bean
+        //TeamMember java bean
         String memberName1 = TeamMember.one.getMemberName();
         String memberTitle1 = TeamMember.one.getMemberTitle();
         
@@ -118,39 +108,5 @@ public class PrintListView{
         String memberTitle3 = TeamMember.three.getMemberTitle();
        
     System.out.println(memberName1 + " " + memberTitle1 + "\n"+ memberName2 + " " + memberTitle2 + "\n" + memberName3 + " " + memberTitle3);
-}
-    
     }
-     
-
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+}     

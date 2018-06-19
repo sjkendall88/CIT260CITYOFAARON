@@ -92,7 +92,7 @@ public class NewGameMenu {
                 
             case 2: //View/Print a List
                 PrintListView plv = new PrintListView(); 
-                plv.displayPrintListView();
+                plv.displayMenu();
                 break;
             case 3: //Move to a new location
                 startMove();
