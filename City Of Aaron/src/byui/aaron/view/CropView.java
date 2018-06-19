@@ -65,8 +65,7 @@ private int max;
         }while(menuOption != max); 
     }
     
-    
-     //the getGameMenuOption method
+//the getGameMenuOption method
     //Purpose: get the user input
     //Parameters: None
     //Return: integers minus option selected
@@ -121,7 +120,6 @@ private int max;
         }
     }
     
-
 //The runCropsView method()
 //Purpose: runs the Hamurabi game
 //Parameters: none
@@ -143,9 +141,6 @@ public static void runCropsView()
 //showStarvedView();
 //displayCropsReportView();
 }
-
-
-
 
 //The buyLandView method
 //Purpose: interface with the user input for buying land.
@@ -248,7 +243,6 @@ public static void feedPeopleView(){
     }
     //Display wheat used for the people
     System.out.println("You curretnly have " + fedPeople 
-            + " bushel in the store.");
-    
+            + " bushel in the store.");    
 }
 }

@@ -109,4 +109,4 @@ public class PrintListView extends MenuView {
        
     System.out.println(memberName1 + " " + memberTitle1 + "\n"+ memberName2 + " " + memberTitle2 + "\n" + memberName3 + " " + memberTitle3);
     }
-}     
+}
