@@ -88,7 +88,7 @@ public class PrintListView{
                 // Main Menu View
                //Display the game menu
         NewGameMenu ngmv = new NewGameMenu(); 
-        ngmv.displayGameMenuView();
+        ngmv.displayMenu();
         } 
         }
     public void displayAnimals(){   

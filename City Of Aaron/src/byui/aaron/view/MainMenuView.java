@@ -127,7 +127,7 @@ public class MainMenuView extends MenuView {
         
         //Display the game menu
         NewGameMenu ngmv = new NewGameMenu(); 
-        ngmv.displayGameMenuView();
+        ngmv.displayMenu();
             
         }
      
