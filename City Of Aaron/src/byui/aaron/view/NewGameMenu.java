@@ -12,11 +12,7 @@ import java.util.Scanner;
  * @author J.J. Hugh
  */
 public class NewGameMenu extends MenuView {
-     Scanner keyboard = new Scanner(System.in);
     
-    private String theMenu;
-    private int max;
- 
     //The newGameMenuView Constructor
     //Purpose: Initialize the menu Data
     //Parameters: none
