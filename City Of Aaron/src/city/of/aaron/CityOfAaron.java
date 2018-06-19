@@ -99,7 +99,7 @@ public class CityOfAaron {
         
         // Main Menu View
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();
+        mmv.displayMenu();
     }
 
     public static Game getCurrentGame() {
