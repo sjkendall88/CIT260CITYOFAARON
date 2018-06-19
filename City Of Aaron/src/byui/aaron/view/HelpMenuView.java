@@ -22,6 +22,7 @@ public class HelpMenuView extends MenuView {
     // Author : James
     public HelpMenuView() {
         
+        //initialize HelpMenuView
         super("\n" + "*******************************\n"
                 + "Help Menu:\n"
                 + "\t1 - What are the goals of the game?\n"
@@ -44,8 +45,6 @@ public class HelpMenuView extends MenuView {
         int option;
         // Display Menu after every option but quit
         do {
-            //initialize help menu text
-            helpMenuView();
             
             //display the menu
             System.out.println(theMenu);
