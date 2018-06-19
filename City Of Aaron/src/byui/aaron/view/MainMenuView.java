@@ -17,7 +17,7 @@ import byui.aaron.view.NewGameMenu;
  * @author James Rasmussen, JJ Hugh, and Sterling Kendall
  */
 
-public class MainMenuView {
+public class MainMenuView extends MenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
@@ -27,69 +27,25 @@ public class MainMenuView {
     // Return: none
     // ========================================
     public MainMenuView(){
-        theMenu = "\n" + "***************************\n"
+        
+        super("\n" + "***************************\n"
                 + "*City Of Aaron: Main Game Menu *\n"
                 + "***************************\n"
                 + "1 - Start new Game \n"
                 + "2 - Get and Start a Saved Game \n"
                 + "3 - Get help on playing the Game \n"
                 + "4 - Save Game \n"
-                + "5 - Quit \n";
-        max = 5;
+                + "5 - Quit \n",
+                5);
     }
-    
-    // The displayMainMenu method
-    // Purpose: displays the menu, gets the user input
-    //          and does the selected action
-    // Parameters: none
-    // Returns: none
-    // ========================================
-    public void displayMenuView(){
-        int menuOption;
-        do{
-            // Display the Menu
-            System.out.println(theMenu);
-            // Prompt the user for input and get user input
-            menuOption = getMenuOption();
-            // Perform the desired action
-            doAction(menuOption);
-            // Determine and Display the next action
-        }while(menuOption != max);
-    }
-    
-    // the getMenuoption method
-    // Purpose get the user input
-    // Parameters: none
-    // Return: integers minus option selected
-    // ===========================================
-    public int getMenuOption(){
-        //declare a variable to hold the input
-        int userInput;
-        
-        // begin loop
-        do {
-            // get user input from keyboard
-            userInput = keyboard.nextInt();
-            
-            // if it is not a valid value output an error message.
-            if(userInput < 1 || userInput > max)
-            {
-                System.out.println("\noption must be between 1 and " + max);
-            }
-            // loop back to top if input not valid
-        } while(userInput < 1 || userInput > max);
-        
-        // return the value input by the user
-        return userInput;
-    }
-    
+      
     // The doAction method
     // Purpose: performs the selected action
     // parameters: none
     // return: none
     // ======================================================
     
-    public void doAction(int option){
+    @Override public void doAction(int option){
         switch(option){
             case 1: // if the option is 1, call startNewGame()
                 startNewGame();
