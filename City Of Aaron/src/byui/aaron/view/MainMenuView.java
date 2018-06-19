@@ -54,7 +54,7 @@ public class MainMenuView extends MenuView {
                 startSavedGame();
                 break;
             case 3: // if the option is 3, call displayHelpMenu()
-                displayHelpMenuView();
+                displayHelpMenu();
                 break;
             case 4: // if the option is 4, call displaySaveGame()
                 displaySaveGameView();
@@ -127,10 +127,21 @@ public class MainMenuView extends MenuView {
         
         //Display the game menu
         NewGameMenu ngmv = new NewGameMenu(); 
-        ngmv.displayGameMenuView();
+        ngmv.displayMenu();
             
         }
      
+    // The displayHelpMenu method
+    // Purpose: Display the help menu view
+    // parameters: none
+    // returns: none
+    // Author : James
+    // =====================================================
+    public void displayHelpMenu(){
+        HelpMenuView hmv = new HelpMenuView();
+        hmv.displayHelpMenuView();
+    }
+    
     // The startSavedGame method
     // Purpose: locate game object and starts saved game
     // parameters: none
@@ -139,97 +150,7 @@ public class MainMenuView extends MenuView {
     public void startSavedGame(){
         System.out.println("\nStart saved game option selected.");
     }
-    // The displayHelpMenuView method
-    // Purpose: Display the help menu view
-    // parameters: none
-    // returns: none
-    // Author : James
-    // =====================================================
-    public void displayHelpMenuView(){
-        int option;
-        // Display Menu after every option but quit
-        do {
-            //initialize help menu text
-            helpMenuView();
-            
-            //display the menu
-            System.out.println(theMenu);
-            
-            //get user input
-            option = getMenuOption();
-            
-            //execute appropriate menu option.
-            doHelpMenu(option);
-            
-        } while(option != max);
-        refreshMenu();
-    }
     
-    // Help Menu View method
-    // Purpose : To save a menu view for the help menu
-    // Parameters : none
-    // returns :  none
-    // Author : James
-    public void helpMenuView() {
-        theMenu = "\n" + "*******************************\n"
-                + "Help Menu:\n"
-                + "\t1 - What are the goals of the game?\n"
-                + "\t2 - What is the city of Aaron?\n"
-                + "\t3 - How do I view the map?\n"
-                + "\t4 - How do I move to another location?\n"
-                + "\t5 - How do I display a list of animals, provisions,"
-                + " and tools in the city storehouse?\n"
-                + "\t6 - Back to the Main Menu.";
-        max = 6;
-    }
-     
-    // the returnToMain() method
-    // Purpose :  refresh theMenu and max variables for main menu
-    // Parameters : none
-    // returns :  none
-    // Author : James
-    
-    public void refreshMenu()
-    {
-        theMenu = "\n" + "***************************\n"
-                + "*City Of Aaron: Main Game Menu *\n"
-                + "***************************\n"
-                + "1 - Start new Game \n"
-                + "2 - Get and Start a Saved Game \n"
-                + "3 - Get help on playing the Game \n"
-                + "4 - Save Game \n"
-                + "5 - Quit \n";
-        max = 5;
-    }
-    
-    // the doHelpMenuFunction
-    // Purpose : Execute aid for weary player
-    // Parameters : option selected
-    // returns : none
-    // Author : James
-    
-    public void doHelpMenu(int option) {
-        switch(option)
-        {
-            case 1: 
-                System.out.println("Goals of game help\n");
-                break;
-            case 2:
-                System.out.println("What City of Aaron is help\n");
-                break;
-            case 3:
-                System.out.println("Map viewing help\n");
-                break;
-            case 4:
-                System.out.println("Moving location help\n");
-                break;
-            case 5:
-                System.out.println("Display possessions help\n");
-                break;
-            case 6:
-                System.out.println("Exiting help menu\n");
-        }
-    }
     
     // The displaySaveGameView method
     // Purpose: Display list of saved games

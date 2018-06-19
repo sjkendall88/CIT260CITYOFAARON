@@ -11,27 +11,25 @@ import java.util.Scanner;
  *
  * @author J.J. Hugh
  */
-public class NewGameMenu {
-    Scanner keyboard = new Scanner(System.in);
-    private String theMenu;
-    private int max;
- 
+public class NewGameMenu extends MenuView {
+    
     //The newGameMenuView Constructor
     //Purpose: Initialize the menu Data
     //Parameters: none
     //Return: none
     
     public NewGameMenu(){
-        theMenu = "\n" + "**********************\n" 
+
+        super("\n" + "**********************\n" 
                 + "*City of Aaron: Game Menu *\n"
                 + "******************************\n"
                 + "1 - View the Map\n"
                 + "2 - View/Print a list\n"
                 + "3 - Move to a new location\n"
                 + "4 - Manage the crops \n"
-                + "5 - Return to the game menu.\n";
+                + "5 - Return to the game menu.\n",
                 
-        max = 5;
+                5);
     }
 
     //THe displayGameMenu method.
@@ -40,13 +38,13 @@ public class NewGameMenu {
     //Parameters: none
     //Returns: none
     
-    public void displayGameMenuView(){
+    @Override public void displayMenu(){
         int menuOption;
         do{
             //display the menu
             System.out.println(theMenu);
             //Prompt user for input and get user input.
-            menuOption = getGameMenuOption();
+            menuOption = getMenuOption();
             //Perform the desire option
             doAction(menuOption);
             //Determine and display the next option.
@@ -59,7 +57,7 @@ public class NewGameMenu {
     //Parameters: None
     //Return: integers minus option selected
     
-    public int getGameMenuOption(){
+    @Override public int getMenuOption(){
         //declare the variable to hold the input
         int userInput;
         
@@ -84,7 +82,7 @@ public class NewGameMenu {
     //parameters: none
     //return: none
     
-    public void doAction (int option){
+    @Override public void doAction (int option){
         switch (option){
             case 1: //View the Map
                 displayMap();

@@ -183,6 +183,7 @@ public static void plantCropsView() {
     int acresPlanted = CropControl.AcresToPlant(acresToPlant, cropData);
         while(acresPlanted == -1)
     {
+        System.out.println("Please enter a valid number");
         acresToPlant = keyboard.nextInt();
         acresPlanted = CropControl.AcresToPlant(acresToPlant, cropData);
     }
@@ -209,6 +210,7 @@ public static void sellLandView()
     int successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData); 
     while(successCheck == -1)
     {
+        System.out.println("Please enter a valid number");
         toSell = keyboard.nextInt();
         successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData);
     }
@@ -238,6 +240,7 @@ public static void feedPeopleView(){
     int fedPeople = CropControl.feedPeople(forPeople, cropData);
         while(fedPeople == -1)
     {
+        System.out.println("Please enter a valid number");
         forPeople = keyboard.nextInt();
         fedPeople = CropControl.feedPeople(forPeople, cropData);
     }
