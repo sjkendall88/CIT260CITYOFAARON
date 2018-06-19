@@ -68,22 +68,39 @@ public class HelpMenuView extends MenuView {
         switch(option)
         {
             case 1: 
-                System.out.println("Goals of game help\n");
+                gameHelp();
                 break;
             case 2:
-                System.out.println("What City of Aaron is help\n");
+                whatIsCityHelp();
                 break;
             case 3:
-                System.out.println("Map viewing help\n");
+                mapHelp();
                 break;
             case 4:
-                System.out.println("Moving location help\n");
+                movingHelp();
                 break;
             case 5:
-                System.out.println("Display possessions help\n");
+                possessionsHelp();
                 break;
             case 6:
                 System.out.println("Exiting help menu\n");
         }
+    }
+    
+    // Help explanation methods
+    public void gameHelp() {
+        System.out.println("Goals of game help\n");
+    }
+    public void whatIsCityHelp() {
+        System.out.println("What City of Aaron is help\n");
+    }
+    public void mapHelp() {
+        System.out.println("Map viewing help\n");
+    }
+    public void movingHelp() {
+        System.out.println("Moving location help\n");
+    }
+    public void possessionsHelp() {
+        System.out.println("Display possessions help\n");
     }
 }
