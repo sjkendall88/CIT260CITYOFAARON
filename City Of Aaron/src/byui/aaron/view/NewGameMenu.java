@@ -38,45 +38,12 @@ public class NewGameMenu extends MenuView {
     //Parameters: none
     //Returns: none
     
-    @Override public void displayMenu(){
-        int menuOption;
-        do{
-            //display the menu
-            System.out.println(theMenu);
-            //Prompt user for input and get user input.
-            menuOption = getMenuOption();
-            //Perform the desire option
-            doAction(menuOption);
-            //Determine and display the next option.
-        }while(menuOption != max); 
-    }
     
     
-     //the getGameMenuOption method
-    //Purpose: get the user input
-    //Parameters: None
-    //Return: integers minus option selected
     
-    @Override public int getMenuOption(){
-        //declare the variable to hold the input
-        int userInput;
+    
         
-        //begin the loop
-        do {
-            //get user input from keyboard
-            userInput = keyboard.nextInt();
-            
-            //If it is not a valid value output an error message.
-            if (userInput < 1 || userInput > max){
-            System.out.println( "\nOption must be between 1 and " + max); 
-        }
-            // loop back to top if input not valid
-        }while (userInput < 1 || userInput > max);
-        
-        //return the value input by the user
-        return userInput;
-    }
-    
+     
     // doAction method
     //Purpose: performs the selected action
     //parameters: none
@@ -99,11 +66,7 @@ public class NewGameMenu extends MenuView {
                 CropView cv = new CropView();
                 cv.displayGameMenuView();
                 break;
-            case 5: 
-                //Return to the main menu
-                // Main Menu View
-                MainMenuView mmv = new MainMenuView();
-                mmv.displayMenu();
+            case 5: System.out.println("\nReturn to the Main Menu");
         }
     }
     
