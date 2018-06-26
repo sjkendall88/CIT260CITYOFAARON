@@ -63,12 +63,12 @@ public class GameControl {
         theCrops.setAcresPlanted(1000); 
 
         theGame.setCropData(theCrops);         
-    };
+    }
     
     //ANOTHER PROLOGUE
     public static void createAnimalList()
     {
-        ArrayList<ListItem> animals = new ArrayList<ListItem>();
+        ArrayList<ListItem> animals = new ArrayList<>();
         
         animals.add(new ListItem("Cureloms", 5));
         animals.add(new ListItem("Half eaten cucumber", 1));
@@ -76,12 +76,12 @@ public class GameControl {
         animals.add(new ListItem("Life, universe and everything answer", 42));
         
         theGame.setAnimals(animals);
-    };
+    }
     
     //ANOTHER PROLOGUE
-    public static void createToolsList()
+    public ArrayList<ListItem> createToolsList()
     {
-        ArrayList<ListItem> tools = new ArrayList<ListItem>();
+        ArrayList<ListItem> tools = new ArrayList<>();
         
         tools.add(new ListItem("Hammer", 13));
         tools.add(new ListItem("Half eaten cucumber", 1));
@@ -89,12 +89,12 @@ public class GameControl {
         tools.add(new ListItem("Measuring Tape", 1000));
         
         theGame.setTools(tools);
-    };
+    }
     
     //ANOTHER PROLOGUE
     public static void createProvisionsList()
     {
-        ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+        ArrayList<ListItem> provisions = new ArrayList<>();
         
         provisions.add(new ListItem("Bacon in Pounds", 200));
         provisions.add(new ListItem("Half eaten cucumber", 1));
@@ -102,7 +102,7 @@ public class GameControl {
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
         theGame.setProvisions(provisions);
-    };
+    }
     
     //The createMap method
     //Purpose: creates the location objects and the map
@@ -202,6 +202,6 @@ public class GameControl {
         theMap.setLocation(0, 4, loc);
         
         theGame.setTheMap(theMap);
-    };
+    }
 }
 }
