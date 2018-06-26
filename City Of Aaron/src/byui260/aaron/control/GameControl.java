@@ -22,7 +22,7 @@ public class GameControl {
     //reference to a game object
     private static Game theGame;
     
-    public static void createNewGame( String pName)
+    public static void createNewGame( String name)
     {
         //create game object. Save in main driver file
         theGame = new Game();
@@ -30,20 +30,23 @@ public class GameControl {
         
         //create player object. Save in game object.
         Player thePlayer = new Player();
-        thePlayer.setPlayerName(pName);
+        thePlayer.setPlayerName(name);
         theGame.setThePlayer(thePlayer);
         
         //create CropData object
-        
+        createCropDataObject();
         
         //create list of animals
+        createAnimalList();
         
         //create list of tools
+        createToolsList();
         
         //create list of provisions
+        createProvisionsList();
         
         //create the Locations and the Map object.
-        
+        createMap();
     }
     
     //PROLOGUE
