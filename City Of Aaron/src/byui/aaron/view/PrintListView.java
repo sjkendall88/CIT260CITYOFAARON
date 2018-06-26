@@ -6,6 +6,7 @@
 package byui.aaron.view;
 import byui260.aaron.model.TeamMember;
 import java.util.Scanner;
+import byui260.aaron.control.GameControl;
 
 /**
  *
