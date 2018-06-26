@@ -91,7 +91,7 @@ public class PrintListView extends MenuView {
         for(int n : tools){
             System.out.println(n);
         }
-        System.out.println(tools.get(0));        
+        // System.out.println(tools.get(0));        
     }
     public void displayProvisions(){
         System.out.println("\nWhat Provisions");
@@ -107,6 +107,7 @@ public class PrintListView extends MenuView {
         String memberName3 = TeamMember.three.getMemberName();
         String memberTitle3 = TeamMember.three.getMemberTitle();
        
-    System.out.println(memberName1 + " " + memberTitle1 + "\n"+ memberName2 + " " + memberTitle2 + "\n" + memberName3 + " " + memberTitle3);
+    System.out.println(memberName1 + " " + memberTitle1 + "\n"+ memberName2 
+            + " " + memberTitle2 + "\n" + memberName3 + " " + memberTitle3);    
     }
 }
