@@ -76,8 +76,9 @@ public class GameControl {
         animals.add(new ListItem("Half eaten cucumber", 1));
         animals.add(new ListItem("Pet rocks", 327));
         animals.add(new ListItem("Life, universe and everything answer", 42));
-        
+
         theGame.setAnimals(animals);
+        System.out.println(animals);
     }
     
     //ANOTHER PROLOGUE
@@ -90,7 +91,7 @@ public class GameControl {
         tools.add(new ListItem("HackSaw", 7));
         tools.add(new ListItem("Measuring Tape", 1000));
         
-        theGame.setAnimals(tools);
+        theGame.setTools(tools);
     }
     
     //ANOTHER PROLOGUE
@@ -103,7 +104,7 @@ public class GameControl {
         provisions.add(new ListItem("Strawberries", 19));
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
-        theGame.setAnimals(provisions);
+        theGame.setProvisions(provisions);
     }
     
     //The createMap method
@@ -118,7 +119,7 @@ public class GameControl {
         //Map discriptors
         String river = "\nA winding river stretches before you.\nIt's super"
                 + " fresh, and provides much needed water to the city";
-        String darkWoodForest = "\nDWThis forest looks ominous, but "
+        String darkWoodForest = "\nThis forest looks ominous, but "
                 + "on the\nother hand, it's obviously very good at growing"
                 + "things. Good for wood too.";
         String swamp = "\nswamp";
