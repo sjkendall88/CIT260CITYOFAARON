@@ -43,8 +43,6 @@ public class GameControl {
         //create list of provisions
         
         //create the Locations and the Map object.
-        
-    }
     
     //PROLOGUE
     public static void createCropDataObject()
@@ -205,5 +203,5 @@ public class GameControl {
         
         theGame.setTheMap(theMap);
     }
-    
+}
 }
