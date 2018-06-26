@@ -45,8 +45,7 @@ public class GameControl {
         //create the Locations and the Map object.
     
     //PROLOGUE
-    public static void createCropDataObject()
-    {
+    public static void createCropDataObject() {
         CropData theCrops = new CropData();
         
         theCrops.setYear(0);
