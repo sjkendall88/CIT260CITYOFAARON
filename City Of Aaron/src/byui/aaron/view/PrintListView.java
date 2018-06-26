@@ -70,7 +70,7 @@ public class PrintListView extends MenuView {
                 displayTools();
                 break;
             case 3: //View / Print List of Provisions
-                this.displayProvisions();
+                displayProvisions();
                 break;                
             case 4: //Display the Authors of the code
                 displayAuthors();

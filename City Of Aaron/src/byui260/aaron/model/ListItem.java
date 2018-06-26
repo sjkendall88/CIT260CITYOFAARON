@@ -20,10 +20,6 @@ public class ListItem implements Serializable{
     public ListItem(String name, int number) {
     }
 
-    public ListItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public String getName() {
         return name;
     }
