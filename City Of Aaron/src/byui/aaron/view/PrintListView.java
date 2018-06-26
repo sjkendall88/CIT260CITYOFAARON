@@ -7,6 +7,7 @@ package byui.aaron.view;
 import byui260.aaron.model.TeamMember;
 import byui260.aaron.model.Game;
 import byui260.aaron.model.ListItem;
+import byui260.aaron.control.GameControl;
 import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ public class PrintListView extends MenuView {
         //return the value input by the user
         return userInput;
     }
-    
+
     @Override public void doAction (int option){
         switch (option){
             case 1: //View / Print List of Animals
@@ -81,17 +82,17 @@ public class PrintListView extends MenuView {
                 displayAuthors();
                 break;
             case 5: 
-                //Return to the main menu
-                // Main Menu View
-               //Display the game menu
-        NewGameMenu ngmv = new NewGameMenu(); 
-        ngmv.displayMenu();
+                return;
         } 
     }
-    public void displayAnimals(){   
-        ArrayList<ListItem> animals = theGame.getAnimals();
+    public static void displayAnimals(){   
+        GameControl.createAnimalList();
+        //ArrayList<ListItem> animals = theGame.getAnimals();
+        //String AnimalA = ListItem.name;
+        //String animalTest = ListItem.getName();
+        //String animalA = getName();
         System.out.println("\nYou have these animals: " 
-                            + theGame.getAnimals());
+                            + "animals");
     }    
     public void displayTools(){
         System.out.println("\nTools, Ha who needs tools.");   

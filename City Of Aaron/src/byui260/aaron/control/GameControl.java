@@ -19,6 +19,7 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     
+    
     //reference to a game object
     private static Game theGame;
     
@@ -34,16 +35,19 @@ public class GameControl {
         theGame.setThePlayer(thePlayer);
         
         //create CropData object
-        
+        createCropDataObject();
         
         //create list of animals
+        createAnimalList();
         
         //create list of tools
+        createToolsList();
         
         //create list of provisions
+        createProvisionsList();
         
         //create the Locations and the Map object.
-        
+        createMap();
     }
     
     //PROLOGUE
@@ -79,7 +83,10 @@ public class GameControl {
 
         theGame.setAnimals(animals);
         System.out.println(animals);
+        System.out.println(animals.get(1));
+        
     }
+    
     
     //ANOTHER PROLOGUE
     public static void createToolsList()
