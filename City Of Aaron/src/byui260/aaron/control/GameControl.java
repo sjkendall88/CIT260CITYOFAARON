@@ -116,8 +116,11 @@ public class GameControl {
         Map theMap = new Map(MAX_ROW, MAX_COL);
         
         //Map discriptors
-        String river = "\nRiver";
-        String darkWoodForest = "\nDWforest";
+        String river = "\nA winding river stretches before you.\nIt's super"
+                + " fresh, and provides much needed water to the city";
+        String darkWoodForest = "\nDWThis forest looks ominous, but "
+                + "on the\nother hand, it's obviously very good at growing"
+                + "things. Good for wood too.";
         String swamp = "\nswamp";
         String rollingHills = "\nrHills";
         String candyCaneForest = "\nccForest";
@@ -131,7 +134,7 @@ public class GameControl {
         Location loc = new Location();
         
         //use setters in the location class to set the description and symbol 
-        loc.setDescription(river);
+        loc.setDescription(river );
         loc.setSymbol("~~~");
         
         theMap.setLocation(2, 0, loc);
@@ -200,5 +203,7 @@ public class GameControl {
         loc.setSymbol("KFC");
         theMap.setLocation(0, 4, loc);
         
+        theGame.setTheMap(theMap);
     }
+    
 }
