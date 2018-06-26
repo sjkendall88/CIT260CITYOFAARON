@@ -11,6 +11,7 @@ import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.Game;
 import byui.aaron.view.NewGameMenu;
+import byui260.aaron.control.GameControl;
 
 /**
  *
@@ -105,6 +106,7 @@ public class MainMenuView extends MenuView {
         cropData.setOfferingBushels(300);
         cropData.setAcresPlanted(1000);
         cropData.setWheatForPeople(0);
+        
         //save a reference to it in the Game.
         theGame.setCrop(cropData);
         
@@ -124,6 +126,9 @@ public class MainMenuView extends MenuView {
         
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
+        
+        //call createNewGame() method. send name as param.
+        GameControl.createNewGame(name);
         
         //Display the game menu
         NewGameMenu ngmv = new NewGameMenu(); 
