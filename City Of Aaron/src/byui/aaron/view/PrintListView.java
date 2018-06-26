@@ -18,7 +18,7 @@ public class PrintListView extends MenuView {
     //Return: none    
     public PrintListView(){
         super("\n" + "**********************\n" 
-                + "*City of Aaron: View / Print List *\n"
+                + "*City of Aaron: LIST MENU *\n"
                 + "******************************\n"
                 + "1 - The animals in the storehouse\n"
                 + "2 - The tools in the storehouse\n"
@@ -84,13 +84,13 @@ public class PrintListView extends MenuView {
         } 
     }
     public void displayAnimals(){   
-    System.out.println("\nI ain't got no stinkin animals.");
+        System.out.println();
     }    
     public void displayTools(){
-    System.out.println("\nTools, Ha who needs tools.");   
+        System.out.println("\nTools, Ha who needs tools.");   
     }
     public void displayProvisions(){
-    System.out.println("\nWhat Provisions");
+        System.out.println("\nWhat Provisions");
     }
     public void displayAuthors(){
         //TeamMember java bean
