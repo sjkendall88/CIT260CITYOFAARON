@@ -91,7 +91,7 @@ public class PrintListView extends MenuView {
         for(int n : tools){
             System.out.println(n);
         }
-        // System.out.println(tools.get(0));        
+        //System.out.println(tools.get(0));        
     }
     public void displayProvisions(){
         System.out.println("\nWhat Provisions");
