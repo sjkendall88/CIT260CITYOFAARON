@@ -21,12 +21,12 @@ public class PrintListView extends MenuView {
     //Return: none    
     public PrintListView(){
         super("\n" + "**********************\n" 
-                + "*City of Aaron: LIST MENU *\n"
+                + "*City of Aaron: LIST MENU *\n  + \"2 - The tools in the storehouse\\n\"\n" +
+"                + \"3 - The provisions in the storehouse\\n\"\n" +
+"                + \"4 - The authors of the game\\n\""
                 + "******************************\n"
                 + "1 - The animals in the storehouse\n"
-                + "2 - The tools in the storehouse\n"
-                + "3 - The provisions in the storehouse\n"
-                + "4 - The authors of the game\n"
+              
                 + "5 - Return to the main menu.\n",
                 5);
     }
@@ -73,7 +73,7 @@ public class PrintListView extends MenuView {
                 displayTools();
                 break;
             case 3: //View / Print List of Provisions
-                displayProvisionsList();
+                displayProvisions();
                 break;                
             case 4: //Display the Authors of the code
                 displayAuthors();
@@ -92,9 +92,11 @@ public class PrintListView extends MenuView {
     public void displayTools(){
         System.out.println("\nTools, Ha who needs tools.");   
     }
-    public void displayProvisionsList(){
-        System.out.println("the Provisions are ");
+    public void displayProvisions(){
+            
+        String provisions = this.displayProvisions();
     }
+            
     public void displayAuthors(){
         //TeamMember java bean
         String memberName1 = TeamMember.one.getMemberName();
