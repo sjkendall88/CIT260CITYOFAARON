@@ -85,7 +85,7 @@ public class PrintListView extends MenuView {
         } 
     }
     public void displayAnimals(){   
-        System.out.println();
+        System.out.println("\nWe aint got no tinkin animals");
     }    
     public void displayTools(){
         System.out.println("\nTools, Ha who needs tools.");   
