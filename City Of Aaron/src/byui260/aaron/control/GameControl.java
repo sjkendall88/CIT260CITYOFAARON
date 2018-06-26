@@ -43,9 +43,12 @@ public class GameControl {
         //create list of provisions
         
         //create the Locations and the Map object.
+        
+    }
     
     //PROLOGUE
-    public static void createCropDataObject() {
+    public static void createCropDataObject()
+    {
         CropData theCrops = new CropData();
         
         theCrops.setYear(0);
@@ -67,7 +70,7 @@ public class GameControl {
     //ANOTHER PROLOGUE
     public static void createAnimalList()
     {
-        ArrayList<ListItem> animals = new ArrayList<>();
+        ArrayList<ListItem> animals = new ArrayList<ListItem>();
         
         animals.add(new ListItem("Cureloms", 5));
         animals.add(new ListItem("Half eaten cucumber", 1));
@@ -78,9 +81,9 @@ public class GameControl {
     }
     
     //ANOTHER PROLOGUE
-    public ArrayList<ListItem> createToolsList()
+    public static void createToolsList()
     {
-        ArrayList<ListItem> tools = new ArrayList<>();
+        ArrayList<ListItem> tools = new ArrayList<ListItem>();
         
         tools.add(new ListItem("Hammer", 13));
         tools.add(new ListItem("Half eaten cucumber", 1));
@@ -93,7 +96,7 @@ public class GameControl {
     //ANOTHER PROLOGUE
     public static void createProvisionsList()
     {
-        ArrayList<ListItem> provisions = new ArrayList<>();
+        ArrayList<ListItem> provisions = new ArrayList<ListItem>();
         
         provisions.add(new ListItem("Bacon in Pounds", 200));
         provisions.add(new ListItem("Half eaten cucumber", 1));
@@ -202,5 +205,5 @@ public class GameControl {
         
         theGame.setTheMap(theMap);
     }
-}
+    
 }
