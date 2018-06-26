@@ -51,7 +51,6 @@ public class NewGameMenu extends MenuView {
             case 1: //View the Map
                 displayMap();
                 break;
-                
             case 2: //View/Print a List
                 PrintListView plv = new PrintListView(); 
                 plv.displayMenu();
