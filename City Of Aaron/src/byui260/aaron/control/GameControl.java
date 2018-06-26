@@ -103,7 +103,7 @@ public class GameControl {
         provisions.add(new ListItem("Strawberries", 19));
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
-        provisions = provisions.getArrat<ListItem>();
+        
         theGame.setProvisions(provisions);
         return provisions;
     }

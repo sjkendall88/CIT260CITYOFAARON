@@ -94,7 +94,7 @@ public class PrintListView extends MenuView {
     }
     public void displayProvisions(){
             
-        String provisions = this.displayProvisions();
+        
     }
             
     public void displayAuthors(){
