@@ -49,7 +49,8 @@ public class CityOfAaron {
         String locationOneSymbol = locationOne.getSymbol();
         System.out.println(locationOneSymbol + " " + locationOneDescription);
         
-        //ListItem
+        /*
+        //ListItem  
         ListItem listItemOne = new ListItem();
         listItemOne.setName("Help");
         listItemOne.setNumber(Integer.SIZE);
@@ -75,6 +76,7 @@ public class CityOfAaron {
         cropDataOne.setNumStarved(listItemOneNumber);
         cropDataOne.setEatenByRats(listItemOneNumber);
         cropDataOne.setWheatForPeople(listItemOneNumber);
+        
         //Getter
         Integer cropDataOneYear = cropDataOne.getYear();
         Integer cropDataOnePopulation = cropDataOne.getPopulation();
@@ -93,7 +95,7 @@ public class CityOfAaron {
         Integer cropDataEatenByRats = cropDataOne.getEatenByRats();
         Integer cropDataWheatForPeople = cropDataOne.getWheatForPeople();
         System.out.println(cropDataOne.toString());
-        
+        */
         // Game java bean
         
         
