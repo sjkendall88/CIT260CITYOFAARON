@@ -90,7 +90,7 @@ public class GameControl {
         tools.add(new ListItem("HackSaw", 7));
         tools.add(new ListItem("Measuring Tape", 1000));
         
-        theGame.setAnimals(tools);
+        theGame.setTools(tools);
     }
     
     //ANOTHER PROLOGUE
@@ -103,7 +103,7 @@ public class GameControl {
         provisions.add(new ListItem("Strawberries", 19));
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
-        theGame.setAnimals(provisions);
+        theGame.setProvisions(provisions);
     }
     
     //The createMap method
