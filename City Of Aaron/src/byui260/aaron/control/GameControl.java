@@ -63,7 +63,7 @@ public class GameControl {
         theCrops.setAcresPlanted(1000); 
 
         theGame.setCropData(theCrops);         
-    }
+    };
     
     //ANOTHER PROLOGUE
     public static void createAnimalList()
@@ -76,7 +76,7 @@ public class GameControl {
         animals.add(new ListItem("Life, universe and everything answer", 42));
         
         theGame.setAnimals(animals);
-    }
+    };
     
     //ANOTHER PROLOGUE
     public static void createToolsList()
@@ -89,7 +89,7 @@ public class GameControl {
         tools.add(new ListItem("Measuring Tape", 1000));
         
         theGame.setTools(tools);
-    }
+    };
     
     //ANOTHER PROLOGUE
     public static void createProvisionsList()
@@ -102,7 +102,7 @@ public class GameControl {
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
         theGame.setProvisions(provisions);
-    }
+    };
     
     //The createMap method
     //Purpose: creates the location objects and the map
@@ -202,6 +202,6 @@ public class GameControl {
         theMap.setLocation(0, 4, loc);
         
         theGame.setTheMap(theMap);
-    }
+    };
 }
 }
