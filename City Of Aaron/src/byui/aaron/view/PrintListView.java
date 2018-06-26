@@ -7,6 +7,7 @@ package byui.aaron.view;
 import byui260.aaron.model.TeamMember;
 import java.util.Scanner;
 import byui260.aaron.control.GameControl;
+import java.lang.reflect.Array;
 
 /**
  *
@@ -78,17 +79,17 @@ public class PrintListView extends MenuView {
                 break;
             case 5: 
                 //Return to the main menu
-                // Main Menu View
-               //Display the game menu
-        NewGameMenu ngmv = new NewGameMenu(); 
-        ngmv.displayMenu();
+                return;
         } 
     }
     public void displayAnimals(){   
         System.out.println();
     }    
     public void displayTools(){
-        System.out.println("\nTools, Ha who needs tools.");   
+        // Sterling
+        String tool = Array.get(tools, *)
+        
+        System.out.println("\n" + tool);   
     }
     public void displayProvisions(){
         System.out.println("\nWhat Provisions");
