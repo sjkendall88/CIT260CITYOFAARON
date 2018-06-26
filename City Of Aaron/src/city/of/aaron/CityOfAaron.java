@@ -29,7 +29,7 @@ public class CityOfAaron {
         
         // Getter method
         
-        
+        /*
         //Player java bean
         Player playerOne = new Player();      
         playerOne.setPlayerName("Sterling");       
@@ -49,7 +49,7 @@ public class CityOfAaron {
         String locationOneSymbol = locationOne.getSymbol();
         System.out.println(locationOneSymbol + " " + locationOneDescription);
         
-        /*
+        
         //ListItem  
         ListItem listItemOne = new ListItem();
         listItemOne.setName("Help");
