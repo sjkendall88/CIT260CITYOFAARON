@@ -90,20 +90,20 @@ public class GameControl {
         tools.add(new ListItem("HackSaw", 7));
         tools.add(new ListItem("Measuring Tape", 1000));
         
-        theGame.setAnimals(tools);
+        theGame.setTools(tools);
     }
     
     //ANOTHER PROLOGUE
-    public static void createProvisionsList()
+    public ArrayList<ListItem> addProvisionsList()
     {
-        ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+        ArrayList<ListItem> provisions = new ArrayList<>();
         
         provisions.add(new ListItem("Bacon in Pounds", 200));
         provisions.add(new ListItem("Half eaten cucumber", 1));
         provisions.add(new ListItem("Strawberries", 19));
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
-        theGame.setAnimals(provisions);
+        return provisions;
     }
     
     //The createMap method

@@ -7,6 +7,8 @@ package byui.aaron.view;
 import byui260.aaron.model.TeamMember;
 import java.util.Scanner;
 import byui260.aaron.control.GameControl;
+import byui260.aaron.model.ListItem;
+import java.lang.reflect.Array;
 
 /**
  *
@@ -71,7 +73,7 @@ public class PrintListView extends MenuView {
                 displayTools();
                 break;
             case 3: //View / Print List of Provisions
-                displayProvisions();
+                displayProvisionsList();
                 break;                
             case 4: //Display the Authors of the code
                 displayAuthors();
@@ -90,8 +92,8 @@ public class PrintListView extends MenuView {
     public void displayTools(){
         System.out.println("\nTools, Ha who needs tools.");   
     }
-    public void displayProvisions(){
-        System.out.println("\nWhat Provisions");
+    public void displayProvisionsList(){
+        System.out.println("the Provisions are " + provisions.ListItem());
     }
     public void displayAuthors(){
         //TeamMember java bean
