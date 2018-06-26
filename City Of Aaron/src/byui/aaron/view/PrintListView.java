@@ -87,9 +87,9 @@ public class PrintListView extends MenuView {
     }    
     public void displayTools(){
         // Sterling
-        String tool = Array.get(tools, *)
+        String toolList = Array.tools.get(*);
         
-        System.out.println("\n" + tool);   
+        System.out.println("\n" + toolList);   
     }
     public void displayProvisions(){
         System.out.println("\nWhat Provisions");
