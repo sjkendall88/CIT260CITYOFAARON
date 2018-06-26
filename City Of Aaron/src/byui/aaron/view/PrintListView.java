@@ -5,14 +5,18 @@
  */
 package byui.aaron.view;
 import byui260.aaron.model.TeamMember;
+import byui260.aaron.model.Game;
+import byui260.aaron.model.ListItem;
 import java.util.Scanner;
-import byui260.aaron.control.GameControl;
+import city.of.aaron.CityOfAaron;
+import java.util.ArrayList;
 
 /**
  *
  * @author Sterling Kendall
  */
 public class PrintListView extends MenuView {
+    private static Game theGame = CityOfAaron.getCurrentGame();
     //The newGameMenuView Constructor
     //Purpose: Initialize the menu Data
     //Parameters: none
@@ -85,7 +89,9 @@ public class PrintListView extends MenuView {
         } 
     }
     public void displayAnimals(){   
-        System.out.println();
+        ArrayList<ListItem> animals = theGame.getAnimals();
+        System.out.println("\nYou have these animals: " 
+                            + theGame.getAnimals());
     }    
     public void displayTools(){
         System.out.println("\nTools, Ha who needs tools.");   
