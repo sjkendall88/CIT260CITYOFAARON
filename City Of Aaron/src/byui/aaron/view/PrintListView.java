@@ -93,7 +93,7 @@ public class PrintListView extends MenuView {
         System.out.println("\nTools, Ha who needs tools.");   
     }
     public void displayProvisionsList(){
-        System.out.println("the Provisions are " + provisions.ListItem());
+        System.out.println("the Provisions are ");
     }
     public void displayAuthors(){
         //TeamMember java bean
