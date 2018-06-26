@@ -73,7 +73,7 @@ public class GameControl {
     //ANOTHER PROLOGUE
     public static void createAnimalList()
     {
-        ArrayList<ListItem> animals = new ArrayList<ListItem>();
+        ArrayList<ListItem> animals = new ArrayList<>();
         
         animals.add(new ListItem("Cureloms", 5));
         animals.add(new ListItem("Half eaten cucumber", 1));
@@ -86,7 +86,7 @@ public class GameControl {
     //ANOTHER PROLOGUE
     public static void createToolsList()
     {
-        ArrayList<ListItem> tools = new ArrayList<ListItem>();
+        ArrayList<ListItem> tools = new ArrayList<>();
         
         tools.add(new ListItem("Hammer", 13));
         tools.add(new ListItem("Half eaten cucumber", 1));

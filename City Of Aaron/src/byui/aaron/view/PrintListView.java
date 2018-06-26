@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package byui.aaron.view;
-import byui260.aaron.model.TeamMember;
+import byui260.aaron.model.*;
 import java.util.Scanner;
 import byui260.aaron.control.GameControl;
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  *
@@ -85,12 +85,14 @@ public class PrintListView extends MenuView {
     public void displayAnimals(){   
         System.out.println();
     }    
-    public void displayTools(){
+    public ArrayList<ListItem> displayTools(){
         // Sterling
-        String toolList;
-        toolList = (String) tools.get(0);
+        ArrayList<ListItem> tools = tools.getName(*);
+        for(int n : tools){
+            System.out.println(n);
+        }
+        System.out.println(tools.get(0));
         
-        System.out.println("\n" + toolList);   
     }
     public void displayProvisions(){
         System.out.println("\nWhat Provisions");
