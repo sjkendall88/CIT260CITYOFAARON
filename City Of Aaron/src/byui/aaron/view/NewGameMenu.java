@@ -40,9 +40,6 @@ public class NewGameMenu extends MenuView {
     
     
     
-    
-    
-        
      
     // doAction method
     //Purpose: performs the selected action
