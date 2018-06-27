@@ -19,7 +19,7 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     
-    
+
     //reference to a game object
     private static Game theGame;
     
@@ -71,7 +71,10 @@ public class GameControl {
         theGame.setCropData(theCrops);         
     }
     
-    //ANOTHER PROLOGUE
+    //The createAnimalList method
+    //Purpose: creates an array list of animals
+    //Parameters: none
+    //Returns: none
     public static void createAnimalList()
     {
         ArrayList<ListItem> animals = new ArrayList<ListItem>();
@@ -80,15 +83,19 @@ public class GameControl {
         animals.add(new ListItem("Half eaten cucumber", 1));
         animals.add(new ListItem("Pet rocks", 327));
         animals.add(new ListItem("Life, universe and everything answer", 42));
+        animals.add(new ListItem("Oboe, the test Chimp", 1));
 
         theGame.setAnimals(animals);
         System.out.println(animals);
-        System.out.println(animals.get(1));
+        System.out.println(animals.get(0).getName());
         
     }
-    
-    
-    //ANOTHER PROLOGUE
+
+
+    //The createToolsList method
+    //Purpose: creates an array list of tools
+    //Parameters: none
+    //Returns: none
     public static void createToolsList()
     {
         ArrayList<ListItem> tools = new ArrayList<ListItem>();
@@ -101,7 +108,10 @@ public class GameControl {
         theGame.setTools(tools);
     }
     
-    //ANOTHER PROLOGUE
+    //The createProvisionsList method
+    //Purpose: creates an array list of provisions
+    //Parameters: none
+    //Returns: none
     public static void createProvisionsList()
     {
         ArrayList<ListItem> provisions = new ArrayList<ListItem>();
@@ -116,7 +126,7 @@ public class GameControl {
     
     //The createMap method
     //Purpose: creates the location objects and the map
-    // Parameters: none
+    //Parameters: none
     //Returns: none
     public static void createMap()
     {
