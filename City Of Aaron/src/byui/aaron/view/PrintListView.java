@@ -90,10 +90,10 @@ public class PrintListView extends MenuView {
         // Sterling
         // ArrayList<ListItem> tools = tools.getName(*);
         
-        for(int n : tools){
-            System.out.println(n);
-        }
-        //System.out.println(tools.get(0));        
+        //for(int n : tools){
+            //System.out.println(n);
+        //}
+        System.out.println("fail");        
     }
     public void displayProvisions(){
         System.out.println("\nWhat Provisions");
