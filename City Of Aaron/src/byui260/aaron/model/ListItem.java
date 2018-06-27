@@ -20,6 +20,11 @@ public class ListItem implements Serializable{
     public ListItem(String name, int number) {
     }
 
+    @Override
+    public String toString() {
+        return "Item=" + name + ", Amount=" + number;
+    }
+
     public String getName() {
         return name;
     }

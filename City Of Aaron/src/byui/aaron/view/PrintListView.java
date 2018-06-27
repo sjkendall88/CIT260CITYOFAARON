@@ -86,7 +86,7 @@ public class PrintListView extends MenuView {
         } 
     }
     public static void displayAnimals(){   
-        GameControl.createAnimalList();
+        
         //ArrayList<ListItem> animals = theGame.getAnimals();
         //String AnimalA = ListItem.name;
         //String animalTest = ListItem.getName();
