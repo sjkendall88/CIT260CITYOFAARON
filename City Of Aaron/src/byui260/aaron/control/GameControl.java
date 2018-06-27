@@ -18,7 +18,7 @@ public class GameControl {
     //size of locations array
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
-    
+    private static ArrayList animals;
 
     //reference to a game object
     private static Game theGame;
@@ -38,7 +38,7 @@ public class GameControl {
         createCropDataObject();
         
         //create list of animals
-        createAnimalList();
+        animals = createAnimalList();
         
         //create list of tools
         createToolsList();
@@ -49,7 +49,7 @@ public class GameControl {
         //create the Locations and the Map object.
         createMap();
     }
-    
+
     //PROLOGUE
     public static void createCropDataObject()
     {
@@ -74,21 +74,18 @@ public class GameControl {
     //The createAnimalList method
     //Purpose: creates an array list of animals
     //Parameters: none
-    //Returns: none
-    public static void createAnimalList()
+    //Returns: animal list
+    public static ArrayList createAnimalList()
     {
         ArrayList<ListItem> animals = new ArrayList<ListItem>();
         
         animals.add(new ListItem("Cureloms", 5));
         animals.add(new ListItem("Half eaten cucumber", 1));
         animals.add(new ListItem("Pet rocks", 327));
-        animals.add(new ListItem("Life, universe and everything answer", 42));
-        animals.add(new ListItem("Oboe, the test Chimp", 1));
+        animals.add(new ListItem("Universal Answers", 42));
 
         theGame.setAnimals(animals);
-        System.out.println(animals);
-        System.out.println(animals.get(0).getName());
-        
+        return animals;
     }
 
 

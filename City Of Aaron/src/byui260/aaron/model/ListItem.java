@@ -17,12 +17,15 @@ public class ListItem implements Serializable{
     private String name;
     private Integer number;
 
+
     public ListItem(String name, int number) {
+    this.name = name;
+    this.number = number;
     }
 
     @Override
     public String toString() {
-        return "Item=" + name + ", Amount=" + number;
+        return number + " " + name + "(s)";
     }
 
     public String getName() {

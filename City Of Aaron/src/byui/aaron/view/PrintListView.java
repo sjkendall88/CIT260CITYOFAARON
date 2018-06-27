@@ -87,12 +87,8 @@ public class PrintListView extends MenuView {
     }
     public static void displayAnimals(){   
         
-        //ArrayList<ListItem> animals = theGame.getAnimals();
-        //String AnimalA = ListItem.name;
-        //String animalTest = ListItem.getName();
-        //String animalA = getName();
         System.out.println("\nYou have these animals: " 
-                            + "animals");
+                            + GameControl.createAnimalList());
     }    
     public void displayTools(){
         System.out.println("\nTools, Ha who needs tools.");   
