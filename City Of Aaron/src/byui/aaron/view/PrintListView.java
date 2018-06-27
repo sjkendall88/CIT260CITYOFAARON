@@ -8,6 +8,7 @@ import byui260.aaron.model.*;
 import java.util.Scanner;
 import byui260.aaron.control.GameControl;
 import java.util.ArrayList;
+import city.of.aaron.CityOfAaron;
 
 /**
  *
@@ -83,11 +84,12 @@ public class PrintListView extends MenuView {
         } 
     }
     public void displayAnimals(){   
-        System.out.println();
+        System.out.println( GameControl.createAnimalList() );
     }    
     public void displayTools(){
         // Sterling
-        ArrayList<ListItem> tools = tools.getName(*);
+        // ArrayList<ListItem> tools = tools.getName(*);
+        
         for(int n : tools){
             System.out.println(n);
         }

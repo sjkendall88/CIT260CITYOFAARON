@@ -18,6 +18,7 @@ public class GameControl {
     //size of locations array
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
+    private static ArrayList animals;
     
     //reference to a game object
     private static Game theGame;
@@ -37,7 +38,7 @@ public class GameControl {
         createCropDataObject();
         
         //create list of animals
-        createAnimalList();
+        animals = createAnimalList();
         
         //create list of tools
         createToolsList();
@@ -71,7 +72,7 @@ public class GameControl {
     }
     
     //ANOTHER PROLOGUE
-    public static void createAnimalList()
+    public static ArrayList createAnimalList()
     {
         ArrayList<ListItem> animals = new ArrayList<>();
         
@@ -81,6 +82,7 @@ public class GameControl {
         animals.add(new ListItem("Life, universe and everything answer", 42));
         
         theGame.setAnimals(animals);
+        return animals;
     }
     
     //ANOTHER PROLOGUE

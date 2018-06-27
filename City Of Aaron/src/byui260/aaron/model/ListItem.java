@@ -22,6 +22,11 @@ public class ListItem implements Serializable{
         this.number = number;
     }
 
+    @Override
+    public String toString() {
+        return number + " " + name + "()";
+    }
+
     public String getName() {
         return name;
     }
