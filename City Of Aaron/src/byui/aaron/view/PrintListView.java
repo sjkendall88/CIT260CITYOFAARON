@@ -4,24 +4,27 @@
  * and open the template in the editor.
  */
 package byui.aaron.view;
-import byui260.aaron.model.*;
-import java.util.Scanner;
+import byui260.aaron.model.TeamMember;
+import byui260.aaron.model.Game;
+import byui260.aaron.model.ListItem;
 import byui260.aaron.control.GameControl;
-import java.util.ArrayList;
+import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
+import java.util.ArrayList;
 
 /**
  *
  * @author Sterling Kendall
  */
 public class PrintListView extends MenuView {
+    private static Game theGame = CityOfAaron.getCurrentGame();
     //The newGameMenuView Constructor
     //Purpose: Initialize the menu Data
     //Parameters: none
     //Return: none    
     public PrintListView(){
-        super("\n" + "**********************\n" 
-                + "*City of Aaron: LIST MENU *\n"
+        super("\n" + "*****************************\n" 
+                + "*City of Aaron: LIST MENU*\n "
                 + "******************************\n"
                 + "1 - The animals in the storehouse\n"
                 + "2 - The tools in the storehouse\n"
@@ -63,7 +66,7 @@ public class PrintListView extends MenuView {
         //return the value input by the user
         return userInput;
     }
-    
+
     @Override public void doAction (int option){
         switch (option){
             case 1: //View / Print List of Animals
@@ -83,8 +86,10 @@ public class PrintListView extends MenuView {
                 return;
         } 
     }
-    public void displayAnimals(){   
-        System.out.println( GameControl.createAnimalList() );
+    public static void displayAnimals(){   
+        
+        System.out.println("\nYou have these animals: " 
+                            + GameControl.createAnimalList());
     }    
     public void displayTools(){
         // Sterling
@@ -96,8 +101,10 @@ public class PrintListView extends MenuView {
         System.out.println("fail");        
     }
     public void displayProvisions(){
-        System.out.println("\nWhat Provisions");
+        System.out.println("\nProvisions are for the homeless");
+        
     }
+    
     public void displayAuthors(){
         //TeamMember java bean
         String memberName1 = TeamMember.one.getMemberName();
@@ -109,7 +116,8 @@ public class PrintListView extends MenuView {
         String memberName3 = TeamMember.three.getMemberName();
         String memberTitle3 = TeamMember.three.getMemberTitle();
        
-    System.out.println(memberName1 + " " + memberTitle1 + "\n"+ memberName2 
-            + " " + memberTitle2 + "\n" + memberName3 + " " + memberTitle3);    
+    System.out.println(memberName1 + " " + memberTitle1 + "\n"
+            + memberName2 + " " + memberTitle2 + "\n" + memberName3 
+            + " " + memberTitle3);
     }
 }

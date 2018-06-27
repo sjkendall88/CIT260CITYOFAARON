@@ -17,14 +17,15 @@ public class ListItem implements Serializable{
     private String name;
     private Integer number;
 
+
     public ListItem(String name, int number) {
-        this.name = name;
-        this.number = number;
+    this.name = name;
+    this.number = number;
     }
 
     @Override
     public String toString() {
-        return number + " " + name + "()";
+        return number + " " + name + "(s)";
     }
 
     public String getName() {
@@ -42,5 +43,5 @@ public class ListItem implements Serializable{
     public void setNumber(Integer number) {
         this.number = number;
     }
-    
-}
+   
+    }

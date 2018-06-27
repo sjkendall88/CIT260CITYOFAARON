@@ -109,7 +109,8 @@ public class MainMenuView extends MenuView {
         
         //save a reference to it in the Game.
         theGame.setCrop(cropData);
-        
+        */
+        /*
         // create a new Player object
         Player thePlayer = new Player();    
         */

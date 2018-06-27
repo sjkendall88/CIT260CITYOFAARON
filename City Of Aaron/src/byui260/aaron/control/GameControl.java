@@ -19,7 +19,7 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     private static ArrayList animals;
-    
+
     //reference to a game object
     private static Game theGame;
     
@@ -49,7 +49,7 @@ public class GameControl {
         //create the Locations and the Map object.
         createMap();
     }
-    
+
     //PROLOGUE
     public static void createCropDataObject()
     {
@@ -71,7 +71,10 @@ public class GameControl {
         theGame.setCropData(theCrops);         
     }
     
-    //ANOTHER PROLOGUE
+    //The createAnimalList method
+    //Purpose: creates an array list of animals
+    //Parameters: none
+    //Returns: animal list
     public static ArrayList createAnimalList()
     {
         ArrayList<ListItem> animals = new ArrayList<>();
@@ -79,13 +82,17 @@ public class GameControl {
         animals.add(new ListItem("Cureloms", 5));
         animals.add(new ListItem("Half eaten cucumber", 1));
         animals.add(new ListItem("Pet rocks", 327));
-        animals.add(new ListItem("Life, universe and everything answer", 42));
-        
+        animals.add(new ListItem("Universal Answers", 42));
+
         theGame.setAnimals(animals);
         return animals;
     }
-    
-    //ANOTHER PROLOGUE
+
+
+    //The createToolsList method
+    //Purpose: creates an array list of tools
+    //Parameters: none
+    //Returns: none
     public static void createToolsList()
     {
         ArrayList<ListItem> tools = new ArrayList<>();
@@ -98,10 +105,19 @@ public class GameControl {
         theGame.setTools(tools);
     }
     
-    //ANOTHER PROLOGUE
+    //The createProvisionsList method
+    //Purpose: creates an array list of provisions
+    //Parameters: none
+    //Returns: none
     public static void createProvisionsList()
     {
-        ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+        
+    }
+
+    //ANOTHER PROLOGUE
+    public ArrayList<ListItem> addProvisionsList()
+    {
+        ArrayList<ListItem> provisions = new ArrayList<>();
         
         provisions.add(new ListItem("Bacon in Pounds", 200));
         provisions.add(new ListItem("Half eaten cucumber", 1));
@@ -109,11 +125,14 @@ public class GameControl {
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
         theGame.setProvisions(provisions);
+   
+        theGame.setProvisions(provisions);
+        return provisions;
     }
     
     //The createMap method
     //Purpose: creates the location objects and the map
-    // Parameters: none
+    //Parameters: none
     //Returns: none
     public static void createMap()
     {
@@ -123,7 +142,7 @@ public class GameControl {
         //Map discriptors
         String river = "\nA winding river stretches before you.\nIt's super"
                 + " fresh, and provides much needed water to the city";
-        String darkWoodForest = "\nDWThis forest looks ominous, but "
+        String darkWoodForest = "\nThis forest looks ominous, but "
                 + "on the\nother hand, it's obviously very good at growing"
                 + "things. Good for wood too.";
         String swamp = "\nswamp";
