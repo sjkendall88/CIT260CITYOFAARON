@@ -24,7 +24,7 @@ public class PrintListView extends MenuView {
     //Return: none    
     public PrintListView(){
         super("\n" + "*****************************\n" 
-                + "*City of Aaron: LIST MENU* "
+                + "*City of Aaron: LIST MENU*\n "
                 + "******************************\n"
                 + "1 - The animals in the storehouse\n"
                 + "2 - The tools in the storehouse\n"
