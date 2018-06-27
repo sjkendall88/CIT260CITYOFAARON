@@ -89,7 +89,7 @@ public class MainMenuView extends MenuView {
                 + "and people who don’t eat have a tendency to starve. "
                 + "\nPlease Plan carefully. Sounds easy enough… but have we "
                 + "told you about the rats?");
-        
+        /*
         //create a CropData object,
         CropData cropData = new CropData();
         
@@ -109,21 +109,22 @@ public class MainMenuView extends MenuView {
         
         //save a reference to it in the Game.
         theGame.setCrop(cropData);
-        
+        */
+        /*
         // create a new Player object
         Player thePlayer = new Player();    
-        
+        */
         // Prompt for and get the user's name.
         String name;
         System.out.println("\nPlease type in your first name: ");
         name = keyboard.next();
-        
+        /*
         // Save the user's name in the Player object
         thePlayer.setPlayerName(name);
         
         // Save a reference to the player object in the Game object.
         theGame.setThePlayer(thePlayer);
-        
+        */
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
         

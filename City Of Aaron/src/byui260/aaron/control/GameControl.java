@@ -111,7 +111,13 @@ public class GameControl {
     //Returns: none
     public static void createProvisionsList()
     {
-        ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+        
+    }
+
+    //ANOTHER PROLOGUE
+    public ArrayList<ListItem> addProvisionsList()
+    {
+        ArrayList<ListItem> provisions = new ArrayList<>();
         
         provisions.add(new ListItem("Bacon in Pounds", 200));
         provisions.add(new ListItem("Half eaten cucumber", 1));
@@ -119,6 +125,9 @@ public class GameControl {
         provisions.add(new ListItem("Lego Bricks", 3596473));
         
         theGame.setProvisions(provisions);
+   
+        theGame.setProvisions(provisions);
+        return provisions;
     }
     
     //The createMap method

@@ -23,8 +23,8 @@ public class PrintListView extends MenuView {
     //Parameters: none
     //Return: none    
     public PrintListView(){
-        super("\n" + "**********************\n" 
-                + "*City of Aaron: LIST MENU *\n"
+        super("\n" + "*****************************\n" 
+                + "*City of Aaron: LIST MENU* "
                 + "******************************\n"
                 + "1 - The animals in the storehouse\n"
                 + "2 - The tools in the storehouse\n"
@@ -94,8 +94,10 @@ public class PrintListView extends MenuView {
         System.out.println("\nTools, Ha who needs tools.");   
     }
     public void displayProvisions(){
-        System.out.println("\nWhat Provisions");
+        System.out.println("\nProvisions are for the homeless");
+        
     }
+    
     public void displayAuthors(){
         //TeamMember java bean
         String memberName1 = TeamMember.one.getMemberName();
@@ -107,6 +109,8 @@ public class PrintListView extends MenuView {
         String memberName3 = TeamMember.three.getMemberName();
         String memberTitle3 = TeamMember.three.getMemberTitle();
        
-    System.out.println(memberName1 + " " + memberTitle1 + "\n"+ memberName2 + " " + memberTitle2 + "\n" + memberName3 + " " + memberTitle3);
+    System.out.println(memberName1 + " " + memberTitle1 + "\n"
+            + memberName2 + " " + memberTitle2 + "\n" + memberName3 
+            + " " + memberTitle3);
     }
 }
