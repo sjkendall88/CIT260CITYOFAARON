@@ -94,7 +94,7 @@ public class GameControl {
     //Purpose: creates an array list of tools
     //Parameters: none
     //Returns: none
-    public static void createToolsList()
+    public static ArrayList createToolsList()
     {
         ArrayList<ListItem> tools = new ArrayList<>();
         
@@ -104,6 +104,7 @@ public class GameControl {
         tools.add(new ListItem("Measuring Tape", 1000));
         
         theGame.setTools(tools);
+        return tools;
     }
     
     //The createProvisionsList method

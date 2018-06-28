@@ -93,12 +93,8 @@ public class PrintListView extends MenuView {
     }    
     public void displayTools(){
         // Sterling
-        // ArrayList<ListItem> tools = tools.getName(*);
-        
-        //for(int n : tools){
-            //System.out.println(n);
-        //}
-        System.out.println("fail");        
+        System.out.println("These are the tools you have:"
+                + GameControl.createToolsList());        
     }
     public void displayProvisions(){
         System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());
