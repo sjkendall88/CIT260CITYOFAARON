@@ -89,42 +89,12 @@ public class MainMenuView extends MenuView {
                 + "and people who don’t eat have a tendency to starve. "
                 + "\nPlease Plan carefully. Sounds easy enough… but have we "
                 + "told you about the rats?");
-        /*
-        //create a CropData object,
-        CropData cropData = new CropData();
         
-        cropData.setYear(0);
-        cropData.setPopulation(100);
-        cropData.setNewPeople(5);
-        cropData.setCropYield(3);
-        cropData.setNumberWhoDied(0);
-        cropData.setOffering(10);
-        cropData.setWheatInStore(2700);
-        cropData.setAcresOwned(1000);
-        cropData.setAcresPlanted(1000);
-        cropData.setHarvest(3000);
-        cropData.setOfferingBushels(300);
-        cropData.setAcresPlanted(1000);
-        cropData.setWheatForPeople(0);
-        
-        //save a reference to it in the Game.
-        theGame.setCrop(cropData);
-        */
-        /*
-        // create a new Player object
-        Player thePlayer = new Player();    
-        */
         // Prompt for and get the user's name.
         String name;
         System.out.println("\nPlease type in your first name: ");
         name = keyboard.next();
-        /*
-        // Save the user's name in the Player object
-        thePlayer.setPlayerName(name);
         
-        // Save a reference to the player object in the Game object.
-        theGame.setThePlayer(thePlayer);
-        */
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
         
