@@ -19,6 +19,7 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     private static ArrayList animals;
+    private static ArrayList provisions;
 
     //reference to a game object
     private static Game theGame;
@@ -44,7 +45,7 @@ public class GameControl {
         createToolsList();
         
         //create list of provisions
-        createProvisionsList();
+        provisions = createProvisionsList();
         
         //create the Locations and the Map object.
         createMap();
@@ -109,13 +110,7 @@ public class GameControl {
     //Purpose: creates an array list of provisions
     //Parameters: none
     //Returns: none
-    public static void createProvisionsList()
-    {
-        
-    }
-
-    //ANOTHER PROLOGUE
-    public ArrayList<ListItem> addProvisionsList()
+    public static ArrayList<ListItem> createProvisionsList()
     {
         ArrayList<ListItem> provisions = new ArrayList<>();
         
