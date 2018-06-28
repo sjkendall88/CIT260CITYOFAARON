@@ -95,7 +95,7 @@ public class GameControl {
     //Returns: none
     public static void createToolsList()
     {
-        ArrayList<ListItem> tools = new ArrayList<ListItem>();
+        ArrayList<ListItem> tools = new ArrayList<>();
         
         tools.add(new ListItem("Hammer", 13));
         tools.add(new ListItem("Half eaten cucumber", 1));
