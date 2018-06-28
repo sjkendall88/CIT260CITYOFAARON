@@ -44,7 +44,7 @@ public class GameControl {
         createToolsList();
         
         //create list of provisions
-        createProvisionsList();
+        provisions = createProvisionsList();
         
         //create the Locations and the Map object.
         createMap();
@@ -109,13 +109,7 @@ public class GameControl {
     //Purpose: creates an array list of provisions
     //Parameters: none
     //Returns: none
-    public static void createProvisionsList()
-    {
-        
-    }
-
-    //ANOTHER PROLOGUE
-    public ArrayList<ListItem> addProvisionsList()
+    public static ArrayList<ListItem> createProvisionsList()
     {
         ArrayList<ListItem> provisions = new ArrayList<>();
         

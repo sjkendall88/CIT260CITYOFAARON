@@ -94,7 +94,7 @@ public class PrintListView extends MenuView {
         System.out.println("\nTools, Ha who needs tools.");   
     }
     public void displayProvisions(){
-        System.out.println("\nProvisions are for the homeless");
+        System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());
         
     }
     
