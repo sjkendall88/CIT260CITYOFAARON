@@ -19,6 +19,7 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     private static ArrayList animals;
+    private static ArrayList provisions;
 
     //reference to a game object
     private static Game theGame;
