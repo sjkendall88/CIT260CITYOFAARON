@@ -105,7 +105,11 @@ public class PrintListView extends MenuView {
     }
     }
     public void displayProvisions(){
-        System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());   
+        // System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());   
+     ArrayList<ListItem> provisions = theGame.getProvisions();       
+            for (ListItem provision:provisions){
+            System.out.println(provision.getName()+" "+provision.getNumber());
+            }
     }
     
     public void displayAuthors(){
