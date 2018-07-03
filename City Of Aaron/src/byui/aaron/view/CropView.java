@@ -224,7 +224,7 @@ public static void plantCropsView() {
     
     // For loop until valid input
     do {
-        if(!paramsNotOkay)
+        
             paramsNotOkay = false;
             try{
                 // Prompt the user for acres of land to plant
