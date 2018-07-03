@@ -104,16 +104,19 @@ public class CropControl {
     // the a reference to CropData.
     // Returns: The number of acres to plant.
     // Pre-Conditions: acres to plant must be positive.    
-    public static int AcresToPlant(int acresToPlant, CropData cropData){
+    public static void AcresToPlant(int acresToPlant, CropData cropData) 
+            throws CropException {
         
         // If (acresToPlant < 0) then return -1
         if(acresToPlant < 0)
-            return -1;
+            throw new CropException ("Acres to plant must be a positive number. "
+                    + "Please try again.");
         
         // If (acresToPlant !<= acresOwned) then return -1
         int acresOwned = cropData.getAcresOwned();
         if(acresOwned < acresToPlant)
-            return -1;
+            throw new CropException("You don't own enough acres to plant."
+                    + "Please try again.");
         
         // bushelsToPlant = acresToPlant / 2
         int bushelsToPlant = acresToPlant / 2;
@@ -121,7 +124,8 @@ public class CropControl {
         // If (wheatInStore !>= bushelsToPlant) then return -1
         int wheatInStore = cropData.getWheatInStore();
         if(wheatInStore < bushelsToPlant)
-            return -1;
+            throw new CropException("You don't have enough Wheat to plant."
+                    + "Please try again.");
         
         // wheatInStore  = wheatInStore – bushelsToPlant
         wheatInStore -= bushelsToPlant;
@@ -130,10 +134,7 @@ public class CropControl {
         // acresPlanted += acresToPlant
         int acresPlanted = cropData.getAcresPlanted();
         acresPlanted = acresToPlant;
-        cropData.setAcresPlanted(acresPlanted);
-        
-        // Return acresPlanted
-        return acresPlanted;        
+        cropData.setAcresPlanted(acresPlanted);        
     }
     
     // The setOffering method

@@ -219,22 +219,30 @@ public static void buyLandView()
 // Return: AcresPlanted
 // Author: Sterling Kendall
 public static void plantCropsView() {
-    // Prompt the user for acres of land to plant
-    // One bushel will plant two acres of land
-    System.out.println("It takes 1 bushel to plant 2 acres. "
-            + "\nHow many acres would you like to plant?");
-    // Get the user input 
-    int acresToPlant = keyboard.nextInt();
-    // call the AcresToPlant() method in the control layer
-    int acresPlanted = CropControl.AcresToPlant(acresToPlant, cropData);
-        while(acresPlanted == -1)
-    {
-        System.out.println("Please enter a valid number");
-        acresToPlant = keyboard.nextInt();
-        acresPlanted = CropControl.AcresToPlant(acresToPlant, cropData);
-    }
-    // Display acres planted
-    System.out.println(acresPlanted);
+    int acresToPlant;
+    boolean paramsNotOkay = false;
+    
+    // For loop until valid input
+    do {
+        // Prompt the user for acres of land to plant
+        // One bushel will plant two acres of land
+        System.out.println("It takes 1 bushel to plant 2 acres. "
+                + "\nHow many acres would you like to plant?");
+        if(!paramsNotOkay)
+            paramsNotOkay = false;
+            // Get the user input 
+            acresToPlant = keyboard.nextInt();
+            try{
+                // call the AcresToPlant() method in the control layer
+                CropControl.AcresToPlant(acresToPlant, cropData);
+            }
+            catch(CropException e)
+            {
+                System.out.println("Please enter a valid number");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+    }while(paramsNotOkay);
 }
 
 // the sellLandView method
