@@ -103,9 +103,9 @@ public class PrintListView extends MenuView {
             for (ListItem tool:tools){
             System.out.println(tool.getName()+" "+tool.getNumber());
     }
+    }
     public void displayProvisions(){
-        System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());
-        
+        System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());   
     }
     
     public void displayAuthors(){
