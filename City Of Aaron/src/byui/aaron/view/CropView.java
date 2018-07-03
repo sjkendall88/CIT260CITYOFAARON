@@ -8,6 +8,7 @@ import byui260.aaron.model.*;
 import byui260.aaron.control.*;
 import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
+import exceptions.CropException;
 
 /**
  *
@@ -156,14 +157,28 @@ public static void buyLandView()
     
     //Prompt the user to enter the number of acres to buy
     System.out.format("Land is selling for %d bushels per acre. %n",price);
-    System.out.format("\nHow many acres of land do you wish to buy?");
     
-    //Get the user's input and save it.
+    //initialize toBuy
     int toBuy;
-    toBuy = keyboard.nextInt();
     
-    //Call the buyLand() method in the control layer to buy the land. 
-    CropControl.buyLand(price, toBuy, cropData);   
+    //Loop to get user input while input is valid
+    boolean paramsNotOkay;
+    do
+    {
+        paramsNotOkay = false;
+        System.out.println("\nHow many acres of land do you wish to buy? ");
+        toBuy = keyboard.nextInt();
+        try
+        {
+            CropControl.buyLand(price, toBuy, cropData);
+        }
+        catch(CropException e)
+        {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+    } while(paramsNotOkay);
 }
 
 // The plantCropsView method
