@@ -210,7 +210,7 @@ public static void buyLandView()
             paramsNotOkay = true;
         }
     } while(paramsNotOkay);
-    System.out.println("complete");
+    
 }
 
 // The plantCropsView method
@@ -244,6 +244,7 @@ public static void plantCropsView() {
                 paramsNotOkay = true;
             }
     }while(paramsNotOkay);
+    System.out.println("complete");
 }
 
 // the sellLandView method
