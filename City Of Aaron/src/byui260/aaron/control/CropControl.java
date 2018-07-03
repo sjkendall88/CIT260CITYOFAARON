@@ -144,7 +144,7 @@ public class CropControl {
     // Pre-conditions: offering must be between 0 and 100
     public static void setOffering(int offering, CropData cropData) throws CropException {
         
-        // IF 0 > offering or offering > 100 return -1
+        // IF 0 > offering or offering > 100 return thrown exception
         if (offering < 0 || offering > 100)
             throw new CropException ("Percentages must be between 0 and 100");
         
