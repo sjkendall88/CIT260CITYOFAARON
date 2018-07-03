@@ -224,15 +224,15 @@ public static void plantCropsView() {
     
     // For loop until valid input
     do {
-        // Prompt the user for acres of land to plant
-        // One bushel will plant two acres of land
-        System.out.println("It takes 1 bushel to plant 2 acres. "
-                + "\nHow many acres would you like to plant?");
         if(!paramsNotOkay)
             paramsNotOkay = false;
-            // Get the user input 
-            acresToPlant = keyboard.nextInt();
             try{
+                // Prompt the user for acres of land to plant
+                // One bushel will plant two acres of land
+                System.out.println("It takes 1 bushel to plant 2 acres. "
+                + "\nHow many acres would you like to plant?");
+                // Get the user input 
+                acresToPlant = keyboard.nextInt();
                 // call the AcresToPlant() method in the control layer
                 CropControl.AcresToPlant(acresToPlant, cropData);
             }
