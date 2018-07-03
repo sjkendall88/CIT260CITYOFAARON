@@ -76,7 +76,7 @@ public class GameControl {
     //Purpose: creates an array list of animals
     //Parameters: none
     //Returns: animal list
-    public static ArrayList createAnimalList()
+    public static void createAnimalList()
     {
         ArrayList<ListItem> animals = theGame.getAnimals();
         
@@ -88,7 +88,7 @@ public class GameControl {
             System.out.println(animal.getName()+" "+animal.getNumber());
         }
 //        theGame.setAnimals(animals);
-//        return animals;
+   //     return animals;
     }
 
 
