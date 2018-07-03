@@ -90,15 +90,18 @@ public class PrintListView extends MenuView {
         
 //        System.out.println("\nYou have these animals: " 
 //                            + GameControl.createAnimalList());
-ArrayList<ListItem> animals = theGame.getAnimals();       
-for (ListItem animal:animals){
+            ArrayList<ListItem> animals = theGame.getAnimals();       
+            for (ListItem animal:animals){
             System.out.println(animal.getName()+" "+animal.getNumber());
         }
     }    
     public void displayTools(){
         // Sterling
-        System.out.println("These are the tools you have:"
-                + GameControl.createToolsList());        
+//        System.out.println("These are the tools you have:"
+//                + GameControl.createToolsList());      
+        ArrayList<ListItem> tools = theGame.getTools();       
+            for (ListItem tool:tools){
+            System.out.println(tool.getName()+" "+tool.getNumber());
     }
     public void displayProvisions(){
         System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());
