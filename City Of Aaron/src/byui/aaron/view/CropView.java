@@ -220,7 +220,7 @@ public static void buyLandView()
 // Author: Sterling Kendall
 public static void plantCropsView() {
     int acresToPlant;
-    boolean paramsNotOkay = false;
+    boolean paramsNotOkay;
     
     // For loop until valid input
     do {
