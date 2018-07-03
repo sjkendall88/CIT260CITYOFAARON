@@ -210,22 +210,21 @@ public class CropControl {
 
 	// if (wheatSetAside > wheatInStore) then return -1
 	int wheatInStore = cropData.getWheatInStore();
-	if (wheatSetAside > wheatInStore) {
+	if (wheatSetAside > wheatInStore) 
             throw new CropException("There is insufficient wheat set aside for the people");
-        }
+        
 	
 	//wheatInStore =  wheatInStore - wheatSetAside.
 	wheatInStore -= wheatSetAside;
 	
 	//wheatForPeople = whatForPeople + wheatSetAside.
-	int wheatForPeople = cropData.getWheatForPeople();
-	wheatForPeople += wheatSetAside;
-        cropData.setWheatForPeople(wheatForPeople);
+	
+	cropData.setWheatForPeople(wheatInStore);
         cropData.setWheatInStore(wheatInStore);
 
     }
-
+}
     //public static int feedPeople() {
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     //}
-}
+
