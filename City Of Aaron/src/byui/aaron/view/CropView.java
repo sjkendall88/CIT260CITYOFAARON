@@ -40,7 +40,7 @@ private int max;
                 + "1 - buylandview\n"
                 + "2 - feed peopleview\n"
                 + "3 - plantCropView\n"
-                + "4 - runCropView\n"
+                + "4 - setOfferingView\n"
                 + "5 - sellLandView\n"
                 + "6 - exit to main menu\n";
                 
@@ -128,14 +128,16 @@ private int max;
 public static void setOfferingView()
 {
     int offering;
-    boolean paramsNotOkay;
+    boolean paramsNotOkay = false;
     
     //For loop until valid input
     do
     {
+        
+        System.out.println("Please set your offerings ot the Lord this year.");
+        if(!paramsNotOkay)
+            System.out.println("\n It should be a percentage between 0 and 100.");
         paramsNotOkay = false;
-        System.out.println("Please set your offerings ot the Lord this year."
-            + "\n It should be a percentage between 0 and 100. v");
         offering = keyboard.nextInt();
         try
         {
@@ -143,7 +145,7 @@ public static void setOfferingView()
         }
         catch(CropException e)
         {
-            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println("\nI am sorry master, I cannot do this.");
             System.out.println(e.getMessage());
             paramsNotOkay = true;    
         }
