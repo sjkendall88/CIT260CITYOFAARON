@@ -285,6 +285,7 @@ public static void feedPeopleView(){
     do{
         
     //Get user's input and save it.
+    paramsNotOkay = false;
     forPeople = keyboard.nextInt();
     try{
     //call the feedPeople() method in the control layer to sell the land.
