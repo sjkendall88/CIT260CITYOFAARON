@@ -108,7 +108,7 @@ private int max;
                 plantCropsView();
                 break;
             case 4: //Manage the crops
-                runCropsView();
+                setOfferingView();
                 break;
             case 5: 
                 sellLandView();
@@ -121,6 +121,35 @@ private int max;
         }
     }
     
+//The setOfferingView method()
+//Purpose: User sets offering
+//Param: none
+//return: none
+public static void setOfferingView()
+{
+    int offering;
+    boolean paramsNotOkay;
+    
+    //For loop until valid input
+    do
+    {
+        paramsNotOkay = false;
+        System.out.println("Please set your offerings ot the Lord this year."
+            + "\n It should be a percentage between 0 and 100. v");
+        offering = keyboard.nextInt();
+        try
+        {
+            CropControl.setOffering(offering, cropData);
+        }
+        catch(CropException e)
+        {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;    
+        }
+    }while(paramsNotOkay);
+}
+
 //The runCropsView method()
 //Purpose: runs the Hamurabi game
 //Parameters: none

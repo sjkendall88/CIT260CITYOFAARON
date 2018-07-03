@@ -142,15 +142,14 @@ public class CropControl {
     // to the CropData object
     // Returns: integer of offering amount
     // Pre-conditions: offering must be between 0 and 100
-    public static int setOffering(int offering, CropData cropData) {
+    public static void setOffering(int offering, CropData cropData) throws CropException {
         
         // IF 0 > offering or offering > 100 return -1
         if (offering < 0 || offering > 100)
-            return -1;
+            throw new CropException ("Percentages must be between 0 and 100");
         
-        // RETURN offering
+        // Set offering
         cropData.setOffering(offering);
-        return offering;
     }
     
     // The harvestCrops Method
