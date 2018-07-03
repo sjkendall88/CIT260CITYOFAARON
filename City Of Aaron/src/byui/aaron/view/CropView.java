@@ -290,19 +290,28 @@ public static void feedPeopleView(){
     System.out.println("\nHow many bushels of grain do you want to give to the "
             + "people?\n");
     
-    //Get user's input and save it.
-    int forPeople = keyboard.nextInt();
+    int forPeople;
+    boolean paramsNotOkay;
     
+    do{
+        
+    //Get user's input and save it.
+    paramsNotOkay = false;
+    forPeople = keyboard.nextInt();
+    try{
     //call the feedPeople() method in the control layer to sell the land.
-    int fedPeople = CropControl.feedPeople(forPeople, cropData);
-        while(fedPeople == -1)
+    CropControl.feedPeople(forPeople, cropData);
+       // while(fedPeople == -1)
+    }
+       
+    catch(CropException e)
     {
         System.out.println("Please enter a valid number");
-        forPeople = keyboard.nextInt();
-        fedPeople = CropControl.feedPeople(forPeople, cropData);
-    }
-    //Display wheat used for the people
-    System.out.println("You curretnly have " + fedPeople 
-            + " bushel in the store.");    
+        System.out.println(e.getMessage());
+        paramsNotOkay = true;
+   
+        }
+    }while(paramsNotOkay);
+    System.out.println("Thank you for feeding my people");
 }
 }
