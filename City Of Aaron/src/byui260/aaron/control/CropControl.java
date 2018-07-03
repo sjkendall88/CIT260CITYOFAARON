@@ -201,17 +201,17 @@ public class CropControl {
     // Returns: amount of wheatInStore with an update to wheatForPeople.
     // Pre-Conditions: amount of wheat set aside for the people, amount must be
     // positive.
-    public static int feedPeople (int wheatSetAside, CropData cropData){
+    public static void feedPeople (int wheatSetAside, CropData cropData) throws CropException{
 
 	// if (wheatSetAside < 0), then return -1
 	if (wheatSetAside < 0) {
-            return -1;
+            throw new CropException("A negative value was input, please try again.");
         }
 
 	// if (wheatSetAside > wheatInStore) then return -1
 	int wheatInStore = cropData.getWheatInStore();
 	if (wheatSetAside > wheatInStore) {
-            return -1;
+            throw new CropException("There is insufficient wheat set aside for the people");
         }
 	
 	//wheatInStore =  wheatInStore - wheatSetAside.
@@ -223,8 +223,6 @@ public class CropControl {
         cropData.setWheatForPeople(wheatForPeople);
         cropData.setWheatInStore(wheatInStore);
 
-	//Return wheat used for people remaining.
-	return wheatInStore;
     }
 
     //public static int feedPeople() {
