@@ -76,19 +76,16 @@ public class GameControl {
     //Purpose: creates an array list of animals
     //Parameters: none
     //Returns: animal list
-    public static void createAnimalList()
+    public static ArrayList createAnimalList()
     {
-        ArrayList<ListItem> animals = theGame.getAnimals();
+        ArrayList<ListItem> animals = new ArrayList<>();
         
-//        animals.add(new ListItem("Cureloms", 5));
-//        animals.add(new ListItem("Half eaten cucumber", 1));
-//        animals.add(new ListItem("Pet rocks", 327));
-//        animals.add(new ListItem("Universal Answers", 42));
-        for (ListItem animal:animals){
-            System.out.println(animal.getName()+" "+animal.getNumber());
-        }
-//        theGame.setAnimals(animals);
-   //     return animals;
+        animals.add(new ListItem("Cureloms", 5));
+        animals.add(new ListItem("Half eaten cucumber", 1));
+        animals.add(new ListItem("Pet rocks", 327));
+        animals.add(new ListItem("Universal Answers", 42));
+        theGame.setAnimals(animals);
+         return animals;
     }
 
 

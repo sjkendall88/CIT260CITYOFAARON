@@ -88,8 +88,12 @@ public class PrintListView extends MenuView {
     }
     public static void displayAnimals(){   
         
-        System.out.println("\nYou have these animals: " 
-                            + GameControl.createAnimalList());
+//        System.out.println("\nYou have these animals: " 
+//                            + GameControl.createAnimalList());
+ArrayList<ListItem> animals = theGame.getAnimals();       
+for (ListItem animal:animals){
+            System.out.println(animal.getName()+" "+animal.getNumber());
+        }
     }    
     public void displayTools(){
         // Sterling
