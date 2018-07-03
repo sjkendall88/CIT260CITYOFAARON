@@ -244,7 +244,7 @@ public static void plantCropsView() {
                 paramsNotOkay = true;
             }
     }while(paramsNotOkay);
-    System.out.println("complete");
+    System.out.println("Thank you for planting");
 }
 
 // the sellLandView method
