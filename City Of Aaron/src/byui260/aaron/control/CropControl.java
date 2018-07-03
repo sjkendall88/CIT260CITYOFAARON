@@ -132,9 +132,7 @@ public class CropControl {
         cropData.setWheatInStore(wheatInStore);
         
         // acresPlanted += acresToPlant
-        int acresPlanted = cropData.getAcresPlanted();
-        acresPlanted = acresToPlant;
-        cropData.setAcresPlanted(acresPlanted);        
+        cropData.setAcresPlanted(acresToPlant);        
     }
     
     // The setOffering method
