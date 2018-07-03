@@ -150,6 +150,7 @@ public static void setOfferingView()
             paramsNotOkay = true;    
         }
     }while(paramsNotOkay);
+    System.out.println("Thanks for your offering!");
 }
 
 //The runCropsView method()
@@ -210,7 +211,7 @@ public static void buyLandView()
             paramsNotOkay = true;
         }
     } while(paramsNotOkay);
-    
+    System.out.println("Thank you for buying land!");
 }
 
 // The plantCropsView method
@@ -244,7 +245,7 @@ public static void plantCropsView() {
                 paramsNotOkay = true;
             }
     }while(paramsNotOkay);
-    System.out.println("Thank you for planting");
+    System.out.println("Thank you for planting!");
 }
 
 // the sellLandView method
