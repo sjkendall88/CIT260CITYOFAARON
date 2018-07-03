@@ -5,6 +5,7 @@
  */
 package byui260.aaron.control;
 import byui260.aaron.model.CropData;
+import exceptions.CropException;
 import java.util.Random;
 
 /**
@@ -67,37 +68,34 @@ public class CropControl {
     // the a reference to CropData.
     // Returns: The number of acres owned after purchase.
     // Pre-Conditions: acres to buy must be positive.
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData){
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException{
                 
-        // if(acresToBuy < 0) return -1
+        // if(acresToBuy < 0) throw exc
         if(acresToBuy < 0)
-            return -1;
+            throw new CropException("A negative value was input");
         
         // TotalCost = acresToBuy * landPrice
         int totalCost = acresToBuy * landPrice;
         
-        // if totalCost > wheatOwned return -1
+        // if totalCost > wheatOwned throw exc
         int wheatOwned = cropData.getWheatInStore();
         if(totalCost > wheatOwned)
-            return -1;
+            throw new CropException("There is sufficient wheat "
+                    + "to buy this much land");
         
         // totalAcres = acresOwned + acresToBuy
         int acresOwned = cropData.getAcresOwned();
         int totalAcres = acresOwned + acresToBuy;
 
-        // if population < totalAcres/10 return -1
+        // if population < totalAcres/10 throw exc
         int population = cropData.getPopulation();
         if(population < totalAcres/10)
-            return -1;
+            throw new CropException("Not enough workers to work the fields");
 
         // wheatOwned = wheatOwned - totalCost
         wheatOwned -= totalCost;
         cropData.setWheatInStore(wheatOwned);
         cropData.setAcresOwned(totalAcres);
-        
-        // return totalAcres
-        return totalAcres;
-        
     }
     
     // The AcresToPlant method
