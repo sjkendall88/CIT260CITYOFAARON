@@ -94,7 +94,7 @@ public class MainMenuView extends MenuView {
         // Prompt for and get the user's name.
         String name;
         System.out.println("\nPlease type in your first name: ");
-        name = keyboard.next();
+        name = keyboard.readLine();
         
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
@@ -120,7 +120,7 @@ public class MainMenuView extends MenuView {
         
         // prompt user and get a file path
         System.out.println("\nPlease type the location to load the game");
-        String fp = keyboard.nextLine();
+        String fp = keyboard.readLine();
         
         // call the getSavedGame() method in the Game Control class to
         // load the game
@@ -153,7 +153,7 @@ public class MainMenuView extends MenuView {
         
         // prompt user and get a file path
         System.out.println("\nPlease type the location to save the game");
-        String fp = keyboard.nextLine();
+        String fp = keyboard.readLine();
         
         // call the setSavedGame() method in the Game Control class to
         // save the game
