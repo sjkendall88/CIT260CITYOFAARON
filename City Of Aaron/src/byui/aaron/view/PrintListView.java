@@ -75,13 +75,19 @@ public class PrintListView extends MenuView {
                 if(offerChoice() == 0)
                     displayAnimals();
                 else
-                    listReport();
+                    listReport(theGame.getAnimals());
                 break;                
             case 2: //View/Print List of Tools
-                displayTools();
+                if(offerChoice() == 0)
+                    displayTools();
+                else
+                    listReport(theGame.getTools());
                 break;
             case 3: //View / Print List of Provisions
-                displayProvisions();
+                if(offerChoice() == 0)
+                    displayProvisions();
+                else
+                    listReport(theGame.getProvisions());
                 break;                
             case 4: //Display the Authors of the code
                 displayAuthors();
