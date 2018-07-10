@@ -10,7 +10,7 @@ import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.Game;
-import byui.aaron.view.NewGameMenu;
+import byui.aaron.view.*;
 import byui260.aaron.control.GameControl;
 import static jdk.nashorn.tools.ShellFunctions.input;
 
@@ -119,16 +119,17 @@ public class MainMenuView extends MenuView {
         keyboard.nextLine();
         
         // prompt user and get a file path
-        System.out.println("\nPlease select the location to save the game");
+        System.out.println("\nPlease type the location to save the game");
+        String fp = keyboard.nextLine();
         
         // call the getSavedGame() method in the Game Control class to
         // load the game
-        GameControl gc = new GameControl();
-        gc.getSavedGame;
+        GameControl.getSavedGame(fp);
+        Game theGame = CityOfAaron.getCurrentGame();
         
         // Display the game menu for the loaded game.
-        
-        
+        NewGameMenu ngm = new NewGameMenu();
+        ngm.displayMenu();
     }
      
     // The displayHelpMenu method
