@@ -125,7 +125,6 @@ public class MainMenuView extends MenuView {
         // call the getSavedGame() method in the Game Control class to
         // load the game
         GameControl.getSavedGame(fp);
-        Game theGame = CityOfAaron.getCurrentGame();
         
         // Display the game menu for the loaded game.
         NewGameMenu ngm = new NewGameMenu();
@@ -149,7 +148,21 @@ public class MainMenuView extends MenuView {
     // returns: none
     // =====================================================
     public void displaySaveGameView(){
-        System.out.println("\nDisplay list of saved games.");
+        // Get rid of the nl charactor left in the stream
+        // keyboard.nextLine();
+        
+        // prompt user and get a file path
+        System.out.println("\nPlease type the location to save the game");
+        String fp = keyboard.nextLine();
+        
+        // call the setSavedGame() method in the Game Control class to
+        // save the game
+        GameControl.setSavedGame(fp);
+        
+        // Display the game menu for the loaded game.
+        NewGameMenu ngm = new NewGameMenu();
+        ngm.displayMenu();
+        System.out.println("\nTHis saves sthe game");
     }
 
 }

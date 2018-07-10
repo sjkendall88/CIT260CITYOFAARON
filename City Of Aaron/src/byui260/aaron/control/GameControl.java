@@ -82,11 +82,12 @@ public class GameControl {
     // Side Effect: the game reference in the driver is updated 
     public static void setSavedGame(String filePath)
     {
-        Game theGame = null;
+        Game theGame = CityOfAaron.getCurrentGame();
         try (FileOutputStream fops = new FileOutputStream(filePath))
         {
             ObjectOutputStream output = new ObjectOutputStream(fops);
-            theGame = (Game)  output.writeObject(theGame);
+             
+            output.writeObject(theGame);
         }catch(Exception e)
         {
             System.out.println("\nThere was an error "
