@@ -162,7 +162,7 @@ public class MainMenuView extends MenuView {
         // Display the game menu for the loaded game.
         NewGameMenu ngm = new NewGameMenu();
         ngm.displayMenu();
-        System.out.println("\nTHis saves sthe game");
+        System.out.println("\nYour game is loaded!");
     }
 
 }
