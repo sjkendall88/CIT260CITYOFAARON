@@ -12,6 +12,7 @@ import byui260.aaron.model.Player;
 import byui260.aaron.model.Game;
 import byui.aaron.view.NewGameMenu;
 import byui260.aaron.control.GameControl;
+import static jdk.nashorn.tools.ShellFunctions.input;
 
 /**
  *
@@ -106,6 +107,29 @@ public class MainMenuView extends MenuView {
         ngmv.displayMenu();
             
         }
+        
+    // The startSavedGame method
+    // Purpose: locate game object and starts saved game
+    // parameters: none
+    // returns: none
+    // Authors: James Rasmussen, JJ Hugh, and Sterling Kendall
+    // =====================================================
+    public void startSavedGame(){
+        // Get rid of the nl charactor left in the stream
+        keyboard.nextLine();
+        
+        // prompt user and get a file path
+        System.out.println("\nPlease select the location to save the game");
+        
+        // call the getSavedGame() method in the Game Control class to
+        // load the game
+        GameControl gc = new GameControl();
+        gc.getSavedGame;
+        
+        // Display the game menu for the loaded game.
+        
+        
+    }
      
     // The displayHelpMenu method
     // Purpose: Display the help menu view
@@ -117,17 +141,7 @@ public class MainMenuView extends MenuView {
         HelpMenuView hmv = new HelpMenuView();
         hmv.displayHelpMenuView();
     }
-    
-    // The startSavedGame method
-    // Purpose: locate game object and starts saved game
-    // parameters: none
-    // returns: none
-    // =====================================================
-    public void startSavedGame(){
-        System.out.println("\nStart saved game option selected.");
-    }
-    
-    
+   
     // The displaySaveGameView method
     // Purpose: Display list of saved games
     // parameters: none

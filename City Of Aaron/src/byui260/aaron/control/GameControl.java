@@ -8,6 +8,8 @@ package byui260.aaron.control;
 import java.util.ArrayList;
 import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.*;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 
 /**
@@ -49,6 +51,25 @@ public class GameControl {
         
         //create the Locations and the Map object.
         createMap();
+    }
+    
+    // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated 
+    public static void getSavedGame(String filePath)
+    {
+        Game theGame = null;
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game)  input.readObject();
+            CityOfAaron.setCurrentGame(theGame);
+        }catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
     }
 
     //PROLOGUE
