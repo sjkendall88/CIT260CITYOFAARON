@@ -13,6 +13,9 @@ import byui260.aaron.model.Location;
 import byui260.aaron.model.Player;
 import byui260.aaron.model.TeamMember;
 import byui.aaron.view.*;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 
 /**
  *
@@ -22,8 +25,8 @@ public class CityOfAaron {
     
     // Variable for keeping a reference to the game object
     private static Game theGame = null;
-    private static PrintWriter = null;
-    private static BufferedReader = null;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
     // main function - entry point for the program
     // runs the main menu

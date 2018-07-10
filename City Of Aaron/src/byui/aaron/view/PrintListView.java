@@ -73,8 +73,9 @@ public class PrintListView extends MenuView {
         switch (option){
             case 1: //View / Print List of Animals
                 if(offerChoice() == 0)
-                    
-                displayAnimals();
+                    displayAnimals();
+                else
+                    listReport();
                 break;                
             case 2: //View/Print List of Tools
                 displayTools();
