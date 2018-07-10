@@ -116,10 +116,10 @@ public class MainMenuView extends MenuView {
     // =====================================================
     public void startSavedGame(){
         // Get rid of the nl charactor left in the stream
-        keyboard.nextLine();
+        // keyboard.nextLine();
         
         // prompt user and get a file path
-        System.out.println("\nPlease type the location to save the game");
+        System.out.println("\nPlease type the location to load the game");
         String fp = keyboard.nextLine();
         
         // call the getSavedGame() method in the Game Control class to
