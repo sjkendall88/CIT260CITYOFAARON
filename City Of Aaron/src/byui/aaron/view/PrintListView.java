@@ -10,6 +10,8 @@ import byui260.aaron.model.ListItem;
 import byui260.aaron.control.GameControl;
 import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -127,4 +129,54 @@ public class PrintListView extends MenuView {
             + memberName2 + " " + memberTitle2 + "\n" + memberName3 
             + " " + memberTitle3);
     }
+    
+    //The listWriter method
+    //Purpose: to write a list to a drive
+    //Parameters: none (ARRAY?)
+    //Return: none  
+    
+    public void listReport(ArrayList<ListItem> list) {
+        
+    //declare a string to hold the file name
+    String outputLocation;
+    
+    //declare a reference to a Printwriter object
+    
+    
+    //prompt the user for a file name, get and save teh users input
+    System.out.println("Please enter a file name");
+    outputLocation = keyboard.nextLine();
+    try (PrintWriter out = new PrintWriter(outputLocation))
+        {
+        //get a reference to the arraylist to output
+
+            
+        //output a heading for the report
+            out.println("\n\n                  List Report               ");
+            out.printf("%n%-20s%10s", "Description","Quantity");
+            out.printf("%n%-20s%10s", "-----------", "-------");
+            
+            
+        //     ArrayList<ListItem> animals = theGame.getAnimals();       
+        //    for (ListItem animal:animals){
+        //   System.out.println(animal.getName()+" "+animal.getNumber());
+            
+            
+            
+        //use a for loop to get the data from the arrayList and output
+            for (ListItem List : list) {
+                out.printf("%n%-20s%7d", List.getName()
+                                       , List.getNumber());
+            }
+            
+        }
+    catch(IOException ex)
+        {
+            System.out.println("I/O Error: " + ex.getMessage());
+        }
+    finally
+        {
+        //if(output != null) close the file;
+        }
+    }    
 }
