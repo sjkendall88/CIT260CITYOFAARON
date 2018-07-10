@@ -54,7 +54,7 @@ public class PrintListView extends MenuView {
         //begin the loop
         do {
             //get user input from keyboard
-            userInput = keyboard.read();
+            userInput = keyboard.nextInt();
             
             //If it is not a valid value output an error message.
             if (userInput < 1 || userInput > max){

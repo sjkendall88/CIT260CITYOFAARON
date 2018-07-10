@@ -13,9 +13,9 @@ import java.io.PrintWriter;
 import java.util.Scanner;
     
 public abstract class MenuView implements ViewInterface {
-    // protected final static Scanner keyboard = new Scanner(System.in);
-    protected final BufferedReader keyboard = CityOfAaron.getInFile();
-    protected final PrintWriter console = CityOfAaron.getOutFile();
+    protected final static Scanner keyboard = new Scanner(System.in);
+    // protected final BufferedReader keyboard = CityOfAaron.getInFile();
+    // protected final PrintWriter console = CityOfAaron.getOutFile();
     protected String theMenu; //this string holds the menu string 
     protected int max; // this int holds the max input value
     
@@ -62,7 +62,7 @@ public abstract class MenuView implements ViewInterface {
         do {
             System.out.format("\nPlease enter an option(1 - %d):", max);
             // get user input from keyboard
-            userInput = keyboard.read();
+            userInput = keyboard.nextInt();
             
             // if it is not a valid value output an error message.
             if(userInput < 1 || userInput > max)

@@ -20,7 +20,7 @@ import static jdk.nashorn.tools.ShellFunctions.input;
  */
 
 public class MainMenuView extends MenuView {
-    // Scanner keyboard = new Scanner(System.in);
+    Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
     // The MainMenuView constructor
@@ -94,7 +94,7 @@ public class MainMenuView extends MenuView {
         // Prompt for and get the user's name.
         String name;
         System.out.println("\nPlease type in your first name: ");
-        name = keyboard.readLine();
+        name = keyboard.next();
         
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
@@ -116,12 +116,11 @@ public class MainMenuView extends MenuView {
     // =====================================================
     public void startSavedGame(){
         // Get rid of the nl charactor left in the stream
-        // keyboard.nextLine();
+        keyboard.nextLine();
         
         // prompt user and get a file path
-        System.out.println("\nPlease type the location to load the game");
-        String fp = keyboard.readLine();
-        
+        System.out.println("\nPlease select the location to load the game");
+        String fp = keyboard.nextLine();
         // call the getSavedGame() method in the Game Control class to
         // load the game
         GameControl.getSavedGame(fp);
@@ -153,7 +152,7 @@ public class MainMenuView extends MenuView {
         
         // prompt user and get a file path
         System.out.println("\nPlease type the location to save the game");
-        String fp = keyboard.readLine();
+        String fp = keyboard.nextLine();
         
         // call the setSavedGame() method in the Game Control class to
         // save the game

@@ -14,8 +14,6 @@ import byui260.aaron.model.Player;
 import byui260.aaron.model.TeamMember;
 import byui.aaron.view.*;
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 /**
@@ -26,35 +24,13 @@ public class CityOfAaron {
     
     // Variable for keeping a reference to the game object
     private static Game theGame = null;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
     // main function - entry point for the program
     // runs the main menu
     public static void main(String[] args) {
         
-
-        try{
-            CityOfAaron.inFile = 
-                    new BufferedReader(new InputStreamReader(System.in));
-            
-            CityOfAaron.outFile = new PrintWriter(System.out, true);
-            
-            // Write list option
-            
-        }catch(Throwable e){
-            System.out.println("this will manage our errors");
-        }
-        
-        finally {
-            try{
-                if(CityOfAaron.inFile != null)
-                CityOfAaron.inFile.close();
-                if(CityOfAaron.outFile != null)
-                CityOfAaron.outFile.close();
-            }catch(IOException ex){
-                System.out.println("System did close file successfully");
-            }
-        }
-
         // Getter method
         
         /*
@@ -140,4 +116,19 @@ public class CityOfAaron {
         CityOfAaron.theGame = theGame;
     }
     
+    public static PrintWriter getOutFile(){
+        return outFile;
+    }
+    
+    public static void setOutFile(PrintWriter outfile){
+        CityOfAaron.outFile = outFile;
+    }
+    
+    public static BufferedReader getInFile(){
+        return inFile;
+    }
+    
+    public static void setInFile(BufferedReader inFile){
+        CityOfAaron.inFile = inFile;
+    }
 }
