@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import city.of.aaron.CityOfAaron;
 import byui260.aaron.model.*;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 
 /**
@@ -68,7 +70,27 @@ public class GameControl {
             CityOfAaron.setCurrentGame(theGame);
         }catch(Exception e)
         {
-            System.out.println("\nThere was an error reading the saved game file");
+            System.out.println("\nThere was an error "
+                    + "reading the saved game file");
+        }
+    }
+    
+    // the setSavedGame method
+    // Purpose: savethe current game to disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated 
+    public static void setSavedGame(String filePath)
+    {
+        Game theGame = null;
+        try (FileOutputStream fops = new FileOutputStream(filePath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            theGame = (Game)  output.writeObject(theGame);
+        }catch(Exception e)
+        {
+            System.out.println("\nThere was an error "
+                    + "saving the game file");
         }
     }
 
