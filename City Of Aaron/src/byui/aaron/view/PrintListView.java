@@ -69,9 +69,11 @@ public class PrintListView extends MenuView {
         return userInput;
     }
 
-    @Override public void doAction (int option){
+    @Override public void doAction (int option){ 
         switch (option){
             case 1: //View / Print List of Animals
+                if(offerChoice() == 0)
+                    
                 displayAnimals();
                 break;                
             case 2: //View/Print List of Tools
@@ -87,6 +89,22 @@ public class PrintListView extends MenuView {
                 //Return to the main menu
                 return;
         } 
+    }
+    
+    public static int offerChoice() {
+        int input = 2;
+        System.out.println();"Would you like to save the list to a disk,\n"
+                + "or view it?\n Press 0 to View, or 1 to print";
+        String joke = "To hear this message again, please input 7";
+        do{
+            input = keyboard.nextInt();
+            if(input < 0 || input > 1)
+            {
+                System.out.println("\nPlease enter a valid option");
+            }
+        }
+        while(input < 0 || input > 1);
+        return input;
     }
     public static void displayAnimals(){   
         
@@ -132,7 +150,7 @@ public class PrintListView extends MenuView {
     
     //The listWriter method
     //Purpose: to write a list to a drive
-    //Parameters: none (ARRAY?)
+    //Parameters: ARRAY
     //Return: none  
     
     public void listReport(ArrayList<ListItem> list) {
@@ -140,27 +158,18 @@ public class PrintListView extends MenuView {
     //declare a string to hold the file name
     String outputLocation;
     
-    //declare a reference to a Printwriter object
     
-    
-    //prompt the user for a file name, get and save teh users input
+    //prompt the user for a file name, get and save the users input
     System.out.println("Please enter a file name");
     outputLocation = keyboard.nextLine();
+    
     try (PrintWriter out = new PrintWriter(outputLocation))
         {
-        //get a reference to the arraylist to output
-
             
         //output a heading for the report
             out.println("\n\n                  List Report               ");
             out.printf("%n%-20s%10s", "Description","Quantity");
-            out.printf("%n%-20s%10s", "-----------", "-------");
-            
-            
-        //     ArrayList<ListItem> animals = theGame.getAnimals();       
-        //    for (ListItem animal:animals){
-        //   System.out.println(animal.getName()+" "+animal.getNumber());
-            
+            out.printf("%n%-20s%10s", "-----------", "--------");
             
             
         //use a for loop to get the data from the arrayList and output
@@ -173,10 +182,6 @@ public class PrintListView extends MenuView {
     catch(IOException ex)
         {
             System.out.println("I/O Error: " + ex.getMessage());
-        }
-    finally
-        {
-        //if(output != null) close the file;
         }
     }    
 }
