@@ -93,8 +93,8 @@ public class PrintListView extends MenuView {
     
     public static int offerChoice() {
         int input = 2;
-        System.out.println();"Would you like to save the list to a disk,\n"
-                + "or view it?\n Press 0 to View, or 1 to print";
+        System.out.println("Would you like to save the list to a disk,\n"
+                + "or view it?\n Press 0 to View, or 1 to print");
         String joke = "To hear this message again, please input 7";
         do{
             input = keyboard.nextInt();
