@@ -14,10 +14,10 @@ import exceptions.CropException;
  *
  * @author JRome
  */
-public class CropView {
+public class CropView extends MenuView {
     
 //Create a Scanner object.
-private static Scanner keyboard = new Scanner(System.in);
+// private static Scanner keyboard = new Scanner(System.in);
 
 //Get references to the Game object and the CropData object.
 private static Game theGame = CityOfAaron.getCurrentGame();
@@ -78,7 +78,7 @@ private int max;
         //begin the loop
         do {
             //get user input from keyboard
-            userInput = keyboard.nextInt();
+            userInput = keyboard.read();
             
             //If it is not a valid value output an error message.
             if (userInput < 1 || userInput > max){
@@ -138,7 +138,7 @@ public static void setOfferingView()
         if(!paramsNotOkay)
             System.out.println("\n It should be a percentage between 0 and 100.");
         paramsNotOkay = false;
-        offering = keyboard.nextInt();
+        offering = keyboard.read();
         try
         {
             CropControl.setOffering(offering, cropData);
@@ -199,7 +199,7 @@ public static void buyLandView()
     {
         paramsNotOkay = false;
         System.out.println("\nHow many acres of land do you wish to buy? ");
-        toBuy = keyboard.nextInt();
+        toBuy = keyboard.read();
         try
         {
             CropControl.buyLand(price, toBuy, cropData);
@@ -234,7 +234,7 @@ public static void plantCropsView() {
                 System.out.println("It takes 1 bushel to plant 2 acres. "
                 + "\nHow many acres would you like to plant?");
                 // Get the user input 
-                acresToPlant = keyboard.nextInt();
+                acresToPlant = keyboard.read();
                 // call the AcresToPlant() method in the control layer
                 CropControl.AcresToPlant(acresToPlant, cropData);
             }
@@ -261,14 +261,14 @@ public static void sellLandView()
     System.out.format("\nHow many acres of land do you wish to sell?\n");
     
     //Get the user's input and save it.
-    int toSell = keyboard.nextInt();
+    int toSell = keyboard.read();
     
     //Call the sellLand() method in the control layer to sell the land. 
     int successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData); 
     while(successCheck == -1)
     {
         System.out.println("Please enter a valid number");
-        toSell = keyboard.nextInt();
+        toSell = keyboard.read();
         successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData);
     }
     System.out.format("You now own %d acres of land.", successCheck);
@@ -297,7 +297,7 @@ public static void feedPeopleView(){
         
     //Get user's input and save it.
     paramsNotOkay = false;
-    forPeople = keyboard.nextInt();
+    forPeople = keyboard.read();
     try{
     //call the feedPeople() method in the control layer to sell the land.
     CropControl.feedPeople(forPeople, cropData);
