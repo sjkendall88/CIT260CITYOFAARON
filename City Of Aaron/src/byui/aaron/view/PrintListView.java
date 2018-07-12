@@ -132,13 +132,14 @@ public class PrintListView extends MenuView {
         // Sterling
         ArrayList<ListItem> tools = theGame.getTools();
         
+        keyboard.nextLine();
         // prompt user and get a file path
-        System.out.println("\nPlease type the location to save the game");
+        System.out.println("\nPlease type the location to print the list");
         String fp = keyboard.nextLine();
         
         // call the setSavedGame() method in the Game Control class to
         // save the game
-        GameControl.setSavedGame(fp);
+        // GameControl.setSavedGame(fp);
         // create a bufferedreader object for input object
         try(PrintWriter out = new PrintWriter(fp)){
             // Print title and column headings
