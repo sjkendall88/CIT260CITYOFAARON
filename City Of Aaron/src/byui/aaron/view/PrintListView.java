@@ -168,6 +168,7 @@ public class PrintListView extends MenuView {
     
     //prompt the user for a file name, get and save the users input
     System.out.println("Please enter a file name");
+    keyboard.nextLine();
     outputLocation = keyboard.nextLine();
     
     try (PrintWriter out = new PrintWriter(outputLocation))
