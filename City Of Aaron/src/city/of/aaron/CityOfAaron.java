@@ -16,7 +16,6 @@ import byui.aaron.view.*;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 
-
 /**
  *
  * @author James Rasmussen, JJ Hugh, and Sterling Kendall

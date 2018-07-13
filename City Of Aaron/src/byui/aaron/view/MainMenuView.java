@@ -119,9 +119,8 @@ public class MainMenuView extends MenuView {
         // keyboard.nextLine();
         
         // prompt user and get a file path
-        System.out.println("\nPlease type the location to load the game");
+        System.out.println("\nPlease select the location to load the game");
         String fp = keyboard.nextLine();
-        
         // call the getSavedGame() method in the Game Control class to
         // load the game
         GameControl.getSavedGame(fp);
@@ -149,7 +148,7 @@ public class MainMenuView extends MenuView {
     // =====================================================
     public void displaySaveGameView(){
         // Get rid of the nl charactor left in the stream
-        // keyboard.nextLine();
+        keyboard.nextLine();
         
         // prompt user and get a file path
         System.out.println("\nPlease type the location to save the game");

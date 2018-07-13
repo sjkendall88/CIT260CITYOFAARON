@@ -78,10 +78,11 @@ public class PrintListView extends MenuView {
                     listReport(theGame.getAnimals());
                 break;                
             case 2: //View/Print List of Tools
-                if(offerChoice() == 0)
-                    displayTools();
-                else
-                    listReport(theGame.getTools());
+                if(offerChoice() == 0){
+                displayTools();
+                }else {
+                    printTools();
+                }
                 break;
             case 3: //View / Print List of Provisions
                 if(offerChoice() == 0)
@@ -130,6 +131,34 @@ public class PrintListView extends MenuView {
             for (ListItem tool:tools){
             System.out.println(tool.getName()+" "+tool.getNumber());
     }
+    }
+    public void printTools() {
+        // Sterling
+        ArrayList<ListItem> tools = theGame.getTools();
+        
+        keyboard.nextLine();
+        // prompt user and get a file path
+        System.out.println("\nPlease type the location to print the list");
+        String fp = keyboard.nextLine();
+        
+        // call the setSavedGame() method in the Game Control class to
+        // save the game
+        // GameControl.setSavedGame(fp);
+        // create a bufferedreader object for input object
+        try(PrintWriter out = new PrintWriter(fp)){
+            // Print title and column headings
+            out.println("\n\n       Tools List         ");
+            out.printf("%n%-20s%10s", "Name", "Quantity");
+            out.printf("%n%-20s%10s", "----", "--------");
+            
+            // Print the Name and quantity of each item
+            for(ListItem tool: tools){
+                out.printf("%n%-20s%7d", tool.getName()
+                                       , tool.getNumber());
+            }
+        }   catch(IOException ex){
+            System.out.println("I/O error: unable to print list");
+        }        
     }
     public void displayProvisions(){
         // System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());   

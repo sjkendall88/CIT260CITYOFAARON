@@ -7,11 +7,15 @@
  *Date: June 19 2018
  */
 package byui.aaron.view;
+import city.of.aaron.CityOfAaron;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
     
 public abstract class MenuView implements ViewInterface {
     protected final static Scanner keyboard = new Scanner(System.in);
-    
+    // protected final BufferedReader keyboard = CityOfAaron.getInFile();
+    // protected final PrintWriter console = CityOfAaron.getOutFile();
     protected String theMenu; //this string holds the menu string 
     protected int max; // this int holds the max input value
     

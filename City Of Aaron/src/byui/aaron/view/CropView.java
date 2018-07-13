@@ -14,7 +14,7 @@ import exceptions.CropException;
  *
  * @author JRome
  */
-public class CropView {
+public class CropView extends MenuView {
     
 //Create a Scanner object.
 private static Scanner keyboard = new Scanner(System.in);
@@ -34,7 +34,7 @@ private int max;
     //Return: none
     
     public CropView(){
-        theMenu = "\n" + "**********************\n" 
+        super( "\n" + "**********************\n" 
                 + "*Debug: CropView testing phase *\n"
                 + "******************************\n"
                 + "1 - buylandview\n"
@@ -42,9 +42,8 @@ private int max;
                 + "3 - plantCropView\n"
                 + "4 - setOfferingView\n"
                 + "5 - sellLandView\n"
-                + "6 - exit to main menu\n";
-                
-        max = 6;
+                + "6 - exit to main menu\n",
+        6);
     }
 
     //The displayGameMenu method.
