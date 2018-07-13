@@ -20,7 +20,7 @@ import static jdk.nashorn.tools.ShellFunctions.input;
  */
 
 public class MainMenuView extends MenuView {
-    Scanner keyboard = new Scanner(System.in);
+    // Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
     // The MainMenuView constructor
