@@ -73,8 +73,9 @@ public class PrintListView extends MenuView {
         switch (option){
             case 1: //View / Print List of Animals
                 if(offerChoice() == 0)
-                    
-                displayAnimals();
+                    displayAnimals();
+                else
+                    listReport(theGame.getAnimals());
                 break;                
             case 2: //View/Print List of Tools
                 if(offerChoice() == 0){
@@ -84,7 +85,10 @@ public class PrintListView extends MenuView {
                 }
                 break;
             case 3: //View / Print List of Provisions
-                displayProvisions();
+                if(offerChoice() == 0)
+                    displayProvisions();
+                else
+                    listReport(theGame.getProvisions());
                 break;                
             case 4: //Display the Authors of the code
                 displayAuthors();
@@ -193,6 +197,7 @@ public class PrintListView extends MenuView {
     
     //prompt the user for a file name, get and save the users input
     System.out.println("Please enter a file name");
+    keyboard.nextLine();
     outputLocation = keyboard.nextLine();
     
     try (PrintWriter out = new PrintWriter(outputLocation))
