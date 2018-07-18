@@ -17,6 +17,7 @@ public class CropControl {
     //constants
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
+    private static final int RAT_RANGE = 100;
     
     // random number generator
     private static Random random = new Random();
@@ -222,8 +223,85 @@ public class CropControl {
         cropData.setWheatInStore(wheatInStore);
 
     }
+    
+    // The payOffering Method
+    // Purpose: To figure the real number to remove from
+    //      the the harvest to pay the offering.
+    // Parameters: Gets game data to figure offering
+    // Returns: no returns
+    public static void payOffering(CropData cropData){
+        // Get percentage of offering
+        // Get number of bushels harvested
+        // Get wheatInStore
+        int offPerc = cropData.getOffering();
+        int harvest = cropData.getHarvest();
+        int wheatInStore = cropData.getWheatInStore();
+        
+        // Multiply percentage by harvest
+        int offering = offPerc * harvest;
+        
+        // Subtract offering from harvest
+        harvest -= offering;
+        
+        // Add remaining harvest to store
+        wheatInStore += harvest;
+        cropData.setWheatInStore(wheatInStore);
+        cropData.setOfferingBushels(offering);
+    }
+    
+    // The CalcEatenByRats method
+    // Pupose: To calculate wheat eaton by rats
+    // Parameters: Gets game data from Cropdata
+    // Returns: no returns
+    public static int calcEatonByRats (CropData cropData){
+        // Generate Random Number
+        int eatRats;
+        int offRange;
+        int offBase;
+        int offCheck;
+        // Get Offering
+        int offering = cropData.getOffering();
+        int wheatInStore = cropData.getWheatInStore();
+        // For loop to concerning offering percentage
+        if(offering < 8){
+            // Rats eat random 6-10% wheatInStore
+            offRange = 5;
+            offBase = 5;
+            offCheck = random.nextInt(offRange)+ offBase;
+            eatRats = (offCheck * 100);
+            return eatRats;
+        }else if( 8 < offering || offering < 12){
+            // Rats eat random 3-7% wheatInStore
+            offRange = 5;
+            offBase = 2;
+            offCheck = random.nextInt(offRange)+ offBase;
+            eatRats = (offCheck * 100);
+            return eatRats;
+        }else{
+            // Rats eat random 3-5% wheatInStore
+            offRange = 3;
+            offBase = 2;
+            offCheck = random.nextInt(offRange)+ offBase;
+            eatRats = (offCheck * 100);
+            return eatRats;
+        }
+        
+        // Subtract eatRats from wheatInStore
+        wheatInStore -= eatRats;
+        
+        
+    }
+    public static void growPopulation(){
+                
+    }
+                   
+    public static void calcStarved(){
+        
+    }
+    
+    public static void CropReportView(){
+    
+    }
 }
-    //public static int feedPeople() {
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
+
 
