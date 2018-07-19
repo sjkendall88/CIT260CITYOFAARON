@@ -160,6 +160,7 @@ public class PrintListView extends MenuView {
             System.out.println("I/O error: unable to print list");
         }        
     }
+    //Author: J.J Hugh
     public void displayProvisions(){
         // System.out.println("\nHere are the provisions: " + GameControl.createProvisionsList());   
      ArrayList<ListItem> provisions = theGame.getProvisions();       

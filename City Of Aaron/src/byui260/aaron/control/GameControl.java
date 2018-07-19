@@ -181,17 +181,33 @@ public class GameControl {
         //Map discriptors
         String river = "\nA winding river stretches before you.\nIt's super"
                 + " fresh, and provides much needed water to the city";
-        String darkWoodForest = "\nThis forest looks ominous, but "
+        String darkWoodForest = "\nThis dark forest looks ominous, but "
                 + "on the\nother hand, it's obviously very good at growing"
                 + "things. Good for wood too.";
-        String swamp = "\nswamp";
-        String rollingHills = "\nrHills";
-        String candyCaneForest = "\nccForest";
-        String desert = "\nDesert";
-        String dessert = "\nDessert";
-        String asicsOasis = "\nAsicsOasis";
-        String plain = "\nplain";
-        String kFC = "\nKFC";
+        String swamp = "\nA deep, green swampy land here is populated by\n"
+                + "Ogres, Donkeys and such.";
+        String rollingHills = "\nWhat beautiful rollings hills and landscape.\n"
+                + "You know, I've never known a hill to roll, but these ones \n"
+                + "do so rather gracefully";
+        String candyCaneForest = "\nUnfortunately, though known as the 'candy "
+                + "cane' forest,\nhistorical records show that it is not due to"
+                + " a presence of sweets, but rather was once\nowned by "
+                + "Brother CandyCane";
+        String desert = "\nThis hot and dry wasteland seems to sap the very"
+                + " word \"water\" out of\nthe air before it even leaves your"
+                + "tongue. It's that bad.";
+        String dessert = "\nThis hot and moist tasteland seems to seep the very"
+                + " meaning\nof the word \"sweet\" the moment it touches your "
+                + "tongue. It's that good.";        
+        String asicsOasis = "\nBoth overflowing with water and great deals on\n"
+                + "a very specific type of shoe, this AsicsOasis seems quality";
+        String plain = "\nIf there was one word for this place, \n"
+                + "it would be plain";
+        String kFC = "\nYou see in the corner of the greenlands here a building"
+                + " capped by\n a bucket of chicken, portraying a fair elderly"
+                + " man on the side. Walking to the building, you see the words"
+                + "\"WELCOME TO KFC\", just above\nanother sign noting \"Sorry"
+                + ", we are closed for renocations\". Drat.";
         
         //create a new Location object
         Location loc = new Location();
