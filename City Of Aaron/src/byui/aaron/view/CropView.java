@@ -158,6 +158,7 @@ public static void setOfferingView()
 //Return: none
 //Author: Sterling
 public static void runCropsView(){
+    
     /*
     //call the buyLandView() method
     buyLandView();
@@ -332,5 +333,15 @@ public static void feedPeopleView(){
         }
     }while(paramsNotOkay);
     System.out.println("Thank you for feeding my people");
+}
+
+// The cropReportView() Method
+// Purpose: To display the current data list
+// Parameter: cropdata
+// Returns: none
+// Author: Sterling
+public static void CropReportView() {
+    // call to cropReport
+    CropControl.CropReportView(cropData);
 }
 }

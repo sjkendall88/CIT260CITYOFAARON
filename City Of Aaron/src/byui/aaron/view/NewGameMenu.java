@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.aaron.view;
+import byui260.aaron.control.CropControl;
 import byui260.aaron.model.Game;
 import byui260.aaron.model.Location;
 import byui260.aaron.model.Map;
