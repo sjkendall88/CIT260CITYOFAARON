@@ -42,8 +42,9 @@ private int max;
                 + "3 - plantCropView\n"
                 + "4 - setOfferingView\n"
                 + "5 - sellLandView\n"
-                + "6 - exit to main menu\n",
-        6);
+                + "6 - Crop Report View\n"
+                + "7 - exit to main menu\n",
+        7);
     }
 
     //The displayGameMenu method.
@@ -112,7 +113,10 @@ private int max;
             case 5: 
                 sellLandView();
                 break;
-            case 6:                
+            case 6:
+                cropReportView();
+                break;
+            case 7:                
                 //Return to the main menu
                 // Main Menu View
                 MainMenuView mmv = new MainMenuView();
@@ -340,7 +344,7 @@ public static void feedPeopleView(){
 // Parameter: cropdata
 // Returns: none
 // Author: Sterling
-public static void CropReportView() {
+public static void cropReportView() {
     // call to cropReport
     CropControl.CropReportView(cropData);
 }
