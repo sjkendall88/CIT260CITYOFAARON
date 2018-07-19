@@ -154,7 +154,11 @@ public class CropControl {
         
         //Author: J.J. Hugh
         //Display a message when 0 is offered for the offerings.
-        if (offering == 0){
+        if (offering > 0 ){
+            System.out.println ("The amount of offerings in the store house: " + cropData.getOffering());
+        }
+        
+        else if (offering == 0){
             System.out.println("\n|**************************************************************************************|\n"
                               +"|                                                                                        |\n"
                               +"|                                                                                        |\n"
@@ -167,6 +171,7 @@ public class CropControl {
                               +"|                                                                                        |\n"
                               +"|****************************************************************************************|\n");
         }
+        
     }
        
     // The harvestCrops Method
