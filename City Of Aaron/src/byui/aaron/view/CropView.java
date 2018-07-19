@@ -62,15 +62,17 @@ public static void runCropsView(){
     // Return: view of crop report
     // Author: Sterling  
 public static void cropsReportView(){
+    int year = cropData.getYear();
     int numStarved = cropData.getNumStarved();
     int pop = cropData.getPopulation();
     int halfPop = pop / 2;
+    int endYear = 11;
     // Create a report of CropData
     System.out.println(
       "***********************************************\n"
     + "            This is the Crop Report            \n"
     + "***********************************************\n"
-    + "This year is: \n" + "\n"
+    + "This year is: \n" + year + "\n"
     + "Number of people Starved: " + numStarved + "\n"
     + "Number of People who moved in: " + cropData.getNewPeople() + "\n"
     + "This is the current population: " + pop + "\n"
