@@ -96,7 +96,7 @@ private int max;
     //parameters: none
     //return: none
     
-    public void doAction (int option){
+    @Override public void doAction (int option){
         switch (option){
             case 1: //View the Map
                 buyLandView();
