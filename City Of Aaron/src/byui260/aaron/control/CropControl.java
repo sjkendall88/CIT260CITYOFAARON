@@ -199,16 +199,19 @@ public class CropControl {
                 harvest = acres * (random.nextInt(harvestRange) + harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                cropData.setHarvest(harvest);
                 return 1;
             case 2:
                 harvest = acres * (random.nextInt(harvestRange) + ++harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                cropData.setHarvest(harvest);
                 return 1;
             case 3:
                 harvest = acres * (random.nextInt(++harvestRange) + ++harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                cropData.setHarvest(harvest);
                 return 1;
         }          
         return -1;
@@ -258,7 +261,7 @@ public class CropControl {
         int wheatInStore = cropData.getWheatInStore();
         
         // Multiply percentage by harvest
-        int offering = offPerc * harvest;
+        int offering = (offPerc * harvest) / 100;
         
         // Subtract offering from harvest
         harvest -= offering;
