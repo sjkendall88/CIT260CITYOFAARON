@@ -156,8 +156,7 @@ public class NewGameMenu extends MenuView {
     
     public void startManageCrops(){
         // Start managing crops
-        CropView cv = new CropView();
-        cv.displayGameMenuView();
+        CropView.runCropsView();
     };
         
        

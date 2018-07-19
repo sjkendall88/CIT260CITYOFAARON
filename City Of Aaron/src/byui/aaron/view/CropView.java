@@ -14,20 +14,84 @@ import exceptions.CropException;
  *
  * @author JRome
  */
-public class CropView extends MenuView {
+public class CropView /*extends MenuView*/ {
+
+    // The CropView() method
+    // Purpose: to allow access to Crop View methods
+    public CropView(){};
+    //Create a Scanner object.
+    private static Scanner keyboard = new Scanner(System.in);
+
+    //Get references to the Game object and the CropData object.
+    private static Game theGame = CityOfAaron.getCurrentGame();
+    private static CropData cropData = theGame.getCropData();
+
+    // referential variable to stabilize value of Land value on a given round.
+    public static int sellLandPrice;
+
+    private String theMenu;
+    private int max;
+
+//The runCropsView method()
+//Purpose: runs the City of Aaron game
+//Parameters: none
+//Return: none
+//Author: Sterling
+public static void runCropsView(){
     
-//Create a Scanner object.
-private static Scanner keyboard = new Scanner(System.in);
+    //displayCropsReportView();
+    cropsReportView();
+    
+    //call the buyLandView() method
+    buyLandView();
 
-//Get references to the Game object and the CropData object.
-private static Game theGame = CityOfAaron.getCurrentGame();
-private static CropData cropData = theGame.getCropData();
+    //add calls to the other crop view methods
+    sellLandView();
 
-// referential variable to stabilize value of Land value on a given round.
-public static int sellLandPrice;
+    //The feedPeopleView method
+    feedPeopleView();
 
-private String theMenu;
-private int max;
+    //plantCropsView();
+    plantCropsView();
+
+}
+
+    // the CropReportView method
+    // Purpose: to diplay the crop report
+    // Parameters: cropData
+    // Return: view of crop report
+    // Author: Sterling  
+public static void cropsReportView(){
+    int numStarved = cropData.getNumStarved();
+    int pop = cropData.getPopulation();
+    int halfPop = pop / 2;
+    // Create a report of CropData
+    System.out.println(
+      "***********************************************\n"
+    + "            This is the Crop Report            \n"
+    + "***********************************************\n"
+    + "This year is: \n" + "\n"
+    + "Number of people Starved: " + numStarved + "\n"
+    + "Number of People who moved in: " + cropData.getNewPeople() + "\n"
+    + "This is the current population: " + pop + "\n"
+    + "Number of acres owned: " + cropData.getAcresOwned() + "\n"
+    + "Number of bushels from this years harvest: " + cropData.getHarvest() + "\n"
+    + "Number of bushels paid to offering: " + cropData.getOfferingBushels() + "\n"
+    + "Number of bushels eaten by rats: " + cropData.getEatenByRats() + "\n"
+    + "Number of bushels in store house: " + cropData.getWheatInStore() + "\n"
+    + "***********************************************\n"
+    );
+        if(numStarved > halfPop){
+            // Game over message
+            System.out.println("More than half of your population has died,"
+                    + " you are no longer in office and the game is over.");
+            
+            // End Game
+            System.exit(0);
+        }
+    }
+    
+/*
     //The CropView constructor test method
     //Purpose: confirm working methods
     //Parameters: none
@@ -123,7 +187,7 @@ private int max;
                 mmv.displayMenu();
         }
     }
-    
+    */
 //The setOfferingView method()
 //Purpose: User sets offering
 //Param: none
@@ -154,49 +218,6 @@ public static void setOfferingView()
         }
     }while(paramsNotOkay);
     System.out.println("Thanks for your offering!");
-}
-
-//The runCropsView method()
-//Purpose: runs the City of Aaron game
-//Parameters: none
-//Return: none
-//Author: Sterling
-public static void runCropsView(){
-    
-    /*
-    //call the buyLandView() method
-    buyLandView();
-
-    //add calls to the other crop view methods
-    sellLandView();
-
-    //The feedPeopleView method
-    feedPeopleView();
-
-    //plantCropsView();
-    plantCropsView();
-    
-    //setOffering()
-    setOffering();
-    
-    //harvestCrops()
-    harvestCrops();
-    
-    //payOffering()
-    payOffering();
-    
-    //calcEatenByRats()
-    calcEatenByRats();
-    
-    //growPopulation()
-    growPopulation();
-    
-    //showStarvedView();
-    showStarvedView();
-    
-    //displayCropsReportView();
-    displayCropsReportView();
-    */
 }
 
 //The buyLandView method
@@ -339,13 +360,4 @@ public static void feedPeopleView(){
     System.out.println("Thank you for feeding my people");
 }
 
-// The cropReportView() Method
-// Purpose: To display the current data list
-// Parameter: cropdata
-// Returns: none
-// Author: Sterling
-public static void cropReportView() {
-    // call to cropReport
-    CropControl.CropReportView(cropData);
-}
 }
