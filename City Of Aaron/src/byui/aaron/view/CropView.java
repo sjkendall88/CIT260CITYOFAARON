@@ -53,7 +53,9 @@ public static void runCropsView(){
 
     //plantCropsView();
     plantCropsView();
-
+    
+    //setOfferingView();
+    setOfferingView();
 }
 
     // the CropReportView method
@@ -106,7 +108,7 @@ public static void setOfferingView()
     do
     {
         
-        System.out.println("Please set your offerings ot the Lord this year.");
+        System.out.println("\nPlease set your offerings ot the Lord this year.");
         if(!paramsNotOkay)
             System.out.println("\n It should be a percentage between 0 and 100.");
         paramsNotOkay = false;
@@ -138,7 +140,7 @@ public static void buyLandView()
     sellLandPrice = price;
     
     //Prompt the user to enter the number of acres to buy
-    System.out.format("Land is selling for %d bushels per acre. %n",price);
+    System.out.format("\nLand is selling for %d bushels per acre. %n",price);
     
     //initialize toBuy
     int toBuy;
@@ -181,7 +183,7 @@ public static void plantCropsView() {
             try{
                 // Prompt the user for acres of land to plant
                 // One bushel will plant two acres of land
-                System.out.println("\n\nIt takes 1 bushel to plant 2 acres. "
+                System.out.println("\nIt takes 1 bushel to plant 2 acres. "
                 + "\nHow many acres would you like to plant?");
                 // Get the user input 
                 acresToPlant = keyboard.nextInt();
@@ -206,7 +208,7 @@ public static void plantCropsView() {
 public static void sellLandView()
 {
     //Prompt the user to enter the number of acres to sell
-    System.out.println("Land is selling for " + sellLandPrice
+    System.out.println("\nLand is selling for " + sellLandPrice
             + " bushels per acre.\n");
     System.out.format("\nHow many acres of land do you wish to sell?\n");
     
@@ -221,7 +223,7 @@ public static void sellLandView()
         toSell = keyboard.nextInt();
         successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData);
     }
-    System.out.format("You now own %d acres of land.", successCheck);
+    System.out.format("You now own %d acres of land.\n", successCheck);
 }
 
     //the feedPeopleView method
