@@ -272,6 +272,8 @@ public static void feedPeopleView(){
             + "You know have: " + cropData.getWheatInStore() +
             ", wheat in storage.");
 }
+// This method will run the remaining methods in cropControl
+// Author: Sterling
 public static void finishManagingCrops(){
     // This method will finish calling the methods to manage the crops
     CropControl.harvestCrops(cropData);
