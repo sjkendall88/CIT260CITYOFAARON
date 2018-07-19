@@ -81,9 +81,10 @@ public class CropControl {
         
         // if totalCost > wheatOwned throw exc
         int wheatOwned = cropData.getWheatInStore();
-        if(totalCost > wheatOwned)
+        if(totalCost > wheatOwned) {
             throw new CropException("There is sufficient wheat "
                     + "to buy this much land");
+        }
         
         // totalAcres = acresOwned + acresToBuy
         int acresOwned = cropData.getAcresOwned();
@@ -91,8 +92,9 @@ public class CropControl {
 
         // if population < totalAcres/10 throw exc
         int population = cropData.getPopulation();
-        if(population < totalAcres/10)
+        if(population < totalAcres/10) {
             throw new CropException("Not enough workers to work the fields");
+        }
 
         // wheatOwned = wheatOwned - totalCost
         wheatOwned -= totalCost;
@@ -110,24 +112,27 @@ public class CropControl {
             throws CropException {
         
         // If (acresToPlant < 0) then return -1
-        if(acresToPlant < 0)
+        if(acresToPlant < 0) {
             throw new CropException ("Acres to plant must be a positive number. "
                     + "Please try again.");
+        }
         
         // If (acresToPlant !<= acresOwned) then return -1
         int acresOwned = cropData.getAcresOwned();
-        if(acresOwned < acresToPlant)
+        if(acresOwned < acresToPlant) {
             throw new CropException("You don't own enough acres to plant."
                     + "Please try again.");
+        }
         
         // bushelsToPlant = acresToPlant / 2
         int bushelsToPlant = acresToPlant / 2;
         
         // If (wheatInStore !>= bushelsToPlant) then return -1
         int wheatInStore = cropData.getWheatInStore();
-        if(wheatInStore < bushelsToPlant)
+        if(wheatInStore < bushelsToPlant) {
             throw new CropException("You don't have enough Wheat to plant."
                     + "Please try again.");
+        }
         
         // wheatInStore  = wheatInStore – bushelsToPlant
         wheatInStore -= bushelsToPlant;
@@ -146,8 +151,9 @@ public class CropControl {
     public static void setOffering(int offering, CropData cropData) throws CropException {
         
         // IF 0 > offering or offering > 100 return thrown exception
-        if (offering < 0 || offering > 100)
+        if (offering < 0 || offering > 100) {
             throw new CropException ("Percentages must be between 0 and 100");
+        }
         
         // Set offering
         cropData.setOffering(offering);
@@ -189,11 +195,13 @@ public class CropControl {
         int harvestBase = 1;
         
         // Assign tier level of return to offering amount
-        if(offering < 8)
+        if(offering < 8) {
             offeringTier = 1;
-        else if(offering > 12)
+        } else if(offering > 12) {
             offeringTier = 3;
-        else offeringTier = 2;
+        } else {
+            offeringTier = 2;
+        }
         
         // harvest wheat and add it to stores based on offeringTier      
         switch (offeringTier)
@@ -232,8 +240,9 @@ public class CropControl {
 
 	// if (wheatSetAside > wheatInStore) then return -1
 	int wheatInStore = cropData.getWheatInStore();
-	if (wheatSetAside > wheatInStore) 
+	if (wheatSetAside > wheatInStore) {
             throw new CropException("There is insufficient wheat set aside for the people");
+        }
         
 	
 	//wheatInStore =  wheatInStore - wheatSetAside.
