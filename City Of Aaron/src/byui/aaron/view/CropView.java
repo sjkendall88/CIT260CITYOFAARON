@@ -104,7 +104,7 @@ private int max;
                 feedPeopleView();
                 break;
             case 3: //Move to a new location
-                plantCropsView();
+                runCropsView();
                 break;
             case 4: //Manage the crops
                 setOfferingView();
@@ -153,25 +153,45 @@ public static void setOfferingView()
 }
 
 //The runCropsView method()
-//Purpose: runs the Hamurabi game
+//Purpose: runs the City of Aaron game
 //Parameters: none
 //Return: none
-public static void runCropsView()
-{
+//Author: Sterling
+public static void runCropsView(){
+    /*
+    //call the buyLandView() method
+    buyLandView();
+
+    //add calls to the other crop view methods
+    sellLandView();
+
+    //The feedPeopleView method
+    feedPeopleView();
+
+    //plantCropsView();
+    plantCropsView();
     
-//call the buyLandView() method
-//buyLandView();
-
-//add calls to the other crop view methods
-//sellLandView();
-
-// The feedPeopleView method
-//feedPeopleView(){}
-
-//plantCropsView();
-
-//showStarvedView();
-//displayCropsReportView();
+    //setOffering()
+    setOffering();
+    
+    //harvestCrops()
+    harvestCrops();
+    
+    //payOffering()
+    payOffering();
+    
+    //calcEatenByRats()
+    calcEatenByRats();
+    
+    //growPopulation()
+    growPopulation();
+    
+    //showStarvedView();
+    showStarvedView();
+    
+    //displayCropsReportView();
+    displayCropsReportView();
+    */
 }
 
 //The buyLandView method

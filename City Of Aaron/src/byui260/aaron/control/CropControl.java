@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui260.aaron.control;
+import byui.aaron.view.MainMenuView;
 import byui260.aaron.model.CropData;
 import exceptions.CropException;
 import java.util.Random;
@@ -149,7 +150,7 @@ public class CropControl {
             throw new CropException ("Percentages must be between 0 and 100");
         
         // Set offering
-        cropData.setOffering(offering);
+        cropData.setOffering(offering);           
     }
     
     // The harvestCrops Method
@@ -229,6 +230,7 @@ public class CropControl {
     //      the the harvest to pay the offering.
     // Parameters: Gets game data to figure offering
     // Returns: no returns
+    // Author: Sterling
     public static void payOffering(CropData cropData){
         // Get percentage of offering
         // Get number of bushels harvested
@@ -253,55 +255,113 @@ public class CropControl {
     // Pupose: To calculate wheat eaton by rats
     // Parameters: Gets game data from Cropdata
     // Returns: no returns
-    public static int calcEatonByRats (CropData cropData){
+    // Author: Sterling
+    public static void calcEatonByRats (CropData cropData){
         // Generate Random Number
-        int eatRats;
+        double eatRats;
         int offRange;
         int offBase;
         int offCheck;
         // Get Offering
         int offering = cropData.getOffering();
         int wheatInStore = cropData.getWheatInStore();
+        double ratsAte = wheatInStore;
         // For loop to concerning offering percentage
         if(offering < 8){
             // Rats eat random 6-10% wheatInStore
             offRange = 5;
             offBase = 5;
             offCheck = random.nextInt(offRange)+ offBase;
-            eatRats = (offCheck * 100);
-            return eatRats;
-        }else if( 8 < offering || offering < 12){
-            // Rats eat random 3-7% wheatInStore
-            offRange = 5;
-            offBase = 2;
-            offCheck = random.nextInt(offRange)+ offBase;
-            eatRats = (offCheck * 100);
-            return eatRats;
-        }else{
+            eatRats = (offCheck / 100);
+        }else if(offering > 12){
             // Rats eat random 3-5% wheatInStore
             offRange = 3;
             offBase = 2;
             offCheck = random.nextInt(offRange)+ offBase;
-            eatRats = (offCheck * 100);
-            return eatRats;
+            eatRats = (offCheck / 100);
+        }else{
+            // Rats eat random 3-7% wheatInStore
+            offRange = 5;
+            offBase = 2;
+            offCheck = random.nextInt(offRange)+ offBase;
+            eatRats = (offCheck / 100);
         }
         
         // Subtract eatRats from wheatInStore
+        eatRats *= ratsAte;
         wheatInStore -= eatRats;
-        
-        
-    }
-    public static void growPopulation(){
-                
-    }
-                   
-    public static void calcStarved(){
-        
+        cropData.setWheatInStore(wheatInStore);
     }
     
+    // The growPopuluation() method
+    // Pupose: To grow the population based on harvest
+    // Parameters: cropdata
+    // Return: none
+    // Author: Sterling Kendall
+    public static void growPopulation(CropData cropData){
+        // Determine random number
+        int newPeople;
+        double growPop = random.nextInt(5);
+        double people = cropData.getPopulation();
+        
+        // Number of people increased
+        growPop /= 100;
+        newPeople = (int) (people * growPop);
+        
+        // Save people increased
+        cropData.setNewPeople(newPeople);
+        
+        // Add to current population
+        int pop = (int) (people + newPeople);
+        
+        // Save to current population
+        cropData.setPopulation(pop);
+    }
+    
+    // The calcStarved() method
+    // Purpose: to calculate the amount of people that starved
+    // Parameters: cropData
+    // Return: none
+    // Author: Sterling
+    public static void calcStarved(CropData cropData){
+        // Get variables
+        int pop = cropData.getPopulation();
+        int wheatAside = cropData.getWheatForPeople();
+        int pepFed;
+        int pepAlive;
+        int pepDead;
+        
+        // Calculate the number of peopleFed 20 bushels = 1 person
+        pepFed = wheatAside / 20;
+        pepAlive = pop - pepFed;
+        pepDead = pop - pepAlive;
+        cropData.setNumStarved(pepDead);
+        
+        // Check Population
+        if(pepAlive == 0){
+            // End game message
+            System.out.println("Your City has fallen to starvation, "
+                    + "and so have you. Game Over, please play again.");
+            // End Game
+            //Return to the main menu
+            MainMenuView mmv = new MainMenuView();
+            mmv.displayMenu();
+        }else if(pepAlive > 0 && pepAlive < pop){
+            // subtact starved from population
+            pop -= pepDead;
+            cropData.setPopulation(pop);
+        }else{
+            // Set population because everyone lived, this time.
+            cropData.setPopulation(pop);
+        }        
+    }
+    
+    // the CropReportView method
+    // Purpose: to diplay the crop report
+    // Parameters: cropData
+    // Return: view of crop report
+    // Author: Sterling
     public static void CropReportView(){
-    
+        ;
     }
 }
-
-
