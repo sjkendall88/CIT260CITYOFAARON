@@ -279,6 +279,6 @@ public static void finishManagingCrops(){
     CropControl.calcEatonByRats(cropData);
     CropControl.calcStarved(cropData);
     CropControl.growPopulation(cropData);
-
+    CropControl.addYear(cropData);
 }
 }

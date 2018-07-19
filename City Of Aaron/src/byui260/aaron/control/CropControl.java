@@ -22,6 +22,7 @@ public class CropControl {
     private static final int LOW_BAR = 8;
     private static final int TO_PERC = 100;
     private static final int BUS_FEED = 20;
+    private static final int CYCLE = 1;
     // random number generator
     private static Random random = new Random();
     
@@ -108,6 +109,7 @@ public class CropControl {
     // the a reference to CropData.
     // Returns: The number of acres to plant.
     // Pre-Conditions: acres to plant must be positive.    
+    // Auther: Sterling
     public static void AcresToPlant(int acresToPlant, CropData cropData) 
             throws CropException {
         
@@ -374,5 +376,19 @@ public class CropControl {
             cropData.setPopulation(pop);
         }        
     }
-    
+    // This Method adds a year for each turn
+    // Pupose: to track game rounds
+    // Parameters:
+    // Returns:
+    // Author: Sterling
+    public static void addYear(CropData cropData){
+        // Get year
+        int year = cropData.getYear();
+        
+        // Add a year
+        year += CYCLE;
+        
+        // Set year
+        cropData.setYear(year);
+    }
 }
