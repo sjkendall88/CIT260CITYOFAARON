@@ -157,11 +157,16 @@ public class CropControl {
         
         // Set offering
         cropData.setOffering(offering);
-        
-        //Author: J.J. Hugh
+        checkOffering();
+    }
+    
+    public static void checkOffering(){
+        int cropData = theGame.getCropData();
+        int offering = cropData.getOffering();
+          //Author: J.J. Hugh
         //Display a message when 0 is offered for the offerings.
         if (offering > 0 ){
-            System.out.println ("The amount of offerings in the store house: " + cropData.getOffering());
+            System.out.println ("The amount of offerings in the store house: " + offering);
         }
         
         else if (offering == 0){
@@ -179,7 +184,6 @@ public class CropControl {
         }
         
     }
-       
     // The harvestCrops Method
     // Purpose: To harvest crops
     // Parameters: reference to the crop data object
