@@ -110,7 +110,7 @@ public static void setOfferingView()
         
         System.out.println("\nPlease set your offerings ot the Lord this year.");
         if(!paramsNotOkay)
-            System.out.println("\n It should be a percentage between 0 and 100.");
+            System.out.println("\nIt should be a percentage between 0 and 100.");
         paramsNotOkay = false;
         offering = keyboard.nextInt();
         try
@@ -209,7 +209,7 @@ public static void sellLandView()
 {
     //Prompt the user to enter the number of acres to sell
     System.out.println("\nLand is selling for " + sellLandPrice
-            + " bushels per acre.\n");
+            + " bushels per acre.");
     System.out.format("\nHow many acres of land do you wish to sell?\n");
     
     //Get the user's input and save it.
@@ -265,7 +265,9 @@ public static void feedPeopleView(){
    
         }
     }while(paramsNotOkay);
-    System.out.println("Thank you for feeding my people");
+    System.out.println("Thank you for feeding my people"
+            + "You know have: " + cropData.getWheatInStore() +
+            ", wheat in storage.");
 }
 
 }
