@@ -102,6 +102,9 @@ public class MainMenuView extends MenuView {
         //call createNewGame() method. send name as param.
         GameControl.createNewGame(name);
         
+        // Run runCropsView();
+        CropView.runCropsView();
+        
         //Display the game menu
         NewGameMenu ngmv = new NewGameMenu(); 
         ngmv.displayMenu();
