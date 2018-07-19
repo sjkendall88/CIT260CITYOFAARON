@@ -59,7 +59,7 @@ private int max;
             //display the menu
             System.out.println(theMenu);
             //Prompt user for input and get user input.
-            menuOption = getGameMenuOption();
+            menuOption = getMenuOption();
             //Perform the desire option
             doAction(menuOption);
             //Determine and display the next option.
@@ -71,7 +71,7 @@ private int max;
     //Parameters: None
     //Return: integers minus option selected
     
-    public int getGameMenuOption(){
+    @Override public int getMenuOption(){
         //declare the variable to hold the input
         int userInput;
         
