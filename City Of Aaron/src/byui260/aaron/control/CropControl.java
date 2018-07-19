@@ -150,18 +150,20 @@ public class CropControl {
         // Set offering
         cropData.setOffering(offering);
         
+        //Author: J.J. Hugh
+        //Display a message when 0 is offered for the offerings.
         if (offering == 0){
-            System.out.println("\n|****************************************************************************************|\n"
-                              +"\n|                                                                                        |\n"
-                              +"\n|                                                                                        |\n"
-                              +"\n|          You were asked to give offerings and hace decided you were unable to do so.   |\n"
-                              +"\n| As a result of your decision, I will send a typhoon that is nothing you have ever seen.|\n"
-                              +"\n| But I will show mercy unto all those who will see the light and repent of your ways    |\n"
-                              +"\n|                                                                                        |\n"
-                              +"\n|                                                                                        |\n"
-                              +"\n|                                                                                        |\n"
-                              +"\n|                                                                                        |\n"
-                              +"\n|****************************************************************************************|\n");
+            System.out.println("\n|**************************************************************************************|\n"
+                              +"|                                                                                        |\n"
+                              +"|                                                                                        |\n"
+                              +"|          You were asked to give offerings and hace decided you were unable to do so.   |\n"
+                              +"| As a result of your decision, I will send a typhoon that is nothing you've ever seen.  |\n"
+                              +"| But I will show mercy unto all those who will see the light and repent of your ways    |\n"
+                              +"|                                                                                        |\n"
+                              +"|                                                                                        |\n"
+                              +"|                                                                                        |\n"
+                              +"|                                                                                        |\n"
+                              +"|****************************************************************************************|\n");
         }
     }
        
