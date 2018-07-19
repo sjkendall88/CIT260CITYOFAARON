@@ -149,8 +149,22 @@ public class CropControl {
         
         // Set offering
         cropData.setOffering(offering);
+        
+        if (offering == 0){
+            System.out.println("\n|****************************************************************************************|\n"
+                              +"\n|                                                                                        |\n"
+                              +"\n|                                                                                        |\n"
+                              +"\n|          You were asked to give offerings and hace decided you were unable to do so.   |\n"
+                              +"\n| As a result of your decision, I will send a typhoon that is nothing you have ever seen.|\n"
+                              +"\n| But I will show mercy unto all those who will see the light and repent of your ways    |\n"
+                              +"\n|                                                                                        |\n"
+                              +"\n|                                                                                        |\n"
+                              +"\n|                                                                                        |\n"
+                              +"\n|                                                                                        |\n"
+                              +"\n|****************************************************************************************|\n");
+        }
     }
-    
+       
     // The harvestCrops Method
     // Purpose: To harvest crops
     // Parameters: reference to the crop data object
