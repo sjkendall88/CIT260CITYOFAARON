@@ -57,7 +57,6 @@ public abstract class MenuView implements ViewInterface {
     @Override public int getMenuOption(){
         //declare a variable to hold the input
         int userInput;
-        
         // begin loop
         do {
             System.out.format("\nPlease enter an option(1 - %d):", max);
