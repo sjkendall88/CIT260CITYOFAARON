@@ -14,7 +14,7 @@ import exceptions.CropException;
  *
  * @author JRome
  */
-public class CropView /*extends MenuView*/ {
+public class CropView {
 
     // The CropView() method
     // Purpose: to allow access to Crop View methods
@@ -56,6 +56,9 @@ public static void runCropsView(){
     
     //setOfferingView();
     setOfferingView();
+    
+    //finishManagingCrops();
+    finishManagingCrops();
 }
 
     // the CropReportView method
@@ -269,5 +272,13 @@ public static void feedPeopleView(){
             + "You know have: " + cropData.getWheatInStore() +
             ", wheat in storage.");
 }
+public static void finishManagingCrops(){
+    // This method will finish calling the methods to manage the crops
+    CropControl.harvestCrops(cropData);
+    CropControl.payOffering(cropData);
+    CropControl.calcEatonByRats(cropData);
+    CropControl.calcStarved(cropData);
+    CropControl.growPopulation(cropData);
 
+}
 }
