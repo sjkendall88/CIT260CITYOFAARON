@@ -361,7 +361,14 @@ public class CropControl {
     // Parameters: cropData
     // Return: view of crop report
     // Author: Sterling
-    public static void CropReportView(){
+    public static void CropReportView(CropData cropData){
+        // Create a report of CropData
+        System.out.println(
+                "***********************************\n"
+              + "      This is the Crop Report      \n"
+              + "***********************************\n"
+              + "This year is: \n" +
+              + "Number of people Starved: " + cropData.getNumStarved());
         ;
     }
 }
