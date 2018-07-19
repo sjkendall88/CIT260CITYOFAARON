@@ -362,13 +362,32 @@ public class CropControl {
     // Return: view of crop report
     // Author: Sterling
     public static void CropReportView(CropData cropData){
+        int numStarved = cropData.getNumStarved();
+        int pop = cropData.getPopulation();
+        int halfPop = pop / 2;
         // Create a report of CropData
         System.out.println(
-                "***********************************\n"
-              + "      This is the Crop Report      \n"
-              + "***********************************\n"
-              + "This year is: \n" +
-              + "Number of people Starved: " + cropData.getNumStarved());
-        ;
+      "***********************************************\n"
+    + "            This is the Crop Report            \n"
+    + "***********************************************\n"
+    + "This year is: \n" + "\n"
+    + "Number of people Starved: " + numStarved + "\n"
+    + "Number of People who moved in: " + cropData.getNewPeople() + "\n"
+    + "This is the current population: " + pop + "\n"
+    + "Number of acres owned: " + cropData.getAcresOwned() + "\n"
+    + "Number of bushels from this years harvest: " + cropData.getHarvest() + "\n"
+    + "Number of bushels paid to offering: " + cropData.getOfferingBushels() + "\n"
+    + "Number of bushels eaten by rats: " + cropData.getEatenByRats() + "\n"
+    + "Number of bushels in store house: " + cropData.getWheatInStore() + "\n"
+    + "***********************************************\n"
+    );
+        if(numStarved > halfPop){
+            // Game over message
+            System.out.println("More than half of your population has died,"
+                    + " you are no longer in office and the game is over.");
+            
+            // End Game
+            System.exit(0);
+        }
     }
 }
