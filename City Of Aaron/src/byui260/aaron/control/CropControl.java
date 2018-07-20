@@ -165,8 +165,9 @@ public class CropControl {
     }
     
     public static void checkOffering(){
-        int cropData = theGame.getCropData();
-        int offering = cropData.getOffering();
+        int offering = cropData.getharvestAfterOffering();
+        
+        
           //Author: J.J. Hugh
         //Display a message when 0 is offered for the offerings.
         if (offering > 0 ){
