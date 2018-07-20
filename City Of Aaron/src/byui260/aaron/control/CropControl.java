@@ -6,6 +6,7 @@
 package byui260.aaron.control;
 import byui.aaron.view.MainMenuView;
 import byui260.aaron.model.CropData;
+import static city.of.aaron.CityOfAaron.getCurrentGame;
 import exceptions.CropException;
 import java.util.Random;
 
@@ -161,25 +162,24 @@ public class CropControl {
         
         // Set offering
         cropData.setOffering(offering);
-        checkOffering();
+        checkOffering(offering);
     }
     
-    public static void checkOffering(){
-        
-        int offering = cropData.getOffering()
+    public static void checkOffering(int offering){
         
         
+      
           //Author: J.J. Hugh
         //Display a message when 0 is offered for the offerings.
         if (offering > 0 ){
-            System.out.println ("The amount of offerings in the store house: " + offering);
+            System.out.println ("The amount of offerings in the store house: " + getCurrentGame().getCrop().getOfferingBushels() );
         }
         
         else if (offering == 0){
             System.out.println("\n|**************************************************************************************|\n"
                               +"|                                                                                        |\n"
                               +"|                                                                                        |\n"
-                              +"|          You were asked to give offerings and hace decided you were unable to do so.   |\n"
+                              +"|          You were asked to give offerings and have decided you were unable to do so.   |\n"
                               +"| As a result of your decision, I will send a typhoon that is nothing you've ever seen.  |\n"
                               +"| But I will show mercy unto all those who will see the light and repent of your ways    |\n"
                               +"|                                                                                        |\n"

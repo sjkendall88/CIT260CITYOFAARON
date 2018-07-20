@@ -12,7 +12,6 @@ import java.util.Scanner;
 import city.of.aaron.CityOfAaron;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.CheckOffering;
 import java.util.ArrayList;
 
 /**

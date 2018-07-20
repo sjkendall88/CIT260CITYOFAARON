@@ -10,7 +10,6 @@ package byui.aaron.view;
 import city.of.aaron.CityOfAaron;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.io.CheckOffering
 import java.util.Scanner;
     
 public abstract class MenuView implements ViewInterface {
