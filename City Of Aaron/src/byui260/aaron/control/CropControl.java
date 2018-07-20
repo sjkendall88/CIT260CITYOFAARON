@@ -24,7 +24,7 @@ public class CropControl {
     private static final int TO_PERC = 100;
     private static final int BUS_FEED = 20;
     private static final int CYCLE = 1;
-    private static final int DESTROY = 0;
+   
     // random number generator
     private static Random random = new Random();
     
@@ -231,13 +231,13 @@ public class CropControl {
                 cropData.setHarvest(harvest);
                 return 1;
             case 2:
-                harvest = acres * (random.nextInt(harvestRange) + ++harvestBase);
+                harvest = acres * (random.nextInt(harvestRange) + harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
                 cropData.setHarvest(harvest);
                 return 1;
             case 3:
-                harvest = acres * (random.nextInt(++harvestRange) + ++harvestBase);
+                harvest = acres * (random.nextInt(harvestRange) + harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
                 cropData.setHarvest(harvest);
