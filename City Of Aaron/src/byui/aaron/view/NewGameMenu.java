@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.aaron.view;
+import byui260.aaron.control.CropControl;
 import byui260.aaron.model.Game;
 import byui260.aaron.model.Location;
 import byui260.aaron.model.Map;
@@ -66,8 +67,7 @@ public class NewGameMenu extends MenuView {
                 startMove();
                 break;
             case 4: //Manage the crops
-                CropView cv = new CropView();
-                cv.displayGameMenuView();
+                startManageCrops();
                 break;
             case 5: System.out.println("\nReturn to the Main Menu");
         }
@@ -153,8 +153,11 @@ public class NewGameMenu extends MenuView {
     public void startMove(){
     System.out.println("\nMoving to a new location Soon");
     }
-    /*
-    public void startManageCrops();
-    */     
+    
+    public void startManageCrops(){
+        // Start managing crops
+        CropView.runCropsView();
+    };
+        
        
 }      

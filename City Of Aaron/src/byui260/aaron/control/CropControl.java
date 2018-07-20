@@ -19,7 +19,10 @@ public class CropControl {
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
     private static final int RAT_RANGE = 100;
-    
+    private static final int LOW_BAR = 8;
+    private static final int TO_PERC = 100;
+    private static final int BUS_FEED = 20;
+    private static final int CYCLE = 1;
     // random number generator
     private static Random random = new Random();
     
@@ -108,6 +111,7 @@ public class CropControl {
     // the a reference to CropData.
     // Returns: The number of acres to plant.
     // Pre-Conditions: acres to plant must be positive.    
+    // Auther: Sterling
     public static void AcresToPlant(int acresToPlant, CropData cropData) 
             throws CropException {
         
@@ -214,16 +218,19 @@ public class CropControl {
                 harvest = acres * (random.nextInt(harvestRange) + harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                cropData.setHarvest(harvest);
                 return 1;
             case 2:
                 harvest = acres * (random.nextInt(harvestRange) + ++harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                cropData.setHarvest(harvest);
                 return 1;
             case 3:
                 harvest = acres * (random.nextInt(++harvestRange) + ++harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
+                cropData.setHarvest(harvest);
                 return 1;
         }          
         return -1;
@@ -274,7 +281,7 @@ public class CropControl {
         int wheatInStore = cropData.getWheatInStore();
         
         // Multiply percentage by harvest
-        int offering = offPerc * harvest;
+        int offering = (offPerc * harvest) / 100;
         
         // Subtract offering from harvest
         harvest -= offering;
@@ -301,24 +308,24 @@ public class CropControl {
         int wheatInStore = cropData.getWheatInStore();
         double ratsAte = wheatInStore;
         // For loop to concerning offering percentage
-        if(offering < 8){
+        if(offering < LOW_BAR){
             // Rats eat random 6-10% wheatInStore
             offRange = 5;
             offBase = 5;
             offCheck = random.nextInt(offRange)+ offBase;
-            eatRats = (offCheck / 100);
+            eatRats = (offCheck / TO_PERC);
         }else if(offering > 12){
             // Rats eat random 3-5% wheatInStore
             offRange = 3;
             offBase = 2;
             offCheck = random.nextInt(offRange)+ offBase;
-            eatRats = (offCheck / 100);
+            eatRats = (offCheck / TO_PERC);
         }else{
             // Rats eat random 3-7% wheatInStore
             offRange = 5;
             offBase = 2;
             offCheck = random.nextInt(offRange)+ offBase;
-            eatRats = (offCheck / 100);
+            eatRats = (offCheck / TO_PERC);
         }
         
         // Subtract eatRats from wheatInStore
@@ -338,8 +345,8 @@ public class CropControl {
         double growPop = random.nextInt(5);
         double people = cropData.getPopulation();
         
-        // Number of people increased
-        growPop /= 100;
+        // Number of people increased 
+        growPop /= TO_PERC;
         newPeople = (int) (people * growPop);
         
         // Save people increased
@@ -366,7 +373,7 @@ public class CropControl {
         int pepDead;
         
         // Calculate the number of peopleFed 20 bushels = 1 person
-        pepFed = wheatAside / 20;
+        pepFed = wheatAside / BUS_FEED;
         pepAlive = pop - pepFed;
         pepDead = pop - pepAlive;
         cropData.setNumStarved(pepDead);
@@ -377,9 +384,7 @@ public class CropControl {
             System.out.println("Your City has fallen to starvation, "
                     + "and so have you. Game Over, please play again.");
             // End Game
-            //Return to the main menu
-            MainMenuView mmv = new MainMenuView();
-            mmv.displayMenu();
+            System.exit(0);
         }else if(pepAlive > 0 && pepAlive < pop){
             // subtact starved from population
             pop -= pepDead;
@@ -389,39 +394,19 @@ public class CropControl {
             cropData.setPopulation(pop);
         }        
     }
-    
-    // the CropReportView method
-    // Purpose: to diplay the crop report
-    // Parameters: cropData
-    // Return: view of crop report
+    // This Method adds a year for each turn
+    // Pupose: to track game rounds
+    // Parameters:
+    // Returns:
     // Author: Sterling
-    public static void CropReportView(CropData cropData){
-        int numStarved = cropData.getNumStarved();
-        int pop = cropData.getPopulation();
-        int halfPop = pop / 2;
-        // Create a report of CropData
-        System.out.println(
-      "***********************************************\n"
-    + "            This is the Crop Report            \n"
-    + "***********************************************\n"
-    + "This year is: \n" + "\n"
-    + "Number of people Starved: " + numStarved + "\n"
-    + "Number of People who moved in: " + cropData.getNewPeople() + "\n"
-    + "This is the current population: " + pop + "\n"
-    + "Number of acres owned: " + cropData.getAcresOwned() + "\n"
-    + "Number of bushels from this years harvest: " + cropData.getHarvest() + "\n"
-    + "Number of bushels paid to offering: " + cropData.getOfferingBushels() + "\n"
-    + "Number of bushels eaten by rats: " + cropData.getEatenByRats() + "\n"
-    + "Number of bushels in store house: " + cropData.getWheatInStore() + "\n"
-    + "***********************************************\n"
-    );
-        if(numStarved > halfPop){
-            // Game over message
-            System.out.println("More than half of your population has died,"
-                    + " you are no longer in office and the game is over.");
-            
-            // End Game
-            System.exit(0);
-        }
+    public static void addYear(CropData cropData){
+        // Get year
+        int year = cropData.getYear();
+        
+        // Add a year
+        year += CYCLE;
+        
+        // Set year
+        cropData.setYear(year);
     }
 }

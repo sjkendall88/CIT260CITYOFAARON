@@ -14,112 +14,90 @@ import exceptions.CropException;
  *
  * @author JRome
  */
-public class CropView extends MenuView {
-    
-//Create a Scanner object.
-private static Scanner keyboard = new Scanner(System.in);
+public class CropView {
 
-//Get references to the Game object and the CropData object.
-private static Game theGame = CityOfAaron.getCurrentGame();
-private static CropData cropData = theGame.getCropData();
+    // The CropView() method
+    // Purpose: to allow access to Crop View methods
+    public CropView(){};
+    //Create a Scanner object.
+    private static Scanner keyboard = new Scanner(System.in);
 
-// referential variable to stabilize value of Land value on a given round.
-public static int sellLandPrice;
+    //Get references to the Game object and the CropData object.
+    private static Game theGame = CityOfAaron.getCurrentGame();
+    private static CropData cropData = theGame.getCropData();
 
-private String theMenu;
-private int max;
-    //The CropView constructor test method
-    //Purpose: confirm working methods
-    //Parameters: none
-    //Return: none
-    
-    public CropView(){
-        super( "\n" + "**********************\n" 
-                + "*Debug: CropView testing phase *\n"
-                + "******************************\n"
-                + "1 - buylandview\n"
-                + "2 - feed peopleview\n"
-                + "3 - plantCropView\n"
-                + "4 - setOfferingView\n"
-                + "5 - sellLandView\n"
-                + "6 - exit to main menu\n",
-        6);
-    }
+    // referential variable to stabilize value of Land value on a given round.
+    public static int sellLandPrice;
 
-    //The displayGameMenu method.
-    //Purpose dislays the menu, gets the user input 
-    //        and does the selected action.
-    //Parameters: none
-    //Returns: none
+    private String theMenu;
+    private int max;
+
+//The runCropsView method()
+//Purpose: runs the City of Aaron game
+//Parameters: none
+//Return: none
+//Author: Sterling
+public static void runCropsView(){
     
-    public void displayGameMenuView(){
-        int menuOption;
-        do{
-            //display the menu
-            System.out.println(theMenu);
-            //Prompt user for input and get user input.
-            menuOption = getGameMenuOption();
-            //Perform the desire option
-            doAction(menuOption);
-            //Determine and display the next option.
-        }while(menuOption != max); 
-    }
+    //displayCropsReportView();
+    cropsReportView();
     
-//the getGameMenuOption method
-    //Purpose: get the user input
-    //Parameters: None
-    //Return: integers minus option selected
+    //call the buyLandView() method
+    buyLandView();
+
+    //add calls to the other crop view methods
+    sellLandView();
+
+    //The feedPeopleView method
+    feedPeopleView();
+
+    //plantCropsView();
+    plantCropsView();
     
-    public int getGameMenuOption(){
-        //declare the variable to hold the input
-        int userInput;
-        
-        //begin the loop
-        do {
-            //get user input from keyboard
-            userInput = keyboard.nextInt();
+    //setOfferingView();
+    setOfferingView();
+    
+    //finishManagingCrops();
+    finishManagingCrops();
+}
+
+    // the CropReportView method
+    // Purpose: to diplay the crop report
+    // Parameters: cropData
+    // Return: view of crop report
+    // Author: Sterling  
+public static void cropsReportView(){
+    int year = cropData.getYear();
+    int starved = cropData.getNumStarved();
+    int pop = cropData.getPopulation();
+    int halfPop = pop / 2;
+    int endYear = 11;
+    // Create a report of CropData
+    System.out.println(
+      "***********************************************\n"
+    + "            This is the Crop Report            \n"
+    + "***********************************************\n"
+    + "This year is: " + year + "\n"
+    + "Number of people Starved: " + starved + "\n"
+    + "Number of People who moved in: " + cropData.getNewPeople() + "\n"
+    + "This is the current population: " + pop + "\n"
+    + "Number of acres owned: " + cropData.getAcresOwned() + "\n"
+    + "Number of bushels from this years harvest: " + cropData.getHarvest() + "\n"
+    + "Number of bushels paid to offering: " + cropData.getOfferingBushels() + "\n"
+    + "Number of bushels eaten by rats: " + cropData.getEatenByRats() + "\n"
+    + "Number of bushels in store house: " + cropData.getWheatInStore() + "\n"
+    + "***********************************************\n"
+    );
+        if(starved > halfPop){
+            // Game over message
+            System.out.println("More than half of your population has died,"
+                    + " you are no longer in office and the game is over.");
             
-            //If it is not a valid value output an error message.
-            if (userInput < 1 || userInput > max){
-            System.out.println( "\nOption must be between 1 and " + max); 
-        }
-            // loop back to top if input not valid
-        }while (userInput < 1 || userInput > max);
-        
-        //return the value input by the user
-        return userInput;
-    }
-    
-    // doAction method
-    //Purpose: performs the selected action
-    //parameters: none
-    //return: none
-    
-    public void doAction (int option){
-        switch (option){
-            case 1: //View the Map
-                buyLandView();
-                break;
-            case 2: //View/Print a List
-                feedPeopleView();
-                break;
-            case 3: //Move to a new location
-                runCropsView();
-                break;
-            case 4: //Manage the crops
-                setOfferingView();
-                break;
-            case 5: 
-                sellLandView();
-                break;
-            case 6:                
-                //Return to the main menu
-                // Main Menu View
-                MainMenuView mmv = new MainMenuView();
-                mmv.displayMenu();
+            // End Game
+            System.exit(0);
         }
     }
-    
+
 //The setOfferingView method()
 //Purpose: User sets offering
 //Param: none
@@ -133,9 +111,9 @@ public static void setOfferingView()
     do
     {
         
-        System.out.println("Please set your offerings ot the Lord this year.");
+        System.out.println("\nPlease set your offerings ot the Lord this year.");
         if(!paramsNotOkay)
-            System.out.println("\n It should be a percentage between 0 and 100.");
+            System.out.println("\nIt should be a percentage between 0 and 100.");
         paramsNotOkay = false;
         offering = keyboard.nextInt();
         try
@@ -152,48 +130,6 @@ public static void setOfferingView()
     System.out.println("Thanks for your offering!");
 }
 
-//The runCropsView method()
-//Purpose: runs the City of Aaron game
-//Parameters: none
-//Return: none
-//Author: Sterling
-public static void runCropsView(){
-    /*
-    //call the buyLandView() method
-    buyLandView();
-
-    //add calls to the other crop view methods
-    sellLandView();
-
-    //The feedPeopleView method
-    feedPeopleView();
-
-    //plantCropsView();
-    plantCropsView();
-    
-    //setOffering()
-    setOffering();
-    
-    //harvestCrops()
-    harvestCrops();
-    
-    //payOffering()
-    payOffering();
-    
-    //calcEatenByRats()
-    calcEatenByRats();
-    
-    //growPopulation()
-    growPopulation();
-    
-    //showStarvedView();
-    showStarvedView();
-    
-    //displayCropsReportView();
-    displayCropsReportView();
-    */
-}
-
 //The buyLandView method
 //Purpose: interface with the user input for buying land.
 //Parameters: none
@@ -207,7 +143,7 @@ public static void buyLandView()
     sellLandPrice = price;
     
     //Prompt the user to enter the number of acres to buy
-    System.out.format("Land is selling for %d bushels per acre. %n",price);
+    System.out.format("\nLand is selling for %d bushels per acre. %n",price);
     
     //initialize toBuy
     int toBuy;
@@ -250,7 +186,7 @@ public static void plantCropsView() {
             try{
                 // Prompt the user for acres of land to plant
                 // One bushel will plant two acres of land
-                System.out.println("It takes 1 bushel to plant 2 acres. "
+                System.out.println("\nIt takes 1 bushel to plant 2 acres. "
                 + "\nHow many acres would you like to plant?");
                 // Get the user input 
                 acresToPlant = keyboard.nextInt();
@@ -275,8 +211,8 @@ public static void plantCropsView() {
 public static void sellLandView()
 {
     //Prompt the user to enter the number of acres to sell
-    System.out.println("Land is selling for " + sellLandPrice
-            + " bushels per acre.\n");
+    System.out.println("\nLand is selling for " + sellLandPrice
+            + " bushels per acre.");
     System.out.format("\nHow many acres of land do you wish to sell?\n");
     
     //Get the user's input and save it.
@@ -290,7 +226,7 @@ public static void sellLandView()
         toSell = keyboard.nextInt();
         successCheck = CropControl.sellLand(sellLandPrice, toSell, cropData);
     }
-    System.out.format("You now own %d acres of land.", successCheck);
+    System.out.format("You now own %d acres of land.\n", successCheck);
 }
 
     //the feedPeopleView method
@@ -304,10 +240,11 @@ public static void feedPeopleView(){
     int wheatInStore = cropData.getWheatInStore();
     //Prompt the user for buschels of grain wanted to give to the people.
     //Display the amount of wheat set aside for the people.
-    System.out.println("You currently have " + wheatInStore + " available in "
+    System.out.println("\nIt takes 20 bushels of wheat to feed 1 person for a year"
+            + "\nYou currently have " + wheatInStore + " available in "
             + "your storehouse.");
-    System.out.println("\nHow many bushels of grain do you want to give to the "
-            + "people?\n");
+    System.out.println("\nHow many bushels of grain do you want to set aside "
+            + "to feed the people?\n");
     
     int forPeople;
     boolean paramsNotOkay;
@@ -331,6 +268,17 @@ public static void feedPeopleView(){
    
         }
     }while(paramsNotOkay);
-    System.out.println("Thank you for feeding my people");
+    System.out.println("Thank you for feeding my people"
+            + "You know have: " + cropData.getWheatInStore() +
+            ", wheat in storage.");
+}
+public static void finishManagingCrops(){
+    // This method will finish calling the methods to manage the crops
+    CropControl.harvestCrops(cropData);
+    CropControl.payOffering(cropData);
+    CropControl.calcEatonByRats(cropData);
+    CropControl.calcStarved(cropData);
+    CropControl.growPopulation(cropData);
+    CropControl.addYear(cropData);
 }
 }
