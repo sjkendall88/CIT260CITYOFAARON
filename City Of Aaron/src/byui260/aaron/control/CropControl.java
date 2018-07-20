@@ -165,7 +165,8 @@ public class CropControl {
     }
     
     public static void checkOffering(){
-        int offering = cropData.getharvestAfterOffering();
+        
+        int offering = cropData.getOffering()
         
         
           //Author: J.J. Hugh

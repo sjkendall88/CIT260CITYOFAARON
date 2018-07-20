@@ -15,6 +15,7 @@ import byui260.aaron.model.TeamMember;
 import byui.aaron.view.*;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
+import java,io.CheckOffering;
 
 /**
  *
@@ -26,6 +27,8 @@ public class CityOfAaron {
     private static Game theGame = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    //private static CheckOffering outfile = null;
+    
     
     // main function - entry point for the program
     // runs the main menu
@@ -131,4 +134,12 @@ public class CityOfAaron {
     public static void setInFile(BufferedReader inFile){
         CityOfAaron.inFile = inFile;
     }
+    
+    //public static CheckOffering getInFile() {
+    //    return inFile;
+    //}
+    
+    //public static void setInFile(CheckOffering inFile){
+    //    CityOfAaron.inFile = inFile;
+    //}
 }
