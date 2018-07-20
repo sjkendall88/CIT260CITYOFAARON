@@ -59,6 +59,8 @@ public static void runCropsView(){
     
     //finishManagingCrops();
     finishManagingCrops();
+    
+
 }
 
     // the CropReportView method
