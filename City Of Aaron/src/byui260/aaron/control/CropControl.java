@@ -24,6 +24,7 @@ public class CropControl {
     private static final int TO_PERC = 100;
     private static final int BUS_FEED = 20;
     private static final int CYCLE = 1;
+    private static final int DESTROY = 0;
     // random number generator
     private static Random random = new Random();
     
@@ -165,17 +166,24 @@ public class CropControl {
         checkOffering(offering);
     }
     
+    
+    //The checkOffering method
+    // Purpose: To check the afterHarvestOffering amount
+    // Parameters: Whether there is an offering amount and a reference to the GetOffering
+    // Return: integer of offering amount in the store house.
+    // Pre-condition: offering must be 0 otherwise display amount.
     public static void checkOffering(int offering){
         
-        
-      
           //Author: J.J. Hugh
         //Display a message when 0 is offered for the offerings.
         if (offering > 0 ){
+            
             System.out.println ("The amount of offerings in the store house: " + getCurrentGame().getCrop().getOfferingBushels() );
         }
         
         else if (offering == 0){
+            
+            
             System.out.println("\n|**************************************************************************************|\n"
                               +"|                                                                                        |\n"
                               +"|                                                                                        |\n"
@@ -188,7 +196,7 @@ public class CropControl {
                               +"|                                                                                        |\n"
                               +"|****************************************************************************************|\n");
         }
-        
+      
     }
     // The harvestCrops Method
     // Purpose: To harvest crops
