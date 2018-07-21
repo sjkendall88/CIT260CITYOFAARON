@@ -186,7 +186,7 @@ public class CropControl {
         if (offering > 0 ){
             
             int afterMath;
-            System.out.println ("The amount of wheat in your storehouse after your offering is " + cropData.getWheatInStore());
+            System.out.println ("The amount of wheat in your storehouse after your offering is " + cropData.1
             //System.out.println ("The amount of offerings in the store house: " + getCurrentGame().getCrop().getOfferingBushels() );
         }
         
