@@ -175,20 +175,20 @@ public class CropControl {
     // Parameters: Whether there is an offering amount and a reference to the GetOffering
     // Return: integer of offering amount in the store house.
     // Pre-condition: offering must be 0 otherwise display amount.
-    public static void checkOffering(int offering){
+    public static void checkOffering(int offering, CropData cropData){
         
           //Author: J.J. Hugh
         //Display a message when 0 is offered for the offerings.
         if (offering > 0 ){
             
-            int afterMath;
+          
             System.out.println ("The amount of offerings in the store house: " + getCurrentGame().getCrop().getOfferingBushels() );
         }
         
         if (offering == 0){
             
-            
-          System.out.println("\n|****************************************************************************************|\n"
+          cropData.setWheatInStore(0);
+          System.out.println("\n|****1************************************************************************************|\n"
                               +"|                                                                                        |\n"
                               +"|                                                                                        |\n"
                               +"|          You were asked to give offerings and have decided you were unable to do so.   |\n"
@@ -201,6 +201,8 @@ public class CropControl {
                               +"|****************************************************************************************|\n");
         }
     }   
+    
+    
     // The harvestCrops Method
     // Purpose: To harvest crops
     // Parameters: reference to the crop data object
