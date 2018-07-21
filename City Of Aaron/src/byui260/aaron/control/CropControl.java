@@ -184,7 +184,7 @@ public class CropControl {
         else if (offering == 0){
             
             
-            System.out.println("\n|**************************************************************************************|\n"
+          System.out.println("\n|****************************************************************************************|\n"
                               +"|                                                                                        |\n"
                               +"|                                                                                        |\n"
                               +"|          You were asked to give offerings and have decided you were unable to do so.   |\n"
