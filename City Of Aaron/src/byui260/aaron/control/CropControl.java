@@ -166,6 +166,10 @@ public class CropControl {
         
         // Set offering
         cropData.setOffering(offering);
+        int currentWheat = cropData.getWheatInStore();
+        int offeringAmount = currentWheat * offering / 100;
+        currentWheat -= offeringAmount;
+        cropData.setWheatInStore(currentWheat);
         checkOffering(offering, cropData);
     }
     
@@ -182,7 +186,7 @@ public class CropControl {
         if (offering > 0 ){
             
           
-            System.out.println ("The amount of wheat in the storehouse after the offering: " + cropData.getWheatInStore() );
+            System.out.println ("The current amount of wheat in the storehouse is " + cropData.getWheatInStore() );
         }
         
         if (offering == 0){
