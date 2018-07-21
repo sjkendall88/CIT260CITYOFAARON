@@ -166,7 +166,7 @@ public class CropControl {
         
         // Set offering
         cropData.setOffering(offering);
-        checkOffering(offering);
+        checkOffering(offering, cropData);
     }
     
     
@@ -199,6 +199,8 @@ public class CropControl {
                               +"|                                                                                        |\n"
                               +"|                                                                                        |\n"
                               +"|****************************************************************************************|\n");
+          
+          System.out.println("\nThe current amount of wheat in the store is" + getCurrentGame().getCrop().getWheatInStore());
         }
     }   
     
