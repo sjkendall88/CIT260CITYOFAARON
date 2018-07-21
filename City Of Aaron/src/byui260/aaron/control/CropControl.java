@@ -185,12 +185,12 @@ public class CropControl {
         //Display a message when 0 is offered for the offerings.
         if (offering > 0 ){
             
-          
+          //If an amount besides 0 is entered, display current amount of wheat.
             System.out.println ("The current amount of wheat in the storehouse is " + cropData.getWheatInStore() );
         }
         
         if (offering == 0){
-            
+           //If 0 is entered, empty the amount of wheat in store to 0 and display the following.
           cropData.setWheatInStore(0);
           System.out.println("\n|****1****************************************************************************************|\n"
                               +"|                                                                                             |\n"
@@ -203,7 +203,6 @@ public class CropControl {
                               +"|                                                                                             |\n"
                               +"|*********************************************************************************************|\n");
           
-          System.out.println("\nThe current amount of wheat in the store is " + getCurrentGame().getCrop().getWheatInStore());
         }
     }   
     
