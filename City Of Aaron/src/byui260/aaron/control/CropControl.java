@@ -182,25 +182,24 @@ public class CropControl {
         if (offering > 0 ){
             
           
-            System.out.println ("The amount of offerings in the store house: " + getCurrentGame().getCrop().getOfferingBushels() );
+            System.out.println ("The amount of wheat in the storehouse after the offering: " + cropData.getWheatInStore() );
         }
         
         if (offering == 0){
             
           cropData.setWheatInStore(0);
-          System.out.println("\n|****1************************************************************************************|\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|          You were asked to give offerings and have decided you were unable to do so.   |\n"
-                              +"| As a result of your decision, I will send a typhoon that is nothing you've ever seen.  |\n"
-                              +"| But I will show mercy unto all those who will see the light and repent of your ways    |\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|****************************************************************************************|\n");
+          System.out.println("\n|****1****************************************************************************************|\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|          You were asked to give offerings and have decided you were unable to do so.        |\n"
+                              +"| As a result of your decision, your supply of wheat in your store has been destroyed by fire.|\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|*********************************************************************************************|\n");
           
-          System.out.println("\nThe current amount of wheat in the store is" + getCurrentGame().getCrop().getWheatInStore());
+          System.out.println("\nThe current amount of wheat in the store is " + getCurrentGame().getCrop().getWheatInStore());
         }
     }   
     
