@@ -48,13 +48,15 @@ public class CropControl {
     public static int sellLand(int landPrice, int acresToSell, CropData cropData){
         
         // if acresToSell < 0, return -1
-        if(acresToSell <0)
+        if(acresToSell <0) {
             return -1;
+        }
         
         // if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
-        if(acresToSell > owned)
+        if(acresToSell > owned) {
             return -1;
+        }
         
         // acresOwned -= acresToSell
         owned -= acresToSell;
@@ -78,8 +80,9 @@ public class CropControl {
     public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException{
                 
         // if(acresToBuy < 0) throw exc
-        if(acresToBuy < 0)
+        if(acresToBuy < 0) {
             throw new CropException("A negative value was input");
+        }
         
         // TotalCost = acresToBuy * landPrice
         int totalCost = acresToBuy * landPrice;
@@ -178,10 +181,11 @@ public class CropControl {
         //Display a message when 0 is offered for the offerings.
         if (offering > 0 ){
             
+            int afterMath;
             System.out.println ("The amount of offerings in the store house: " + getCurrentGame().getCrop().getOfferingBushels() );
         }
         
-        else if (offering == 0){
+        if (offering == 0){
             
             
           System.out.println("\n|****************************************************************************************|\n"
@@ -196,8 +200,7 @@ public class CropControl {
                               +"|                                                                                        |\n"
                               +"|****************************************************************************************|\n");
         }
-      
-    }
+    }   
     // The harvestCrops Method
     // Purpose: To harvest crops
     // Parameters: reference to the crop data object
