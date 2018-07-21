@@ -114,8 +114,9 @@ public static void setOfferingView()
     {
         
         System.out.println("\nPlease set your offerings ot the Lord this year.");
-        if(!paramsNotOkay)
+        if(!paramsNotOkay) {
             System.out.println("\nIt should be a percentage between 0 and 100.");
+        }
         paramsNotOkay = false;
         offering = keyboard.nextInt();
         try
