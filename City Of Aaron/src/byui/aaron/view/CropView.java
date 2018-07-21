@@ -271,7 +271,7 @@ public static void feedPeopleView(){
    
         }
     }while(paramsNotOkay);
-    System.out.println("Thank you for feeding my people"
+    System.out.println("Thank you for feeding my people\n"
             + "You know have: " + cropData.getWheatInStore() +
             ", wheat in storage.");
 }
