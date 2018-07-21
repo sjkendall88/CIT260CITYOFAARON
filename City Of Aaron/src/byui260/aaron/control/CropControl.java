@@ -166,7 +166,7 @@ public class CropControl {
         
         // Set offering
         cropData.setOffering(offering);
-        checkOffering(offering);
+        checkOffering(offering, cropData);
     }
     
     
@@ -175,7 +175,7 @@ public class CropControl {
     // Parameters: Whether there is an offering amount and a reference to the GetOffering
     // Return: integer of offering amount in the store house.
     // Pre-condition: offering must be 0 otherwise display amount.
-    public static void checkOffering(int offering){
+    public static void checkOffering(int offering, CropData cropData){
         
           //Author: J.J. Hugh
         //Display a message when 0 is offered for the offerings.
@@ -187,7 +187,7 @@ public class CropControl {
         
         if (offering == 0){
             
-            
+            cropData.setWheatInStore(0);
           System.out.println("\n|****************************************************************************************|\n"
                               +"|                                                                                        |\n"
                               +"|                                                                                        |\n"
