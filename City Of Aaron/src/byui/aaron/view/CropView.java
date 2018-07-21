@@ -129,11 +129,14 @@ public static void setOfferingView()
             System.out.println(e.getMessage());
             paramsNotOkay = true;    
         }
-        if (offering == 0){
-            System.out.println("\n We have trials and in those trials, we must look to the Savior for strength!!");
-        }
+        
     }while(paramsNotOkay);
-    System.out.println("Thanks for your offering!");
+    if (offering == 0){
+            System.out.println("\n We have trials and in those trials, we must look to the Savior for strength!!");
+    }
+    else {
+        System.out.println("Thanks for your offering!");
+    }
 }
 
 //The buyLandView method
