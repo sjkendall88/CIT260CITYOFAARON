@@ -16,6 +16,7 @@ import byui.aaron.view.*;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 
+
 /**
  *
  * @author James Rasmussen, JJ Hugh, and Sterling Kendall
@@ -26,6 +27,8 @@ public class CityOfAaron {
     private static Game theGame = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    //private static CheckOffering outfile = null;
+    
     
     // main function - entry point for the program
     // runs the main menu
@@ -131,4 +134,6 @@ public class CityOfAaron {
     public static void setInFile(BufferedReader inFile){
         CityOfAaron.inFile = inFile;
     }
+    
+ 
 }

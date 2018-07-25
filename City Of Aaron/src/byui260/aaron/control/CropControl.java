@@ -6,6 +6,7 @@
 package byui260.aaron.control;
 import byui.aaron.view.MainMenuView;
 import byui260.aaron.model.CropData;
+import static city.of.aaron.CityOfAaron.getCurrentGame;
 import exceptions.CropException;
 import java.util.Random;
 
@@ -23,6 +24,7 @@ public class CropControl {
     private static final int TO_PERC = 100;
     private static final int BUS_FEED = 20;
     private static final int CYCLE = 1;
+   
     // random number generator
     private static Random random = new Random();
     
@@ -46,13 +48,15 @@ public class CropControl {
     public static int sellLand(int landPrice, int acresToSell, CropData cropData){
         
         // if acresToSell < 0, return -1
-        if(acresToSell <0)
+        if(acresToSell <0) {
             return -1;
+        }
         
         // if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
-        if(acresToSell > owned)
+        if(acresToSell > owned) {
             return -1;
+        }
         
         // acresOwned -= acresToSell
         owned -= acresToSell;
@@ -76,17 +80,19 @@ public class CropControl {
     public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException{
                 
         // if(acresToBuy < 0) throw exc
-        if(acresToBuy < 0)
+        if(acresToBuy < 0) {
             throw new CropException("A negative value was input");
+        }
         
         // TotalCost = acresToBuy * landPrice
         int totalCost = acresToBuy * landPrice;
         
         // if totalCost > wheatOwned throw exc
         int wheatOwned = cropData.getWheatInStore();
-        if(totalCost > wheatOwned)
+        if(totalCost > wheatOwned) {
             throw new CropException("There is sufficient wheat "
                     + "to buy this much land");
+        }
         
         // totalAcres = acresOwned + acresToBuy
         int acresOwned = cropData.getAcresOwned();
@@ -94,8 +100,9 @@ public class CropControl {
 
         // if population < totalAcres/10 throw exc
         int population = cropData.getPopulation();
-        if(population < totalAcres/10)
+        if(population < totalAcres/10) {
             throw new CropException("Not enough workers to work the fields");
+        }
 
         // wheatOwned = wheatOwned - totalCost
         wheatOwned -= totalCost;
@@ -114,24 +121,27 @@ public class CropControl {
             throws CropException {
         
         // If (acresToPlant < 0) then return -1
-        if(acresToPlant < 0)
+        if(acresToPlant < 0) {
             throw new CropException ("Acres to plant must be a positive number. "
                     + "Please try again.");
+        }
         
         // If (acresToPlant !<= acresOwned) then return -1
         int acresOwned = cropData.getAcresOwned();
-        if(acresOwned < acresToPlant)
+        if(acresOwned < acresToPlant) {
             throw new CropException("You don't own enough acres to plant."
                     + "Please try again.");
+        }
         
         // bushelsToPlant = acresToPlant / 2
         int bushelsToPlant = acresToPlant / 2;
         
         // If (wheatInStore !>= bushelsToPlant) then return -1
         int wheatInStore = cropData.getWheatInStore();
-        if(wheatInStore < bushelsToPlant)
+        if(wheatInStore < bushelsToPlant) {
             throw new CropException("You don't have enough Wheat to plant."
                     + "Please try again.");
+        }
         
         // wheatInStore  = wheatInStore – bushelsToPlant
         wheatInStore -= bushelsToPlant;
@@ -150,29 +160,54 @@ public class CropControl {
     public static void setOffering(int offering, CropData cropData) throws CropException {
         
         // IF 0 > offering or offering > 100 return thrown exception
-        if (offering < 0 || offering > 100)
+        if (offering < 0 || offering > 100) {
             throw new CropException ("Percentages must be between 0 and 100");
+        }
         
         // Set offering
         cropData.setOffering(offering);
-        
-        //Author: J.J. Hugh
-        //Display a message when 0 is offered for the offerings.
-        if (offering == 0){
-            System.out.println("\n|**************************************************************************************|\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|          You were asked to give offerings and hace decided you were unable to do so.   |\n"
-                              +"| As a result of your decision, I will send a typhoon that is nothing you've ever seen.  |\n"
-                              +"| But I will show mercy unto all those who will see the light and repent of your ways    |\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|                                                                                        |\n"
-                              +"|****************************************************************************************|\n");
-        }
+        int currentWheat = cropData.getWheatInStore();
+        int offeringAmount = currentWheat * offering / 100;
+        currentWheat -= offeringAmount;
+        cropData.setWheatInStore(currentWheat);
+        checkOffering(offering, cropData);
     }
-       
+    
+    
+    //The checkOffering method
+    // Purpose: To check the afterHarvestOffering amount
+    // Parameters: Whether there is an offering amount and a reference to the GetOffering
+    // Return: integer of offering amount in the store house.
+    // Pre-condition: offering must be 0 otherwise display amount.
+    public static void checkOffering(int offering, CropData cropData){
+        
+          //Author: J.J. Hugh
+        //Display a message when 0 is offered for the offerings.
+        if (offering > 0 ){
+            
+          //If an amount besides 0 is entered, display current amount of wheat.
+            System.out.println ("The current amount of wheat in the storehouse is " + cropData.getWheatInStore() );
+        }
+        
+        if (offering == 0){
+           //If 0 is entered, empty the amount of wheat in store to 0 and display the following.
+          cropData.setWheatInStore(0);
+          System.out.println("\n|****1****************************************************************************************|\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|          You were asked to give offerings and have decided you were unable to do so.        |\n"
+                              +"| As a result of your decision, your supply of wheat in your store has been destroyed by fire.|\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|                                                                                             |\n"
+                              +"|*********************************************************************************************|\n");
+          
+          System.out.println("\nThe current amount of wheat in the store is " + getCurrentGame().getCrop().getWheatInStore());
+        }
+    }   
+    
+    
     // The harvestCrops Method
     // Purpose: To harvest crops
     // Parameters: reference to the crop data object
@@ -188,11 +223,13 @@ public class CropControl {
         int harvestBase = 1;
         
         // Assign tier level of return to offering amount
-        if(offering < 8)
+        if(offering < 8) {
             offeringTier = 1;
-        else if(offering > 12)
+        } else if(offering > 12) {
             offeringTier = 3;
-        else offeringTier = 2;
+        } else {
+            offeringTier = 2;
+        }
         
         // harvest wheat and add it to stores based on offeringTier      
         switch (offeringTier)
@@ -204,13 +241,13 @@ public class CropControl {
                 cropData.setHarvest(harvest);
                 return 1;
             case 2:
-                harvest = acres * (random.nextInt(harvestRange) + ++harvestBase);
+                harvest = acres * (random.nextInt(harvestRange) + harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
                 cropData.setHarvest(harvest);
                 return 1;
             case 3:
-                harvest = acres * (random.nextInt(++harvestRange) + ++harvestBase);
+                harvest = acres * (random.nextInt(harvestRange) + harvestBase);
                 wheatOwned += harvest;
                 cropData.setWheatInStore(wheatOwned);
                 cropData.setHarvest(harvest);
@@ -234,8 +271,9 @@ public class CropControl {
 
 	// if (wheatSetAside > wheatInStore) then return -1
 	int wheatInStore = cropData.getWheatInStore();
-	if (wheatSetAside > wheatInStore) 
+	if (wheatSetAside > wheatInStore) {
             throw new CropException("There is insufficient wheat set aside for the people");
+        }
         
 	
 	//wheatInStore =  wheatInStore - wheatSetAside.

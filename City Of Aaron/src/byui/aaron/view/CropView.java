@@ -59,6 +59,8 @@ public static void runCropsView(){
     
     //finishManagingCrops();
     finishManagingCrops();
+    
+
 }
 
     // the CropReportView method
@@ -112,8 +114,9 @@ public static void setOfferingView()
     {
         
         System.out.println("\nPlease set your offerings ot the Lord this year.");
-        if(!paramsNotOkay)
+        if(!paramsNotOkay) {
             System.out.println("\nIt should be a percentage between 0 and 100.");
+        }
         paramsNotOkay = false;
         offering = keyboard.nextInt();
         try
@@ -126,8 +129,14 @@ public static void setOfferingView()
             System.out.println(e.getMessage());
             paramsNotOkay = true;    
         }
+        
     }while(paramsNotOkay);
-    System.out.println("Thanks for your offering!");
+    if (offering == 0){
+            System.out.println("\n We have trials and in those trials, we must look to the Savior for strength!!");
+    }
+    else {
+        System.out.println("Thanks for your offering!");
+    }
 }
 
 //The buyLandView method
@@ -268,7 +277,7 @@ public static void feedPeopleView(){
    
         }
     }while(paramsNotOkay);
-    System.out.println("Thank you for feeding my people"
+    System.out.println("Thank you for feeding my people\n"
             + "You know have: " + cropData.getWheatInStore() +
             ", wheat in storage.");
 }
