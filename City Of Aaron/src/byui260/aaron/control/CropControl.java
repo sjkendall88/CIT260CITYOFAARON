@@ -25,9 +25,6 @@ public class CropControl {
     private static final int TO_PERC = 100;
     private static final int BUS_FEED = 20;
     private static final int CYCLE = 1;
-    //Get references to the Game object and the CropData object.
-    private static Game theGame = CityOfAaron.getCurrentGame();
-    private static CropData cropData = theGame.getCropData();
    
     // random number generator
     private static Random random = new Random();
@@ -171,8 +168,8 @@ public class CropControl {
         // Set offering
         cropData.setOffering(offering);
         int currentWheat = cropData.getWheatInStore();
-        currentWheat *= offering;
-        int offeringAmount = currentWheat / 100;
+        int currentWheat2 = currentWheat * offering;
+        int offeringAmount = currentWheat2 / 100;
         currentWheat -= offeringAmount;
         cropData.setWheatInStore(currentWheat);
         cropData.setOfferingBushels(offeringAmount);
