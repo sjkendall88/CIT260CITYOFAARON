@@ -143,7 +143,7 @@ public static void setOfferingView()
     }
     else {
         System.out.println("Thanks for your offering!"
-                + "This is how much wheat is left in store: " + cropData.getWheatInStore());
+                + "\nThis is how much wheat you offered: " + cropData.getOfferingBushels());
     }
 }
 

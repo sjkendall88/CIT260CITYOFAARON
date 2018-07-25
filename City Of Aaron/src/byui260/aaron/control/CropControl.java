@@ -171,7 +171,8 @@ public class CropControl {
         // Set offering
         cropData.setOffering(offering);
         int currentWheat = cropData.getWheatInStore();
-        int offeringAmount = currentWheat * (offering / 100);
+        currentWheat *= offering;
+        int offeringAmount = currentWheat / 100;
         currentWheat -= offeringAmount;
         cropData.setWheatInStore(currentWheat);
         cropData.setOfferingBushels(offeringAmount);
