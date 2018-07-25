@@ -6,7 +6,8 @@
 package byui260.aaron.control;
 import byui.aaron.view.MainMenuView;
 import byui260.aaron.model.CropData;
-import static city.of.aaron.CityOfAaron.getCurrentGame;
+import byui260.aaron.model.Game;
+import city.of.aaron.CityOfAaron;
 import exceptions.CropException;
 import java.util.Random;
 
@@ -24,6 +25,9 @@ public class CropControl {
     private static final int TO_PERC = 100;
     private static final int BUS_FEED = 20;
     private static final int CYCLE = 1;
+    //Get references to the Game object and the CropData object.
+    private static Game theGame = CityOfAaron.getCurrentGame();
+    private static CropData cropData = theGame.getCropData();
    
     // random number generator
     private static Random random = new Random();
@@ -203,7 +207,7 @@ public class CropControl {
                               +"|                                                                                             |\n"
                               +"|*********************************************************************************************|\n");
           
-          System.out.println("\nThe current amount of wheat in the store is " + getCurrentGame().getCrop().getWheatInStore());
+          System.out.println("\nThe current amount of wheat in the store is " + cropData.getWheatInStore());
         }
     }   
     
@@ -281,7 +285,7 @@ public class CropControl {
 	
 	//wheatForPeople = whatForPeople + wheatSetAside.
 	
-	cropData.setWheatForPeople(wheatInStore);
+	cropData.setWheatForPeople(wheatSetAside);
         cropData.setWheatInStore(wheatInStore);
 
     }
@@ -394,8 +398,8 @@ public class CropControl {
         
         // Calculate the number of peopleFed 20 bushels = 1 person
         pepFed = wheatAside / BUS_FEED;
-        pepAlive = pop - pepFed;
-        pepDead = pop - pepAlive;
+        pepDead = pop - pepFed;
+        pepAlive = pop - pepDead;
         cropData.setNumStarved(pepDead);
         
         // Check Population

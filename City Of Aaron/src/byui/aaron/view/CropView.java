@@ -72,8 +72,15 @@ public static void cropsReportView(){
     int year = cropData.getYear();
     int starved = cropData.getNumStarved();
     int pop = cropData.getPopulation();
-    int halfPop = pop / 2;
+    int newPep = cropData.getNewPeople();
     int endYear = 11;
+    // update values
+    pop += newPep;
+    cropData.setPopulation(pop);
+    
+    // variable
+    int halfPop = pop / 2;
+    
     // Create a report of CropData
     System.out.println(
       "***********************************************\n"
@@ -81,7 +88,7 @@ public static void cropsReportView(){
     + "***********************************************\n"
     + "This year is: " + year + "\n"
     + "Number of people Starved: " + starved + "\n"
-    + "Number of People who moved in: " + cropData.getNewPeople() + "\n"
+    + "Number of People who moved in: " + newPep + "\n"
     + "This is the current population: " + pop + "\n"
     + "Number of acres owned: " + cropData.getAcresOwned() + "\n"
     + "Number of bushels from this years harvest: " + cropData.getHarvest() + "\n"
