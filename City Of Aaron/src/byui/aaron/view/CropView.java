@@ -74,9 +74,6 @@ public static void cropsReportView(){
     int pop = cropData.getPopulation();
     int newPep = cropData.getNewPeople();
     int endYear = 11;
-    // update values
-    pop += newPep;
-    cropData.setPopulation(pop);
     
     // variable
     int halfPop = pop / 2;
