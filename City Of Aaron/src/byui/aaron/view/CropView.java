@@ -142,7 +142,8 @@ public static void setOfferingView()
             System.out.println("\n We have trials and in those trials, we must look to the Savior for strength!!");
     }
     else {
-        System.out.println("Thanks for your offering!");
+        System.out.println("Thanks for your offering!"
+                + "This is how much wheat is left in store: " + cropData.getWheatInStore());
     }
 }
 
