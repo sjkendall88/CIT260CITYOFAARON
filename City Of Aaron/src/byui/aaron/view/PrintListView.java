@@ -122,7 +122,8 @@ public class PrintListView extends MenuView {
             for (ListItem animal:animals){
             System.out.println(animal.getName()+" "+animal.getNumber());
         }
-    }    
+    }  
+    // This method is for displaying the tools list
     public void displayTools(){
         // Sterling
 //        System.out.println("These are the tools you have:"
@@ -132,6 +133,7 @@ public class PrintListView extends MenuView {
             System.out.println(tool.getName()+" "+tool.getNumber());
     }
     }
+    // This method is for printing the tools list
     public void printTools() {
         // Sterling
         ArrayList<ListItem> tools = theGame.getTools();
